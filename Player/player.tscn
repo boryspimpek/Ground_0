@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://y5fuahah3vd5" path="res://Player model/Mixamo/T-Pose.fbx" id="1_5htga"]
 [ext_resource type="Animation" uid="uid://d2c7r6swkepdb" path="res://Player model/Animations/firing.tres" id="2_00tjw"]
 [ext_resource type="Script" uid="uid://bfp4gifp06gdj" path="res://Player/Player.gd" id="2_p5o4e"]
-[ext_resource type="Texture2D" uid="uid://c81jog6mmth3s" path="res://Player model/Model/T-Pose_T-Pose_fbx_basecolor.jpg" id="3_gu6f8"]
 [ext_resource type="Animation" uid="uid://dpvq8btbl1aop" path="res://Player model/Animations/idle.tres" id="3_x3vf3"]
 [ext_resource type="Animation" uid="uid://bwpbn3583vk6n" path="res://Player model/Animations/jump.tres" id="4_00tjw"]
 [ext_resource type="Animation" uid="uid://ga5t6rbyyuve" path="res://Player model/Animations/run.tres" id="4_apopc"]
@@ -16,7 +15,6 @@
 [ext_resource type="Script" uid="uid://61y6y7mpgg37" path="res://Player/Traversal.gd" id="13_lfmf2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkpta"]
-albedo_texture = ExtResource("3_gu6f8")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gpjlu"]
 radius = 0.16601563
@@ -124,17 +122,17 @@ transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
 script = ExtResource("2_p5o4e")
 
 [node name="Skeleton3D" parent="." index="0" unique_id=1694315123]
-bones/0/position = Vector3(0.019760113, 0.50823486, 0.015010238)
-bones/0/rotation = Quaternion(-0.7300204, -0.013905982, 0.0309102, 0.6825844)
-bones/1/rotation = Quaternion(0.6971533, 0.033483304, 0.020013653, 0.71586007)
-bones/2/rotation = Quaternion(0.010646716, -0.0037264223, -0.0019924068, 0.9999345)
-bones/3/rotation = Quaternion(0.012610019, -0.008820747, -0.003768207, 0.9998746)
-bones/4/rotation = Quaternion(-0.6632514, 0.013695516, 0.030197196, 0.7476618)
-bones/5/rotation = Quaternion(0.04574166, 0.05699349, 0.37101257, 0.9257479)
-bones/7/rotation = Quaternion(-0.68045074, -0.27941322, 0.6016664, -0.3113079)
-bones/8/rotation = Quaternion(-0.015399901, 0.9496209, 0.17503387, -0.25951132)
-bones/9/rotation = Quaternion(0.58975685, 0.80119056, 0.043944776, 0.09137537)
-bones/10/rotation = Quaternion(-0.030992214, -0.7258797, -0.073805444, 0.6831478)
+bones/0/position = Vector3(0.008077694, 0.5116532, 0.0029690266)
+bones/0/rotation = Quaternion(-0.72187823, -0.08354833, -0.067049004, 0.6836783)
+bones/1/rotation = Quaternion(0.6945914, -0.0016697011, -0.012663941, 0.7192911)
+bones/2/rotation = Quaternion(0.005190334, -0.0026862973, 0.0047591724, 0.9999716)
+bones/3/rotation = Quaternion(0.016520176, -0.004199312, -0.001461612, 0.99985373)
+bones/4/rotation = Quaternion(-0.669213, 0.0032866364, 0.011046715, 0.74298126)
+bones/5/rotation = Quaternion(-0.008058555, 0.027754955, 0.09433495, 0.99512094)
+bones/7/rotation = Quaternion(-0.68747485, -0.27316722, 0.5958771, -0.3125517)
+bones/8/rotation = Quaternion(-0.12183044, 0.9378669, 0.20948224, -0.2483552)
+bones/9/rotation = Quaternion(0.40926397, 0.9087125, 0.0304956, 0.076255195)
+bones/10/rotation = Quaternion(0.101906404, -0.7706752, 0.025534447, 0.62850845)
 bones/11/rotation = Quaternion(-0.26860428, 0.24563774, 0.4336386, 0.82430065)
 bones/12/rotation = Quaternion(0.007884949, -0.017569108, -0.0107980985, 0.9997563)
 bones/13/rotation = Quaternion(-0.092754714, 0.0020724188, 0.003129792, 0.99568194)
@@ -142,23 +140,23 @@ bones/15/rotation = Quaternion(0.30169606, -0.013893886, 0.5053195, 0.80835545)
 bones/16/rotation = Quaternion(0.34353212, -0.021809826, 0.24187374, 0.9071975)
 bones/17/rotation = Quaternion(0.11618288, 0.01178959, 0.20288073, 0.972215)
 bones/19/rotation = Quaternion(0.65847313, -0.34513235, 0.53518844, 0.40108627)
-bones/20/rotation = Quaternion(0.23399492, 0.88164973, 0.10506759, 0.39610738)
-bones/21/rotation = Quaternion(-0.6705075, 0.729828, 0.06639224, -0.115597725)
-bones/22/rotation = Quaternion(0.23693544, -0.00035063722, -0.03696808, 0.97082186)
+bones/20/rotation = Quaternion(0.22750157, 0.8848829, 0.10460696, 0.39278853)
+bones/21/rotation = Quaternion(-0.6826781, 0.7182507, 0.06759734, -0.11617737)
+bones/22/rotation = Quaternion(0.25206554, -0.045004282, 0.075556114, 0.96370584)
 bones/23/rotation = Quaternion(0.006793916, -0.50598586, -0.4794738, 0.7169638)
 bones/24/rotation = Quaternion(0.16138665, -0.016344381, 0.26027188, 0.95181185)
 bones/25/rotation = Quaternion(0.08249783, 0.017111052, 0.27809653, 0.9568509)
 bones/27/rotation = Quaternion(0.12989484, 0.034269154, -0.23652768, 0.96229297)
 bones/28/rotation = Quaternion(0.29698208, -0.002366014, 0.08921448, 0.9507034)
 bones/29/rotation = Quaternion(0.45300704, -0.09867308, -0.43617636, 0.77123183)
-bones/31/rotation = Quaternion(0.05871254, -0.5732073, 0.8164001, -0.038433675)
-bones/32/rotation = Quaternion(-0.29204953, -0.010606022, 0.016018946, 0.9562103)
-bones/33/rotation = Quaternion(0.47044796, -0.041289993, 0.07805587, 0.8779984)
-bones/34/rotation = Quaternion(0.36461443, -0.10363418, 0.045925256, 0.9242334)
-bones/36/rotation = Quaternion(-0.04562835, -0.70001984, 0.6949468, 0.1579218)
-bones/37/rotation = Quaternion(-0.29564124, 0.07045477, -0.044730823, 0.95164686)
-bones/38/rotation = Quaternion(0.56706554, 0.18517546, -0.027895356, 0.8021026)
-bones/39/rotation = Quaternion(0.4018427, 0.11292455, -0.047026657, 0.9075016)
+bones/31/rotation = Quaternion(0.038340453, -0.5793434, 0.808568, -0.095442586)
+bones/32/rotation = Quaternion(-0.27971205, -0.07305376, 0.02940626, 0.9568488)
+bones/33/rotation = Quaternion(0.457946, -0.06675854, 0.046050083, 0.88527304)
+bones/34/rotation = Quaternion(0.36842144, -0.1045056, 0.045910936, 0.92262477)
+bones/36/rotation = Quaternion(-0.042441897, -0.6656909, 0.73427874, 0.12605202)
+bones/37/rotation = Quaternion(-0.29972172, 0.08096015, -0.038564414, 0.9498027)
+bones/38/rotation = Quaternion(0.5605225, 0.079912774, -0.02792104, 0.8238016)
+bones/39/rotation = Quaternion(0.39896274, 0.11225328, -0.047055222, 0.908853)
 
 [node name="tripo_node_a2ee04c2" parent="Skeleton3D" index="0" unique_id=714411759]
 surface_material_override/0 = SubResource("StandardMaterial3D_dkpta")
@@ -192,9 +190,9 @@ script = ExtResource("11_gu6f8")
 [node name="Movement" type="Node" parent="." index="5" unique_id=1228659330]
 script = ExtResource("12_dkpta")
 walk_speed = 0.5
-run_speed = 2.0
+run_speed = 3.0
 
 [node name="Traversal" type="Node" parent="." index="6" unique_id=1038287411]
 script = ExtResource("13_lfmf2")
-jump_velocity = 4.0
+jump_velocity = 6.0
 gravity = 15.0
