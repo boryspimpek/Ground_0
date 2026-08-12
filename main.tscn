@@ -33,10 +33,17 @@ environment = SubResource("Environment_h2yge")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=877989289]
 transform = Transform3D(0.49999997, 0.61237246, -0.61237246, 0, 0.70710677, 0.70710677, 0.86602545, -0.35355335, 0.35355335, 0, 6.9103527, 0)
+shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=346466420 node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 0.9378889, 0.34693566, 0, -0.34693566, 0.9378889, 0, 1.347, 3.115)
+transform = Transform3D(0.70710677, -0.5479685, 0.4469122, 0, 0.6320293, 0.7749445, -0.70710677, -0.5479685, 0.4469122, 2.5, 3.5, 2.5)
 script = ExtResource("1_0xm2m")
 target = NodePath("../Player")
 
 [node name="Player" parent="." unique_id=223788772 instance=ExtResource("1_ig7tw")]
+
+[node name="Arena" type="Node3D" parent="." unique_id=1595222296]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Arena" unique_id=88176234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
+use_collision = true
