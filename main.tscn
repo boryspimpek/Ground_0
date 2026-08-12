@@ -1,10 +1,24 @@
 [gd_scene format=3 uid="uid://drqhpny3vvhoy"]
 
 [ext_resource type="Script" uid="uid://c1g6u7c33v7jy" path="res://Player/Camera.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://ceapadi6n8wcj" path="res://sky box/kloofendal_48d_partly_cloudy_puresky.jpg" id="1_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://brme6u266if1i" path="res://kenney_prototype-textures/Dark/texture_01.png" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dh8ryyvkdbd0f" path="res://kenney_prototype-textures/Purple/texture_05.png" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://ror7gej2r6ap" path="res://Player/player_2.tscn" id="4_1bvp3"]
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lquwl"]
+panorama = ExtResource("1_1bvp3")
+
+[sub_resource type="Sky" id="Sky_1bvp3"]
+sky_material = SubResource("PanoramaSkyMaterial_lquwl")
+
 [sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_1bvp3")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
+albedo_texture = ExtResource("2_h2yge")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
 albedo_texture = ExtResource("1_h2yge")
@@ -29,6 +43,7 @@ shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=346466420 node_paths=PackedStringArray("target")]
 transform = Transform3D(0.70710677, -0.5479685, 0.4469122, 0, 0.6320293, 0.7749445, -0.70710677, -0.5479685, 0.4469122, 2.5, 3.5, 2.5)
+visible = false
 script = ExtResource("1_0xm2m")
 target = NodePath("../Player2")
 
@@ -36,10 +51,12 @@ target = NodePath("../Player2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Arena" unique_id=88176234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
+material_override = SubResource("StandardMaterial3D_lquwl")
 use_collision = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Arena" unique_id=692118955]
 mesh = SubResource("PlaneMesh_ig7tw")
+metadata/_edit_lock_ = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Arena/MeshInstance3D" unique_id=528651856]
 
