@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c1g6u7c33v7jy" path="res://Player/Camera.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://brme6u266if1i" path="res://kenney_prototype-textures/Dark/texture_01.png" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://07idelptawb6" path="res://Player/player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://ror7gej2r6ap" path="res://Player/player_2.tscn" id="4_1bvp3"]
+
+[sub_resource type="Environment" id="Environment_h2yge"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
 albedo_texture = ExtResource("1_h2yge")
@@ -16,17 +18,7 @@ size = Vector2(50, 50)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0xm2m"]
 data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
 
-[sub_resource type="Environment" id="Environment_h2yge"]
-
 [node name="main" type="Node3D" unique_id=711130756]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=692118955]
-mesh = SubResource("PlaneMesh_ig7tw")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=528651856]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=963957728]
-shape = SubResource("ConcavePolygonShape3D_0xm2m")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=317984252]
 environment = SubResource("Environment_h2yge")
@@ -38,12 +30,20 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="." unique_id=346466420 node_paths=PackedStringArray("target")]
 transform = Transform3D(0.70710677, -0.5479685, 0.4469122, 0, 0.6320293, 0.7749445, -0.70710677, -0.5479685, 0.4469122, 2.5, 3.5, 2.5)
 script = ExtResource("1_0xm2m")
-target = NodePath("../Player")
-
-[node name="Player" parent="." unique_id=223788772 instance=ExtResource("1_ig7tw")]
+target = NodePath("../Player2")
 
 [node name="Arena" type="Node3D" parent="." unique_id=1595222296]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Arena" unique_id=88176234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
 use_collision = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena" unique_id=692118955]
+mesh = SubResource("PlaneMesh_ig7tw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Arena/MeshInstance3D" unique_id=528651856]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/MeshInstance3D/StaticBody3D" unique_id=963957728]
+shape = SubResource("ConcavePolygonShape3D_0xm2m")
+
+[node name="Player2" parent="." unique_id=812363354 instance=ExtResource("4_1bvp3")]
