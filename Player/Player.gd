@@ -18,6 +18,6 @@ func _physics_process(delta: float) -> void:
 
 	movement.update(delta)
 
-	combat.update()
+	combat.update(delta)
 
 	move_and_slide()

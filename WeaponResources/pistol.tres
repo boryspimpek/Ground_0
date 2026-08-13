@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://p85v5fyrnfnx"]
+
+[ext_resource type="PackedScene" uid="uid://cmmlja5n8gvuh" path="res://Projectile/projectile.tscn" id="1_6230l"]
+[ext_resource type="PackedScene" uid="uid://db4vd2isl5vb1" path="res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_01.tscn" id="1_m5av0"]
+[ext_resource type="Script" uid="uid://vfi6dybnjra6" path="res://Player/weapon_data.gd" id="1_wpa12"]
+
+[resource]
+script = ExtResource("1_wpa12")
+id = "1"
+weapon_name = "Pistol"
+is_automatic = true
+magazine_size = 10
+projectile_scene = ExtResource("1_6230l")
+muzzle_flash_scene = ExtResource("1_m5av0")
+metadata/_custom_type_script = "uid://vfi6dybnjra6"
