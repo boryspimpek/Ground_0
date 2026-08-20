@@ -6,24 +6,55 @@ extends Node
 @onready var player: CharacterBody3D = get_parent()
 @onready var animation_tree: AnimationTree = player.get_node("AnimationTree")
 @onready var aim_origin: Marker3D = player.get_node("AimOrigin")
+@onready var audio_player: AudioStreamPlayer3D = $AudioPlayer
 
 const ANIM_SHOOT_SHOT = "parameters/FiringShot/request"
 
 var _cooldown_timer: float = 0.0
 var _current_weapon_index: int = 0
+
+var _ammo_in_magazine: Array[int] = []
+var _is_reloading: bool = false
+var _reload_timer: float = 0.0
+
 var weapon_data: Resource:
 	get:
 		if weapon_list.is_empty():
 			return null
 		return weapon_list[_current_weapon_index]
 
+var current_ammo: int:
+	get:
+		if _ammo_in_magazine.is_empty():
+			return 0
+		return _ammo_in_magazine[_current_weapon_index]
+	set(value):
+		if _ammo_in_magazine.is_empty():
+			return
+		_ammo_in_magazine[_current_weapon_index] = value
+
+
+func _ready() -> void:
+	_ammo_in_magazine.resize(weapon_list.size())
+	for i in weapon_list.size():
+		var w: Resource = weapon_list[i]
+		_ammo_in_magazine[i] = w.magazine_size if w else 0
+
 
 func update(delta: float) -> void:
 	if _cooldown_timer > 0.0:
 		_cooldown_timer -= delta
 
+	if _is_reloading:
+		_reload_timer -= delta
+		if _reload_timer <= 0.0:
+			_finish_reload()
+
 	if Input.is_action_just_pressed("weapon_next"):
 		_switch_weapon()
+
+	if Input.is_action_just_pressed("reload"):
+		_start_reload()
 
 	var trigger_pulled := false
 	if weapon_data and weapon_data.is_automatic:
@@ -35,24 +66,25 @@ func update(delta: float) -> void:
 		shoot()
 
 
-func _switch_weapon() -> void:
-	if weapon_list.is_empty():
-		return
-
-	_current_weapon_index = wrapi(_current_weapon_index + 1, 0, weapon_list.size())
-	_cooldown_timer = 0.0  # opcjonalnie: reset cooldownu przy zmianie broni
-	print("Zmieniono broń na: ", weapon_data.resource_path)		
-
 func shoot() -> void:
 	if not weapon_data:
 		push_warning("Brak przypisanego WeaponData w Combat!")
 		return
 
+	if _is_reloading:
+		return
+
+	if current_ammo <= 0:
+		print("Pusty magazynek!")
+		return
+
+	current_ammo -= 1
 	_cooldown_timer = weapon_data.cooldown
 
 	animation_tree.set(ANIM_SHOOT_SHOT, AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
 	_spawn_muzzle_flash()
+	_play_sound(weapon_data.fire_sound)
 
 	var forward := player.transform.basis.z
 
@@ -61,6 +93,41 @@ func shoot() -> void:
 		_fire_ray(shot_dir)
 
 
+func _start_reload() -> void:
+	if not weapon_data:
+		return
+	if _is_reloading:
+		return
+	if current_ammo >= weapon_data.magazine_size:
+		return
+
+	_is_reloading = true
+	_reload_timer = weapon_data.reload_time
+	_play_sound(weapon_data.reload_sound)
+	print("Przeładowanie...")
+
+
+func _play_sound(stream: AudioStream) -> void:
+	if not stream:
+		return
+	audio_player.stream = stream
+	audio_player.play()
+
+
+func _finish_reload() -> void:
+	_is_reloading = false
+	current_ammo = weapon_data.magazine_size
+	print("Przeładowano. Amunicja: ", current_ammo)
+
+
+func _switch_weapon() -> void:
+	if weapon_list.is_empty():
+		return
+
+	_is_reloading = false  # przerywamy przeładowanie przy zmianie broni
+	_current_weapon_index = wrapi(_current_weapon_index + 1, 0, weapon_list.size())
+	_cooldown_timer = 0.0
+	print("Zmieniono broń na: ", weapon_data.resource_path, " | amunicja: ", current_ammo)
 func _spawn_muzzle_flash() -> void:
 	if not weapon_data.muzzle_flash_scene:
 		return

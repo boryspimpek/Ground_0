@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c40krlv7vbcq2"
+path="res://.godot/imported/44 Magnum Eject Full.mp3-b03bb9da0bfe44edb58596845be27707.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/guns/& More/Revolver/44 Magnum/MP3/44 Magnum Eject Full.mp3"
+dest_files=["res://.godot/imported/44 Magnum Eject Full.mp3-b03bb9da0bfe44edb58596845be27707.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

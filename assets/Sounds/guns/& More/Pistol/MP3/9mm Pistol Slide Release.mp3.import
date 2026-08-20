@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://boe5e2sxurymg"
+path="res://.godot/imported/9mm Pistol Slide Release.mp3-02026541cdc46c19c18475b42417ff5e.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/guns/& More/Pistol/MP3/9mm Pistol Slide Release.mp3"
+dest_files=["res://.godot/imported/9mm Pistol Slide Release.mp3-02026541cdc46c19c18475b42417ff5e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

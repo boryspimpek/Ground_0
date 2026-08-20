@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d0ypanhq165om"
+path="res://.godot/imported/Modded Mosin PolyMag Pack.mp3-5435b5c8fb7bc6a9feeb2c7d0eec5271.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/guns/& More/Mag Pack/MP3/Modded Mosin PolyMag Pack.mp3"
+dest_files=["res://.godot/imported/Modded Mosin PolyMag Pack.mp3-5435b5c8fb7bc6a9feeb2c7d0eec5271.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://s2wufqnksrlj"
+path="res://.godot/imported/44 Magnum Cock Hammer.mp3-19f39d9f03f4f86c5465eaa3893d428e.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/guns/& More/Revolver/44 Magnum/MP3/44 Magnum Cock Hammer.mp3"
+dest_files=["res://.godot/imported/44 Magnum Cock Hammer.mp3-19f39d9f03f4f86c5465eaa3893d428e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

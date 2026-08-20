@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3gu1vy47y8bm"
+path="res://.godot/imported/20 Gauge Slow Burst.mp3-36637150d5f0367b04d119d27a3e1775.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/guns/Full Sounds/20 Gauge/MP3/20 Gauge Slow Burst.mp3"
+dest_files=["res://.godot/imported/20 Gauge Slow Burst.mp3-36637150d5f0367b04d119d27a3e1775.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
