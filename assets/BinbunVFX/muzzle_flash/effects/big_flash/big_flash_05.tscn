@@ -342,7 +342,10 @@ _data = {
 }
 
 [node name="BigFlash_05" type="Node3D" unique_id=1115545788]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
 script = ExtResource("1_u3wad")
+preview = false
+one_shot = true
 primary_color = Color(1, 1, 1, 1)
 secondary_color = Color(1, 0.270588, 0, 1)
 light_color = Color(1, 1, 1, 1)

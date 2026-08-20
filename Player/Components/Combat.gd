@@ -1,6 +1,6 @@
 extends Node
 
-@export var weapon_data: Resource
+@export var weapon_list: Array[Resource] = []
 @export var muzzle: Marker3D
 
 @onready var player: CharacterBody3D = get_parent()
@@ -10,10 +10,20 @@ extends Node
 const ANIM_SHOOT_SHOT = "parameters/FiringShot/request"
 
 var _cooldown_timer: float = 0.0
+var _current_weapon_index: int = 0
+var weapon_data: Resource:
+	get:
+		if weapon_list.is_empty():
+			return null
+		return weapon_list[_current_weapon_index]
+
 
 func update(delta: float) -> void:
 	if _cooldown_timer > 0.0:
 		_cooldown_timer -= delta
+
+	if Input.is_action_just_pressed("weapon_next"):
+		_switch_weapon()
 
 	var trigger_pulled := false
 	if weapon_data and weapon_data.is_automatic:
@@ -23,7 +33,15 @@ func update(delta: float) -> void:
 
 	if trigger_pulled and _cooldown_timer <= 0.0:
 		shoot()
-		
+
+
+func _switch_weapon() -> void:
+	if weapon_list.is_empty():
+		return
+
+	_current_weapon_index = wrapi(_current_weapon_index + 1, 0, weapon_list.size())
+	_cooldown_timer = 0.0  # opcjonalnie: reset cooldownu przy zmianie broni
+	print("Zmieniono broń na: ", weapon_data.resource_path)		
 
 func shoot() -> void:
 	if not weapon_data:

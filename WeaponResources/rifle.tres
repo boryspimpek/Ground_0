@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://b2ipulpr5nyn7"]
+
+[ext_resource type="Script" uid="uid://vfi6dybnjra6" path="res://WeaponResources/weapon_data.gd" id="1_kx4qb"]
+[ext_resource type="PackedScene" uid="uid://xgeh1g0m76wq" path="res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_05.tscn" id="1_oy0us"]
+[ext_resource type="PackedScene" uid="uid://cmmlja5n8gvuh" path="res://Projectile/projectile.tscn" id="2_rl4wo"]
+
+[resource]
+script = ExtResource("1_kx4qb")
+id = "2"
+weapon_name = "Rifle"
+is_automatic = true
+cooldown = 0.1
+magazine_size = 60
+projectile_scene = ExtResource("2_rl4wo")
+projectile_speed = 120.0
+muzzle_flash_scene = ExtResource("1_oy0us")
+metadata/_custom_type_script = "uid://vfi6dybnjra6"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://3nlegs65tlxs"]
+
+[ext_resource type="PackedScene" uid="uid://cmmlja5n8gvuh" path="res://Projectile/projectile.tscn" id="1_mqijo"]
+[ext_resource type="Script" uid="uid://vfi6dybnjra6" path="res://WeaponResources/weapon_data.gd" id="1_msmrs"]
+
+[resource]
+script = ExtResource("1_msmrs")
+id = "3"
+weapon_name = "shotgun"
+is_automatic = true
+cooldown = 1.0
+damage = 1.0
+pellets_per_shot = 20
+spread_angle = 5.0
+projectile_scene = ExtResource("1_mqijo")
+metadata/_custom_type_script = "uid://vfi6dybnjra6"
