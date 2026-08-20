@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cmmlja5n8gvuh" path="res://Projectile/projectile.tscn" id="1_6230l"]
 [ext_resource type="PackedScene" uid="uid://db4vd2isl5vb1" path="res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_01.tscn" id="1_m5av0"]
-[ext_resource type="Script" uid="uid://vfi6dybnjra6" path="res://Player/weapon_data.gd" id="1_wpa12"]
+[ext_resource type="Script" uid="uid://vfi6dybnjra6" path="res://WeaponResources/weapon_data.gd" id="1_wpa12"]
 
 [resource]
 script = ExtResource("1_wpa12")

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://drqhpny3vvhoy"]
 
 [ext_resource type="Script" uid="uid://c1g6u7c33v7jy" path="res://Player/Camera.gd" id="1_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://ceapadi6n8wcj" path="res://sky box/kloofendal_48d_partly_cloudy_puresky.jpg" id="1_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://brme6u266if1i" path="res://kenney_prototype-textures/Dark/texture_01.png" id="1_h2yge"]
-[ext_resource type="Texture2D" uid="uid://dh8ryyvkdbd0f" path="res://kenney_prototype-textures/Purple/texture_05.png" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://ror7gej2r6ap" path="res://Player/player_2.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://ceapadi6n8wcj" path="res://assets/sky box/kloofendal_48d_partly_cloudy_puresky.jpg" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://brme6u266if1i" path="res://assets/kenney_prototype-textures/Dark/texture_01.png" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dh8ryyvkdbd0f" path="res://assets/kenney_prototype-textures/Purple/texture_05.png" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ror7gej2r6ap" path="res://Player/Player.tscn" id="4_1bvp3"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lquwl"]
 panorama = ExtResource("1_1bvp3")
@@ -42,7 +42,7 @@ transform = Transform3D(0.49999997, 0.61237246, -0.61237246, 0, 0.70710677, 0.70
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=346466420 node_paths=PackedStringArray("target")]
-transform = Transform3D(0.70710677, -0.5479685, 0.4469122, 0, 0.6320293, 0.7749445, -0.70710677, -0.5479685, 0.4469122, 2.5, 3.5, 2.5)
+transform = Transform3D(0.70710677, -0.5479685, 0.4469122, 0, 0.6320293, 0.7749445, -0.70710677, -0.5479685, 0.4469122, 7, 10, 7)
 visible = false
 script = ExtResource("1_0xm2m")
 target = NodePath("../Player2")
@@ -50,9 +50,52 @@ target = NodePath("../Player2")
 [node name="Arena" type="Node3D" parent="." unique_id=1595222296]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Arena" unique_id=88176234]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -7.5)
 material_override = SubResource("StandardMaterial3D_lquwl")
 use_collision = true
+size = Vector3(3, 1, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Arena" unique_id=339021688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.25, 0.5)
+material_override = SubResource("StandardMaterial3D_lquwl")
+use_collision = true
+size = Vector3(2, 2.5, 8)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Arena" unique_id=532996665]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 16.328426, 1.25, 5.1715727)
+material_override = SubResource("StandardMaterial3D_lquwl")
+use_collision = true
+size = Vector3(2, 2.5, 8)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Arena" unique_id=1405078914]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 14.914213, 1, 6.5857863)
+material_override = SubResource("StandardMaterial3D_lquwl")
+use_collision = true
+size = Vector3(2, 2, 8)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Arena" unique_id=1513724536]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 13.5, 0.75, 8)
+material_override = SubResource("StandardMaterial3D_lquwl")
+use_collision = true
+size = Vector3(2, 1.5, 8)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Arena" unique_id=744466452]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 12.085787, 0.5, 9.414213)
+material_override = SubResource("StandardMaterial3D_lquwl")
+use_collision = true
+size = Vector3(2, 1, 8)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Arena" unique_id=1454920293]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 10.671573, 0.25, 10.828427)
+material_override = SubResource("StandardMaterial3D_lquwl")
+use_collision = true
+size = Vector3(2, 0.5, 8)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Arena" unique_id=1733649440]
+transform = Transform3D(0.9659258, 0.258819, 0, -0.258819, 0.9659258, 0, 0, 0, 1, -5.2529445, -0.066581696, 3)
+material_override = SubResource("StandardMaterial3D_lquwl")
+use_collision = true
+size = Vector3(10.5, 2.5, 3)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Arena" unique_id=692118955]
 mesh = SubResource("PlaneMesh_ig7tw")
