@@ -1,5 +1,7 @@
 [gd_resource type="Animation" format=3 uid="uid://ga5t6rbyyuve"]
 
+[ext_resource type="AudioStream" uid="uid://hst284h4lxom" path="res://assets/Sounds/walking/walking_single_step.mp3" id="1_kwe0n"]
+
 [resource]
 resource_name = "mixamo_com"
 length = 0.6666667
@@ -277,3 +279,18 @@ tracks/36/keys = {
 "method": &"right_footstep"
 }]
 }
+tracks/37/type = "audio"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("Combat/AudioPlayer")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_kwe0n")
+}],
+"times": PackedFloat32Array(0.2)
+}
+tracks/37/use_blend = true
