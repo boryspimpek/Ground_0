@@ -40,6 +40,10 @@ func _ready() -> void:
 		var w: Resource = weapon_list[i]
 		_ammo_in_magazine[i] = w.magazine_size if w else 0
 
+	if weapon_data:
+		EventBus.weapon_changed.emit(weapon_data)
+		EventBus.ammo_changed.emit(current_ammo, weapon_data.magazine_size)
+
 
 func update(delta: float) -> void:
 	if _cooldown_timer > 0.0:
@@ -76,9 +80,12 @@ func shoot() -> void:
 
 	if current_ammo <= 0:
 		print("Pusty magazynek!")
+		_start_reload()
 		return
 
 	current_ammo -= 1
+	EventBus.ammo_changed.emit(current_ammo, weapon_data.magazine_size)
+
 	_cooldown_timer = weapon_data.cooldown
 
 	animation_tree.set(ANIM_SHOOT_SHOT, AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
@@ -104,7 +111,7 @@ func _start_reload() -> void:
 	_is_reloading = true
 	_reload_timer = weapon_data.reload_time
 	_play_sound(weapon_data.reload_sound)
-	print("Przeładowanie...")
+	EventBus.reload_started.emit(weapon_data.reload_time)
 
 
 func _play_sound(stream: AudioStream) -> void:
@@ -117,17 +124,21 @@ func _play_sound(stream: AudioStream) -> void:
 func _finish_reload() -> void:
 	_is_reloading = false
 	current_ammo = weapon_data.magazine_size
-	print("Przeładowano. Amunicja: ", current_ammo)
-
+	EventBus.ammo_changed.emit(current_ammo, weapon_data.magazine_size)
+	EventBus.reload_finished.emit()
+	
 
 func _switch_weapon() -> void:
 	if weapon_list.is_empty():
 		return
 
-	_is_reloading = false  # przerywamy przeładowanie przy zmianie broni
+	_is_reloading = false
 	_current_weapon_index = wrapi(_current_weapon_index + 1, 0, weapon_list.size())
 	_cooldown_timer = 0.0
-	print("Zmieniono broń na: ", weapon_data.resource_path, " | amunicja: ", current_ammo)
+
+	EventBus.weapon_changed.emit(weapon_data)
+	EventBus.ammo_changed.emit(current_ammo, weapon_data.magazine_size)
+	
 func _spawn_muzzle_flash() -> void:
 	if not weapon_data.muzzle_flash_scene:
 		return
