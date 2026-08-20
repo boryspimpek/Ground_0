@@ -282,7 +282,7 @@ tracks/36/keys = {
 tracks/37/type = "audio"
 tracks/37/imported = false
 tracks/37/enabled = true
-tracks/37/path = NodePath("Combat/AudioPlayer")
+tracks/37/path = NodePath("AudioPlayer")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
@@ -291,6 +291,6 @@ tracks/37/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("1_kwe0n")
 }],
-"times": PackedFloat32Array(0.2)
+"times": PackedFloat32Array(0.23333333)
 }
 tracks/37/use_blend = true

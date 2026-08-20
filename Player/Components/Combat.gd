@@ -6,7 +6,7 @@ extends Node
 @onready var player: CharacterBody3D = get_parent()
 @onready var animation_tree: AnimationTree = player.get_node("AnimationTree")
 @onready var aim_origin: Marker3D = player.get_node("AimOrigin")
-@onready var audio_player: AudioStreamPlayer3D = $AudioPlayer
+@onready var audio_player: AudioStreamPlayer3D = $"../AudioPlayer"
 
 const ANIM_SHOOT_SHOT = "parameters/FiringShot/request"
 
