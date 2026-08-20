@@ -117,6 +117,7 @@ func _start_reload() -> void:
 func _play_sound(stream: AudioStream) -> void:
 	if not stream:
 		return
+	audio_player.global_position = muzzle.global_position
 	audio_player.stream = stream
 	audio_player.play()
 
