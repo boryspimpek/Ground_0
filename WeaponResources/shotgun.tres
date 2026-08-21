@@ -1,7 +1,9 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://3nlegs65tlxs"]
 
+[ext_resource type="PackedScene" uid="uid://dbxojkr0k7vsg" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/hit/vfx_hit_01.tscn" id="1_fnmix"]
 [ext_resource type="PackedScene" uid="uid://cmmlja5n8gvuh" path="res://Projectile/projectile.tscn" id="1_mqijo"]
 [ext_resource type="Script" uid="uid://vfi6dybnjra6" path="res://WeaponResources/weapon_data.gd" id="1_msmrs"]
+[ext_resource type="PackedScene" uid="uid://djei8rcsa8lfv" path="res://assets/BinbunVFX/muzzle_flash/effects/wide_flash/wide_flash_01.tscn" id="2_nglgl"]
 
 [resource]
 script = ExtResource("1_msmrs")
@@ -13,4 +15,6 @@ damage = 1.0
 pellets_per_shot = 20
 spread_angle = 5.0
 projectile_scene = ExtResource("1_mqijo")
+muzzle_flash_scene = ExtResource("2_nglgl")
+impact_effect_scene = ExtResource("1_fnmix")
 metadata/_custom_type_script = "uid://vfi6dybnjra6"

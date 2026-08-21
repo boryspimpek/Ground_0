@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://b2ipulpr5nyn7"]
 
 [ext_resource type="Script" uid="uid://vfi6dybnjra6" path="res://WeaponResources/weapon_data.gd" id="1_kx4qb"]
-[ext_resource type="PackedScene" uid="uid://xgeh1g0m76wq" path="res://assets/BinbunVFX/muzzle_flash/effects/big_flash/big_flash_05.tscn" id="1_oy0us"]
 [ext_resource type="AudioStream" uid="uid://6ua44l3hlonh" path="res://assets/Sounds/guns/Full Sounds/20 Gauge/MP3/20 Gauge Single edit.mp3" id="1_vocnw"]
-[ext_resource type="PackedScene" uid="uid://b8ukjib0taqrg" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/hit/vfx_hit_02.tscn" id="2_2mw8t"]
+[ext_resource type="PackedScene" uid="uid://dbxojkr0k7vsg" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/hit/vfx_hit_01.tscn" id="2_2mw8t"]
 [ext_resource type="PackedScene" uid="uid://cmmlja5n8gvuh" path="res://Projectile/projectile.tscn" id="2_rl4wo"]
+[ext_resource type="PackedScene" uid="uid://dd7uf7xlh4l1w" path="res://assets/BinbunVFX/muzzle_flash/effects/muzzle_flash/muzzle_flash_01.tscn" id="3_im8hs"]
 [ext_resource type="AudioStream" uid="uid://ewobrujpqj3j" path="res://assets/Sounds/guns/reload/gun-full-reload.mp3" id="4_2mw8t"]
 
 [resource]
@@ -16,7 +16,7 @@ cooldown = 0.1
 projectile_speed = 120.0
 magazine_size = 60
 projectile_scene = ExtResource("2_rl4wo")
-muzzle_flash_scene = ExtResource("1_oy0us")
+muzzle_flash_scene = ExtResource("3_im8hs")
 impact_effect_scene = ExtResource("2_2mw8t")
 fire_sound = ExtResource("1_vocnw")
 reload_sound = ExtResource("4_2mw8t")
