@@ -4,6 +4,7 @@ extends StaticBody3D
 var health: float
 
 func _ready() -> void:
+	add_to_group("enemies")
 	health = max_health
 
 func take_damage(amount: float) -> void:

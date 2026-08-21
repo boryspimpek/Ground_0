@@ -9,6 +9,7 @@ extends Node
 
 @onready var player: CharacterBody3D = get_parent()
 @onready var animation_tree: AnimationTree = player.get_node("AnimationTree")
+@onready var aim_assist: AimAssist = player.get_node_or_null("AimAssist")
 
 const ANIM_IS_AIMING = "parameters/IsAiming/transition_request"
 const ANIM_WALK_BLEND = "parameters/NormalWalk/blend_position"
@@ -37,11 +38,13 @@ func update(delta: float) -> void:
 
 	if _is_aiming:
 		var aim_dir := (cam_right * aim_input.x + cam_forward * aim_input.y).normalized()
+		if aim_assist:
+			aim_dir = aim_assist.get_assisted_direction(aim_dir)
 
 		if aim_dir:
 			var target_rotation = atan2(aim_dir.x, aim_dir.z)
 			player.rotation.y = lerp_angle(player.rotation.y, target_rotation, aim_speed * delta)
-
+		
 		# Obliczenie lokalnego ruchu względem obróconej postaci na potrzeby drzewa animacji (Strafe)
 		var local_move = player.transform.basis.inverse() * move_dir
 		var target_strafe = Vector2(local_move.x, local_move.z)
