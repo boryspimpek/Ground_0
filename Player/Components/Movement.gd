@@ -3,6 +3,7 @@ extends Node
 @export var walk_speed: float = 3.0
 @export var run_speed: float = 6.0
 @export var aim_threshold: float = 0.2
+@export var aim_speed: float = 10.0
 ## Szybkość wygładzania przejścia animacji biegu/stania (im wyższa, tym szybsza reakcja)
 @export var blend_smooth_speed: float = 8.0 
 
@@ -39,7 +40,7 @@ func update(delta: float) -> void:
 
 		if aim_dir:
 			var target_rotation = atan2(aim_dir.x, aim_dir.z)
-			player.rotation.y = lerp_angle(player.rotation.y, target_rotation, 20.0 * delta)
+			player.rotation.y = lerp_angle(player.rotation.y, target_rotation, aim_speed * delta)
 
 		# Obliczenie lokalnego ruchu względem obróconej postaci na potrzeby drzewa animacji (Strafe)
 		var local_move = player.transform.basis.inverse() * move_dir

@@ -255,7 +255,7 @@ parameters/TimeScale/scale = 1.0
 script = ExtResource("12_gu84g")
 walk_speed = 3.5
 run_speed = 5.0
-aim_threshold = 0.0
+blend_smooth_speed = 10.0
 
 [node name="Combat" type="Node" parent="." index="7" unique_id=1252543771 node_paths=PackedStringArray("muzzle")]
 script = ExtResource("11_f4nco")
@@ -275,6 +275,6 @@ right_foot_marker = NodePath("../Skeleton3D/BoneAttachment3D3/RightFootMarker")
 
 [node name="HUD" parent="." index="10" unique_id=319821492 instance=ExtResource("21_roy6y")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="11" unique_id=325458686]
-transform = Transform3D(1, 0, 0, 0, -4.3711392e-08, -1, 0, 1, -4.3711392e-08, -0.08758369, 0.85811186, 2.9839814)
+[node name="Laser" type="MeshInstance3D" parent="." index="11" unique_id=325458686]
+transform = Transform3D(1, -3.233759e-11, -7.737021e-13, -9.166002e-12, -4.373659e-08, -0.99999994, 6.467518e-11, 1.0000001, -4.3720423e-08, -0.08758368, 0.85811186, 2.9839816)
 mesh = SubResource("CylinderMesh_u5tep")
