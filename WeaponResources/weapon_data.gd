@@ -9,6 +9,7 @@ class_name WeaponData
 @export var is_automatic: bool = false
 @export var cooldown: float = 0.2
 @export var damage: float = 10.0
+@export var projectile_speed: float = 60.0
 @export var max_range: float = 30.0
 @export var min_falloff_range: float = 15.0
 @export var min_damage_multiplier: float = 0.5
@@ -23,7 +24,7 @@ class_name WeaponData
 
 @export_group("Wizualia i dźwięk")
 @export var projectile_scene: PackedScene
-@export var projectile_speed: float = 60.0
 @export var muzzle_flash_scene: PackedScene
+@export var impact_effect_scene: PackedScene
 @export var fire_sound: AudioStream
 @export var reload_sound: AudioStream

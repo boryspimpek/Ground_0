@@ -173,11 +173,29 @@ func _fire_ray(direction: Vector3) -> void:
 		var collider = result.collider
 		if collider.has_method("take_damage"):
 			collider.take_damage(dmg)
+
+		_spawn_impact_effect(result.position, result.normal)
 	else:
 		hit_point = target
 
 	_spawn_projectile_trail(hit_point)
 
+
+func _spawn_impact_effect(position: Vector3, normal: Vector3) -> void:
+	if not weapon_data.impact_effect_scene:
+		push_warning("Brak impact_effect_scene w WeaponData!")
+		return
+
+	var effect: Node3D = weapon_data.impact_effect_scene.instantiate()
+	player.get_tree().current_scene.add_child(effect)
+	effect.global_position = position
+
+	if normal != Vector3.ZERO:
+		var up_hint := Vector3.RIGHT if abs(normal.dot(Vector3.UP)) > 0.99 else Vector3.UP
+		effect.global_transform.basis = Basis.looking_at(normal, up_hint)
+
+	effect.emitting = true
+			
 
 func _calculate_damage(distance: float) -> float:
 	if distance <= weapon_data.min_falloff_range:
