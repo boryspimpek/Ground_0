@@ -161,7 +161,6 @@ func _fire_ray(direction: Vector3) -> void:
 
 	var query := PhysicsRayQueryParameters3D.create(origin, target)
 	query.exclude = [player.get_rid()]
-	# TODO: ustaw collision_mask na warstwy "Enemies" + "Environment"
 
 	var result := space_state.intersect_ray(query)
 

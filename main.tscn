@@ -49,6 +49,7 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="." unique_id=346466420 node_paths=PackedStringArray("target")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.6320293, 0.7749445, 0, -0.7749445, 0.6320293, 0, 10, 7)
 visible = false
+fov = 46.9
 script = ExtResource("1_0xm2m")
 target = NodePath("../Player2")
 
