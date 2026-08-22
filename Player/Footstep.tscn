@@ -19,4 +19,4 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("QuadMesh_v6j7j")
 script = ExtResource("1_jviv8")
-lifetime = 10.0
+lifetime = 3.0

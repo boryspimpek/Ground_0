@@ -4,6 +4,7 @@ extends Node
 @export var left_foot_marker: Marker3D
 @export var right_foot_marker: Marker3D
 @export var ground_collision_mask: int = 1   # ustaw maskę pod warstwę terenu
+@export var timer: float = 3.0  # czas życia śladu
 
 @onready var raycast_up_offset: float = 0.3   # o ile podnieść origin nad marker
 @onready var raycast_distance: float = 0.6    # jak daleko w dół szukać ziemi
@@ -28,14 +29,13 @@ func spawn_footprint(marker: Marker3D) -> void:
 	var result := space_state.intersect_ray(query)
 
 	if result.is_empty():
-		return # nic nie trafione, np. postać w powietrzu (skok) - nie spawnuj śladu
+		return
 
 	var footprint := footprint_scene.instantiate()
 	get_tree().current_scene.add_child(footprint)
 
 	var original_scale: Vector3 = footprint.scale
 
-	# Pozycja i rotacja dopasowane do nachylenia terenu
 	var up_dir: Vector3 = result.normal
 	var forward_dir: Vector3 = -marker.global_transform.basis.z
 
@@ -45,6 +45,8 @@ func spawn_footprint(marker: Marker3D) -> void:
 	basis.z = basis.x.cross(basis.y).normalized()
 
 	var spawn_position: Vector3 = result.position + up_dir * surface_offset
-	
+
 	footprint.global_transform = Transform3D(basis, spawn_position)
 	footprint.scale = original_scale
+
+	get_tree().create_timer(timer).timeout.connect(footprint.queue_free)
