@@ -1,5 +1,8 @@
 [gd_resource type="Animation" format=3 uid="uid://bwpbn3583vk6n"]
 
+[ext_resource type="AudioStream" uid="uid://hst284h4lxom" path="res://assets/Sounds/walking/walking_single_step.mp3" id="1_2l6uk"]
+[ext_resource type="AudioStream" uid="uid://cp4m8e4qcjybc" path="res://assets/Sounds/walking/jump.mp3" id="2_31akd"]
+
 [resource]
 resource_name = "mixamo_com"
 length = 0.8666667
@@ -248,3 +251,57 @@ tracks/34/path = NodePath("Skeleton3D:mixamorig_RightHandIndex3")
 tracks/34/interp = 1
 tracks/34/loop_wrap = true
 tracks/34/keys = PackedFloat32Array(0, 1, 0.054624118, -0.035515796, -0.21216953, 0.97505844)
+tracks/35/type = "method"
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/path = NodePath("Footprint")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"right_footstep"
+}, {
+"args": [],
+"method": &"left_footstep"
+}, {
+"args": [],
+"method": &"right_footstep"
+}]
+}
+tracks/36/type = "audio"
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/path = NodePath("AudioPlayer")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/keys = {
+"clips": [{
+"end_offset": 0.38407138,
+"start_offset": 0.0,
+"stream": ExtResource("1_2l6uk")
+}, {
+"end_offset": 0.22241423,
+"start_offset": 0.32982403,
+"stream": ExtResource("1_2l6uk")
+}],
+"times": PackedFloat32Array(0, 0.8)
+}
+tracks/36/use_blend = true
+tracks/37/type = "audio"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("AudioPlayer")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"clips": [{
+"end_offset": 0.23655875,
+"start_offset": 0.025165824,
+"stream": ExtResource("2_31akd")
+}],
+"times": PackedFloat32Array(0.058499165)
+}
+tracks/37/use_blend = true
