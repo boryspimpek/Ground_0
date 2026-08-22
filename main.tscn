@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c1g6u7c33v7jy" path="res://Player/Camera.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://ceapadi6n8wcj" path="res://assets/sky box/kloofendal_48d_partly_cloudy_puresky.jpg" id="1_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://brme6u266if1i" path="res://assets/kenney_prototype-textures/Dark/texture_01.png" id="1_h2yge"]
-[ext_resource type="Texture2D" uid="uid://dh8ryyvkdbd0f" path="res://assets/kenney_prototype-textures/Purple/texture_05.png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://8qpor3ys8384" path="res://assets/kenney_prototype-textures/Dark/texture_05.png" id="3_272bh"]
 [ext_resource type="PackedScene" uid="uid://ror7gej2r6ap" path="res://Player/Player.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://qo6akhg8xy63" path="res://assets/kenney_prototype-textures/Dark/texture_04.png" id="4_5vw27"]
 [ext_resource type="PackedScene" uid="uid://c7pifgmmeka61" path="res://Enemies/enemy_1.tscn" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://mscmcdj6uxcf" path="res://Hud/hud.tscn" id="7_272bh"]
 
@@ -20,20 +20,41 @@ sky = SubResource("Sky_1bvp3")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
-albedo_texture = ExtResource("2_h2yge")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+albedo_texture = ExtResource("3_272bh")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
-albedo_texture = ExtResource("1_h2yge")
-uv1_triplanar = true
-uv1_world_triplanar = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c57u"]
+albedo_texture = ExtResource("3_272bh")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ig7tw"]
-material = SubResource("StandardMaterial3D_1bvp3")
-size = Vector2(50, 50)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efxa6"]
+albedo_texture = ExtResource("3_272bh")
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0xm2m"]
-data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg77c"]
+albedo_texture = ExtResource("3_272bh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycdy4"]
+albedo_texture = ExtResource("3_272bh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w48qg"]
+albedo_texture = ExtResource("3_272bh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vivmo"]
+albedo_texture = ExtResource("3_272bh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2cqfq"]
+albedo_texture = ExtResource("3_272bh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yaehf"]
+albedo_texture = ExtResource("3_272bh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_074og"]
+albedo_texture = ExtResource("3_272bh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cegan"]
+albedo_texture = ExtResource("3_272bh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82xsv"]
+albedo_texture = ExtResource("4_5vw27")
 
 [node name="main" type="Node3D" unique_id=711130756]
 
@@ -45,131 +66,164 @@ transform = Transform3D(0.49999997, 0.61237246, -0.61237246, 0, 0.70710677, 0.70
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=346466420 node_paths=PackedStringArray("target")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.7890841, 0.6142852, 0, -0.6142852, 0.7890841, 0, 6, 7.735)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.43837112, 0.898794, 0, -0.898794, 0.43837112, 0, 8.775, 6.1)
 visible = false
-v_offset = 0.795
-projection = 1
 size = 15.0
-near = 0.001
-far = 25.0
 script = ExtResource("1_0xm2m")
 target = NodePath("../Player2")
 
 [node name="Arena" type="Node3D" parent="." unique_id=1595222296]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Arena" unique_id=88176234]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 0)
-material_override = SubResource("StandardMaterial3D_lquwl")
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Arena" unique_id=86590183]
+material_override = SubResource("StandardMaterial3D_kek77")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=88176234]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_4c57u")
 use_collision = true
 size = Vector3(5, 1, 1)
 
-[node name="CSGBox3D10" type="CSGBox3D" parent="Arena" unique_id=1646733022]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 0)
-material_override = SubResource("StandardMaterial3D_lquwl")
+[node name="CSGBox3D10" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=1646733022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_efxa6")
 use_collision = true
 size = Vector3(5, 1, 1)
 
-[node name="CSGBox3D9" type="CSGBox3D" parent="Arena" unique_id=1972073224]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.09278474e-07, 0.5, -6.5)
-material_override = SubResource("StandardMaterial3D_lquwl")
+[node name="CSGBox3D9" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=1972073224]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.5000001, 0.75, -11.5)
+material_override = SubResource("StandardMaterial3D_dg77c")
+use_collision = true
+size = Vector3(10, 1.5, 4)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=1591516969]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.09278474e-07, 0.5, 15)
+material_override = SubResource("StandardMaterial3D_ycdy4")
 use_collision = true
 size = Vector3(10, 1, 1)
 
-[node name="CSGBox3D11" type="CSGBox3D" parent="Arena" unique_id=1591516969]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.09278474e-07, 0.5, 6.5)
-material_override = SubResource("StandardMaterial3D_lquwl")
-use_collision = true
-size = Vector3(10, 1, 1)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Arena" unique_id=339021688]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.25, 0.5)
-material_override = SubResource("StandardMaterial3D_lquwl")
+[node name="CSGBox3D3" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=339021688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5, 1.25, 11)
+material_override = SubResource("StandardMaterial3D_w48qg")
 use_collision = true
 size = Vector3(2, 2.5, 8)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Arena" unique_id=532996665]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 16.328426, 1.25, 5.1715727)
-material_override = SubResource("StandardMaterial3D_lquwl")
+[node name="CSGBox3D4" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=532996665]
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 16.328426, 1.25, 5.1715727)
+material_override = SubResource("StandardMaterial3D_vivmo")
 use_collision = true
 size = Vector3(2, 2.5, 8)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Arena" unique_id=1405078914]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 14.914213, 1, 6.5857863)
-material_override = SubResource("StandardMaterial3D_lquwl")
+[node name="CSGBox3D5" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=1405078914]
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 14.914213, 1, 6.5857863)
+material_override = SubResource("StandardMaterial3D_2cqfq")
 use_collision = true
 size = Vector3(2, 2, 8)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Arena" unique_id=1513724536]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 13.5, 0.75, 8)
-material_override = SubResource("StandardMaterial3D_lquwl")
+[node name="CSGBox3D6" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=1513724536]
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 13.5, 0.75, 8)
+material_override = SubResource("StandardMaterial3D_yaehf")
 use_collision = true
 size = Vector3(2, 1.5, 8)
 
-[node name="CSGBox3D7" type="CSGBox3D" parent="Arena" unique_id=744466452]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 12.085787, 0.5, 9.414213)
-material_override = SubResource("StandardMaterial3D_lquwl")
+[node name="CSGBox3D7" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=744466452]
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 12.085787, 0.5, 9.414213)
+material_override = SubResource("StandardMaterial3D_074og")
 use_collision = true
 size = Vector3(2, 1, 8)
 
-[node name="CSGBox3D8" type="CSGBox3D" parent="Arena" unique_id=1454920293]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 10.671573, 0.25, 10.828427)
-material_override = SubResource("StandardMaterial3D_lquwl")
+[node name="CSGBox3D8" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=1454920293]
+transform = Transform3D(0.7071067, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071067, 10.671573, 0.25, 10.828427)
+material_override = SubResource("StandardMaterial3D_cegan")
 use_collision = true
 size = Vector3(2, 0.5, 8)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Arena" unique_id=1733649440]
-transform = Transform3D(0.9659258, 0.258819, 0, -0.258819, 0.9659258, 0, 0, 0, 1, -8.252945, -0.066581696, 3)
-material_override = SubResource("StandardMaterial3D_lquwl")
+[node name="CSGBox3D2" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=1733649440]
+transform = Transform3D(0.9659258, 0.258819, 0, -0.258819, 0.9659258, 0, 0, 0, 1, -14.752945, -0.066581696, 13.5)
+material_override = SubResource("StandardMaterial3D_82xsv")
 use_collision = true
 size = Vector3(10.5, 2.5, 3)
 
-[node name="Ground" type="MeshInstance3D" parent="Arena" unique_id=692118955]
-mesh = SubResource("PlaneMesh_ig7tw")
+[node name="CSGBox3D13" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=1189250696]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 4, 1.25, -20)
+material_override = SubResource("StandardMaterial3D_w48qg")
+use_collision = true
+size = Vector3(2, 2.5, 8)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=793543408]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -2, 1.25, -17.5)
+material_override = SubResource("StandardMaterial3D_w48qg")
+use_collision = true
+size = Vector3(2, 2.5, 8)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=115296233]
+transform = Transform3D(0.6830126, 0.18301263, -0.70710677, -0.25881895, 0.9659257, 0, 0.6830126, 0.18301263, 0.70710677, 9.747055, -0.066581696, -17.5)
+material_override = SubResource("StandardMaterial3D_82xsv")
+use_collision = true
+size = Vector3(10.5, 2.5, 3)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=1236428655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(50, 1, 50)
 metadata/_edit_lock_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Arena/Ground" unique_id=528651856]
+[node name="Enemies" type="Node3D" parent="Arena" unique_id=1819544152]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Ground/StaticBody3D" unique_id=963957728]
-shape = SubResource("ConcavePolygonShape3D_0xm2m")
-
-[node name="Enemy1" parent="Arena" unique_id=499813603 instance=ExtResource("5_7mycd")]
+[node name="Enemy1" parent="Arena/Enemies" unique_id=499813603 instance=ExtResource("5_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 1, -6.5)
+metadata/_edit_lock_ = true
 
-[node name="Enemy2" parent="Arena" unique_id=1749527315 instance=ExtResource("5_7mycd")]
+[node name="Enemy2" parent="Arena/Enemies" unique_id=1749527315 instance=ExtResource("5_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 1, -8)
+metadata/_edit_lock_ = true
 
-[node name="Enemy3" parent="Arena" unique_id=582518197 instance=ExtResource("5_7mycd")]
+[node name="Enemy3" parent="Arena/Enemies" unique_id=582518197 instance=ExtResource("5_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1, -9)
+metadata/_edit_lock_ = true
 
-[node name="Enemy4" parent="Arena" unique_id=160063363 instance=ExtResource("5_7mycd")]
+[node name="Enemy4" parent="Arena/Enemies" unique_id=160063363 instance=ExtResource("5_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -9)
+metadata/_edit_lock_ = true
 
-[node name="Enemy5" parent="Arena" unique_id=1898426975 instance=ExtResource("5_7mycd")]
+[node name="Enemy5" parent="Arena/Enemies" unique_id=1898426975 instance=ExtResource("5_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, -6.5)
+metadata/_edit_lock_ = true
 
-[node name="Enemy6" parent="Arena" unique_id=1968935979 instance=ExtResource("5_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, -1)
+[node name="Enemy6" parent="Arena/Enemies" unique_id=1968935979 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1, 9.5)
+metadata/_edit_lock_ = true
 
-[node name="Enemy7" parent="Arena" unique_id=542650800 instance=ExtResource("5_7mycd")]
+[node name="Enemy14" parent="Arena/Enemies" unique_id=1885365860 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5, 1, -6.5)
+metadata/_edit_lock_ = true
+
+[node name="Enemy7" parent="Arena/Enemies" unique_id=542650800 instance=ExtResource("5_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 9.5)
+metadata/_edit_lock_ = true
 
-[node name="Enemy8" parent="Arena" unique_id=1762500356 instance=ExtResource("5_7mycd")]
+[node name="Enemy8" parent="Arena/Enemies" unique_id=1762500356 instance=ExtResource("5_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 9.5)
+metadata/_edit_lock_ = true
 
-[node name="Enemy9" parent="Arena" unique_id=2059726842 instance=ExtResource("5_7mycd")]
+[node name="Enemy9" parent="Arena/Enemies" unique_id=2059726842 instance=ExtResource("5_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 15.5)
+metadata/_edit_lock_ = true
 
-[node name="Enemy10" parent="Arena" unique_id=1532389749 instance=ExtResource("5_7mycd")]
+[node name="Enemy10" parent="Arena/Enemies" unique_id=1532389749 instance=ExtResource("5_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 19)
+metadata/_edit_lock_ = true
 
-[node name="Enemy11" parent="Arena" unique_id=1284631006 instance=ExtResource("5_7mycd")]
+[node name="Enemy11" parent="Arena/Enemies" unique_id=1284631006 instance=ExtResource("5_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1, 20.5)
+metadata/_edit_lock_ = true
 
-[node name="Enemy12" parent="Arena" unique_id=1943249164 instance=ExtResource("5_7mycd")]
+[node name="Enemy12" parent="Arena/Enemies" unique_id=1943249164 instance=ExtResource("5_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1, 19.5)
+metadata/_edit_lock_ = true
 
-[node name="Enemy13" parent="Arena" unique_id=416902228 instance=ExtResource("5_7mycd")]
+[node name="Enemy13" parent="Arena/Enemies" unique_id=416902228 instance=ExtResource("5_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1, 17.5)
+metadata/_edit_lock_ = true
 
 [node name="Player2" parent="." unique_id=812363354 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)

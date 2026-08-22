@@ -4,7 +4,7 @@ extends Node
 @export var left_foot_marker: Marker3D
 @export var right_foot_marker: Marker3D
 @export var ground_collision_mask: int = 1   # ustaw maskę pod warstwę terenu
-@export var timer: float = 3.0  # czas życia śladu
+@export var timer: float = 5.0  # czas życia śladu
 
 @onready var raycast_up_offset: float = 0.3   # o ile podnieść origin nad marker
 @onready var raycast_distance: float = 0.6    # jak daleko w dół szukać ziemi
