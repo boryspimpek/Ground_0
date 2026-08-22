@@ -17,6 +17,9 @@ const ANIM_STRAFE_BLEND = "parameters/Strafe/blend_position"
 
 var _is_aiming := false
 
+func is_aiming() -> bool:
+	return _is_aiming
+
 func update(delta: float) -> void:
 	# Pobieramy aktywną kamerę z Viewportu
 	var camera := player.get_viewport().get_camera_3d()
@@ -26,7 +29,7 @@ func update(delta: float) -> void:
 	var cam_forward := Vector3(cam_basis.z.x, 0, cam_basis.z.z).normalized()
 	var cam_right := Vector3(cam_basis.x.x, 0, cam_basis.x.z).normalized()
 
-	# Surowe dane z analogów / klawiatury
+	# Surowe dane z analogów
 	var move_input := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	var aim_input := Input.get_vector("aim_left", "aim_right", "aim_forward", "aim_back")
 

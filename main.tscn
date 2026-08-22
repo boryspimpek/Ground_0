@@ -55,10 +55,10 @@ target = NodePath("../Player2")
 [node name="Arena" type="Node3D" parent="." unique_id=1595222296]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Arena" unique_id=88176234]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, -7.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -7.5)
 material_override = SubResource("StandardMaterial3D_lquwl")
 use_collision = true
-size = Vector3(3, 1, 1)
+size = Vector3(5, 1, 1)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Arena" unique_id=339021688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.25, 0.5)

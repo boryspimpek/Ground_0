@@ -4,6 +4,7 @@ extends Node
 @export var muzzle: Marker3D
 
 @onready var player: CharacterBody3D = get_parent()
+@onready var movement: Node = player.get_node("Movement")
 @onready var animation_tree: AnimationTree = player.get_node("AnimationTree")
 @onready var aim_origin: Marker3D = player.get_node("AimOrigin")
 @onready var audio_player: AudioStreamPlayer3D = $"../AudioPlayer"
@@ -61,9 +62,9 @@ func update(delta: float) -> void:
 		_start_reload()
 
 	var trigger_pulled := false
-	if weapon_data and weapon_data.is_automatic:
+	if movement.is_aiming() and weapon_data and weapon_data.is_automatic:
 		trigger_pulled = Input.is_action_pressed("shoot")
-	else:
+	elif movement.is_aiming() and weapon_data:
 		trigger_pulled = Input.is_action_just_pressed("shoot")
 
 	if trigger_pulled and _cooldown_timer <= 0.0:
@@ -71,6 +72,9 @@ func update(delta: float) -> void:
 
 
 func shoot() -> void:
+	if not movement.is_aiming():
+		return
+
 	if not weapon_data:
 		push_warning("Brak przypisanego WeaponData w Combat!")
 		return
