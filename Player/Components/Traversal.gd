@@ -1,5 +1,7 @@
 extends Node
 
+signal airborne_changed(is_airborne: bool)
+
 @export_group("Traversal")
 @export var jump_velocity: float = 4.5
 @export var gravity: float = 9.8
@@ -8,6 +10,8 @@ extends Node
 @onready var animation_tree: AnimationTree = player.get_node("AnimationTree")
 
 const ANIM_JUMP_SHOT = "parameters/JumpShot/request"
+
+var _was_on_floor: bool = true
 
 func update(delta: float) -> void:
 	# Grawitacja.
@@ -22,3 +26,8 @@ func update(delta: float) -> void:
 			ANIM_JUMP_SHOT,
 			AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE
 		)
+
+	var on_floor := player.is_on_floor()
+	if on_floor != _was_on_floor:
+		airborne_changed.emit(not on_floor)
+		_was_on_floor = on_floor
