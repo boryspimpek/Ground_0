@@ -35,7 +35,7 @@ func _fire_ray(direction: Vector3, weapon_data: Resource) -> Dictionary:
 		var dmg := _calculate_damage(distance, weapon_data)
 		var collider = result.collider
 		if collider.has_method("take_damage"):
-			collider.take_damage(dmg)
+			collider.take_damage(dmg, player)
 		return {"hit": true, "position": result.position, "normal": result.normal}
 
 	return {"hit": false, "position": target, "normal": Vector3.ZERO}
