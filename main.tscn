@@ -133,7 +133,43 @@ metadata/_edit_lock_ = true
 shape = SubResource("ConcavePolygonShape3D_0xm2m")
 
 [node name="Enemy1" parent="Arena" unique_id=499813603 instance=ExtResource("5_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 1, -6.5)
+
+[node name="Enemy2" parent="Arena" unique_id=1749527315 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.5, 1, -8)
+
+[node name="Enemy3" parent="Arena" unique_id=582518197 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1, -9)
+
+[node name="Enemy4" parent="Arena" unique_id=160063363 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -9)
+
+[node name="Enemy5" parent="Arena" unique_id=1898426975 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, -6.5)
+
+[node name="Enemy6" parent="Arena" unique_id=1968935979 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5, 1, -1)
+
+[node name="Enemy7" parent="Arena" unique_id=542650800 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 9.5)
+
+[node name="Enemy8" parent="Arena" unique_id=1762500356 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 9.5)
+
+[node name="Enemy9" parent="Arena" unique_id=2059726842 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, 15.5)
+
+[node name="Enemy10" parent="Arena" unique_id=1532389749 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 19)
+
+[node name="Enemy11" parent="Arena" unique_id=1284631006 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1, 20.5)
+
+[node name="Enemy12" parent="Arena" unique_id=1943249164 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1, 19.5)
+
+[node name="Enemy13" parent="Arena" unique_id=416902228 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1, 17.5)
 
 [node name="Player2" parent="." unique_id=812363354 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)

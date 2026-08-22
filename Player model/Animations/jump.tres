@@ -302,6 +302,6 @@ tracks/37/keys = {
 "start_offset": 0.025165824,
 "stream": ExtResource("2_31akd")
 }],
-"times": PackedFloat32Array(0.058499165)
+"times": PackedFloat32Array(0)
 }
 tracks/37/use_blend = true

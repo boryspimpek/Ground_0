@@ -13,7 +13,6 @@ id = "1"
 weapon_name = "Pistol"
 is_automatic = true
 cooldown = 0.5
-projectile_speed = 10.0
 max_range = 15.0
 magazine_size = 10
 reload_time = 1.0
