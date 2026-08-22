@@ -13,9 +13,12 @@ func take_damage(amount: float, source: Node = null) -> void:
 
 
 func _on_damaged(amount: float, source: Node) -> void:
-	print(name, " otrzymał ", amount, " obrażeń, HP: ", health.current_health, " from ", source.name if source else "nieznane źródło")
+	var source_name := str(source.name) if source else "nieznane źródło"
+	print(name, " otrzymał ", amount, " obrażeń, HP: ",
+		health.current_health, " from ", source_name)
 
 
-func _on_died(_source: Node) -> void:
-	print(name, " zniszczony przez ", _source.name if _source else "nieznane źródło")
+func _on_died(source: Node) -> void:
+	var source_name := str(source.name) if source else "nieznane źródło"
+	print(name, " zniszczony przez ", source_name)
 	queue_free()
