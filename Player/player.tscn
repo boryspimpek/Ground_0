@@ -20,7 +20,7 @@
 [ext_resource type="Resource" uid="uid://3nlegs65tlxs" path="res://WeaponResources/shotgun.tres" id="16_evw08"]
 [ext_resource type="Script" uid="uid://bfdd2nhy7wpxm" path="res://Player/Components/Footprint.gd" id="17_slvjm"]
 [ext_resource type="PackedScene" uid="uid://7xehhb00tip8" path="res://Player/Footstep.tscn" id="18_m035p"]
-[ext_resource type="PackedScene" uid="uid://mscmcdj6uxcf" path="res://hud.tscn" id="21_roy6y"]
+[ext_resource type="PackedScene" uid="uid://mscmcdj6uxcf" path="res://Hud/hud.tscn" id="21_roy6y"]
 [ext_resource type="Script" uid="uid://mdeecea2c1mi" path="res://Player/Components/AimAssist.gd" id="22_u5tep"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bcy2i"]

@@ -10,6 +10,7 @@ extends Node
 @onready var player: CharacterBody3D = get_parent()
 @onready var animation_tree: AnimationTree = player.get_node("AnimationTree")
 @onready var aim_assist: AimAssist = player.get_node_or_null("AimAssist")
+@onready var laser: MeshInstance3D = player.get_node("Laser")
 
 const ANIM_IS_AIMING = "parameters/IsAiming/transition_request"
 const ANIM_WALK_BLEND = "parameters/NormalWalk/blend_position"
@@ -37,6 +38,7 @@ func update(delta: float) -> void:
 	var move_dir := (cam_right * move_input.x + cam_forward * move_input.y).normalized()
 
 	_is_aiming = aim_input.length() > aim_threshold
+	laser.visible = _is_aiming
 	animation_tree.set(ANIM_IS_AIMING, "strafe" if _is_aiming else "normal")
 
 	if _is_aiming:
