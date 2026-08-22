@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://brme6u266if1i" path="res://assets/kenney_prototype-textures/Dark/texture_01.png" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dh8ryyvkdbd0f" path="res://assets/kenney_prototype-textures/Purple/texture_05.png" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://ror7gej2r6ap" path="res://Player/Player.tscn" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://j42e3rehfcda" path="res://enemy.gd" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://c7pifgmmeka61" path="res://Enemies/enemy_1.tscn" id="5_7mycd"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lquwl"]
 panorama = ExtResource("1_1bvp3")
@@ -34,10 +34,6 @@ size = Vector2(50, 50)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0xm2m"]
 data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_7mycd"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_272bh"]
-
 [node name="main" type="Node3D" unique_id=711130756]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=317984252]
@@ -48,21 +44,44 @@ transform = Transform3D(0.49999997, 0.61237246, -0.61237246, 0, 0.70710677, 0.70
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=346466420 node_paths=PackedStringArray("target")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.57357645, 0.81915206, 0, -0.81915206, 0.57357645, 0, 7, 9)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.7890841, 0.6142852, 0, -0.6142852, 0.7890841, 0, 6, 7.735)
 visible = false
+v_offset = 0.795
+projection = 1
+size = 15.0
+near = 0.001
+far = 25.0
 script = ExtResource("1_0xm2m")
 target = NodePath("../Player2")
 
 [node name="Arena" type="Node3D" parent="." unique_id=1595222296]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Arena" unique_id=88176234]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -7.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 0)
 material_override = SubResource("StandardMaterial3D_lquwl")
 use_collision = true
 size = Vector3(5, 1, 1)
 
+[node name="CSGBox3D10" type="CSGBox3D" parent="Arena" unique_id=1646733022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_lquwl")
+use_collision = true
+size = Vector3(5, 1, 1)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Arena" unique_id=1972073224]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.09278474e-07, 0.5, -6.5)
+material_override = SubResource("StandardMaterial3D_lquwl")
+use_collision = true
+size = Vector3(10, 1, 1)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="Arena" unique_id=1591516969]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.09278474e-07, 0.5, 6.5)
+material_override = SubResource("StandardMaterial3D_lquwl")
+use_collision = true
+size = Vector3(10, 1, 1)
+
 [node name="CSGBox3D3" type="CSGBox3D" parent="Arena" unique_id=339021688]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1.25, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.25, 0.5)
 material_override = SubResource("StandardMaterial3D_lquwl")
 use_collision = true
 size = Vector3(2, 2.5, 8)
@@ -98,7 +117,7 @@ use_collision = true
 size = Vector3(2, 0.5, 8)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Arena" unique_id=1733649440]
-transform = Transform3D(0.9659258, 0.258819, 0, -0.258819, 0.9659258, 0, 0, 0, 1, -5.2529445, -0.066581696, 3)
+transform = Transform3D(0.9659258, 0.258819, 0, -0.258819, 0.9659258, 0, 0, 0, 1, -8.252945, -0.066581696, 3)
 material_override = SubResource("StandardMaterial3D_lquwl")
 use_collision = true
 size = Vector3(10.5, 2.5, 3)
@@ -112,147 +131,8 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Ground/StaticBody3D" unique_id=963957728]
 shape = SubResource("ConcavePolygonShape3D_0xm2m")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Arena" unique_id=1386972565 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1, 0)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D" unique_id=363053406]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D" unique_id=1836897571]
-shape = SubResource("CapsuleShape3D_272bh")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Arena" unique_id=942513306 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1, -2.5)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D2" unique_id=473292593]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D2" unique_id=1571515326]
-shape = SubResource("CapsuleShape3D_272bh")
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="Arena" unique_id=1345299063 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 7)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D3" unique_id=1833123658]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D3" unique_id=1855502855]
-shape = SubResource("CapsuleShape3D_272bh")
-
-[node name="StaticBody3D4" type="StaticBody3D" parent="Arena" unique_id=2062172062 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 3.5)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D4" unique_id=566680057]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D4" unique_id=1982303635]
-shape = SubResource("CapsuleShape3D_272bh")
-
-[node name="StaticBody3D5" type="StaticBody3D" parent="Arena" unique_id=1847217323 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -9)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D5" unique_id=947083750]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D5" unique_id=363005744]
-shape = SubResource("CapsuleShape3D_272bh")
-
-[node name="StaticBody3D6" type="StaticBody3D" parent="Arena" unique_id=318106986 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, -5)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D6" unique_id=1672043746]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D6" unique_id=758866470]
-shape = SubResource("CapsuleShape3D_272bh")
-
-[node name="StaticBody3D7" type="StaticBody3D" parent="Arena" unique_id=1159121109 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -6.5)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D7" unique_id=907119817]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D7" unique_id=1438146965]
-shape = SubResource("CapsuleShape3D_272bh")
-
-[node name="StaticBody3D8" type="StaticBody3D" parent="Arena" unique_id=1649127262 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 1, -1.5)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D8" unique_id=1954543889]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D8" unique_id=1087287870]
-shape = SubResource("CapsuleShape3D_272bh")
-
-[node name="StaticBody3D9" type="StaticBody3D" parent="Arena" unique_id=907507616 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 5.5)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D9" unique_id=1520210174]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D9" unique_id=1983998697]
-shape = SubResource("CapsuleShape3D_272bh")
-
-[node name="StaticBody3D10" type="StaticBody3D" parent="Arena" unique_id=564294059 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 12.5)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D10" unique_id=158460515]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D10" unique_id=1273273091]
-shape = SubResource("CapsuleShape3D_272bh")
-
-[node name="StaticBody3D11" type="StaticBody3D" parent="Arena" unique_id=1288300466 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 1, 13)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D11" unique_id=1374256380]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D11" unique_id=1791719439]
-shape = SubResource("CapsuleShape3D_272bh")
-
-[node name="StaticBody3D12" type="StaticBody3D" parent="Arena" unique_id=1562160174 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 1, 17.5)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D12" unique_id=1986281131]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D12" unique_id=1189195353]
-shape = SubResource("CapsuleShape3D_272bh")
-
-[node name="StaticBody3D13" type="StaticBody3D" parent="Arena" unique_id=42952906 groups=["enemies"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 17.5)
-script = ExtResource("6_7mycd")
-max_health = 50.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/StaticBody3D13" unique_id=1352871226]
-mesh = SubResource("CapsuleMesh_7mycd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/StaticBody3D13" unique_id=407792602]
-shape = SubResource("CapsuleShape3D_272bh")
+[node name="Enemy1" parent="Arena" unique_id=499813603 instance=ExtResource("5_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
 
 [node name="Player2" parent="." unique_id=812363354 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)

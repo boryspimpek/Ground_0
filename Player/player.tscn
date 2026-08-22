@@ -276,6 +276,7 @@ right_foot_marker = NodePath("../Skeleton3D/BoneAttachment3D3/RightFootMarker")
 
 [node name="AimAssist" type="Node" parent="." index="10" unique_id=133123927]
 script = ExtResource("22_u5tep")
+assist_radius = 11.0
 assist_cone_angle = 15.0
 lose_target_angle = 15.0
 pull_strength = 1.0
