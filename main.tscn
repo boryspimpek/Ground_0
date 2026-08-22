@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dh8ryyvkdbd0f" path="res://assets/kenney_prototype-textures/Purple/texture_05.png" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://ror7gej2r6ap" path="res://Player/Player.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://c7pifgmmeka61" path="res://Enemies/enemy_1.tscn" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://mscmcdj6uxcf" path="res://Hud/hud.tscn" id="7_272bh"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lquwl"]
 panorama = ExtResource("1_1bvp3")
@@ -136,3 +137,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
 
 [node name="Player2" parent="." unique_id=812363354 instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)
+
+[node name="HUD" parent="." unique_id=319821492 instance=ExtResource("7_272bh")]

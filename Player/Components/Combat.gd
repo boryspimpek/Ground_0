@@ -1,66 +1,33 @@
 extends Node
 
-@export var weapon_list: Array[Resource] = []
-@export var muzzle: Marker3D
-
 @onready var player: CharacterBody3D = get_parent()
 @onready var movement: Node = player.get_node("Movement")
 @onready var animation_tree: AnimationTree = player.get_node("AnimationTree")
-@onready var aim_origin: Marker3D = player.get_node("AimOrigin")
-@onready var audio_player: AudioStreamPlayer3D = $"../AudioPlayer"
+
+@onready var inventory: WeaponInventory = $"../WeaponInventory"
+@onready var ammo: AmmoController = $"../AmmoController"
+@onready var firing: WeaponFiring = $"../WeaponFiring"
+@onready var fx: WeaponFX = $"../WeaponFX"
 
 const ANIM_SHOOT_SHOT = "parameters/FiringShot/request"
 
 var _cooldown_timer: float = 0.0
-var _current_weapon_index: int = 0
-
-var _ammo_in_magazine: Array[int] = []
-var _is_reloading: bool = false
-var _reload_timer: float = 0.0
-
-var weapon_data: Resource:
-	get:
-		if weapon_list.is_empty():
-			return null
-		return weapon_list[_current_weapon_index]
-
-var current_ammo: int:
-	get:
-		if _ammo_in_magazine.is_empty():
-			return 0
-		return _ammo_in_magazine[_current_weapon_index]
-	set(value):
-		if _ammo_in_magazine.is_empty():
-			return
-		_ammo_in_magazine[_current_weapon_index] = value
-
-
-func _ready() -> void:
-	_ammo_in_magazine.resize(weapon_list.size())
-	for i in weapon_list.size():
-		var w: Resource = weapon_list[i]
-		_ammo_in_magazine[i] = w.magazine_size if w else 0
-
-	if weapon_data:
-		EventBus.weapon_changed.emit(weapon_data)
-		EventBus.ammo_changed.emit(current_ammo, weapon_data.magazine_size)
 
 
 func update(delta: float) -> void:
 	if _cooldown_timer > 0.0:
 		_cooldown_timer -= delta
 
-	if _is_reloading:
-		_reload_timer -= delta
-		if _reload_timer <= 0.0:
-			_finish_reload()
+	ammo.update(delta)
 
 	if Input.is_action_just_pressed("weapon_next"):
-		_switch_weapon()
+		inventory.switch_weapon()
+		_cooldown_timer = 0.0
 
 	if Input.is_action_just_pressed("reload"):
-		_start_reload()
+		_reload()
 
+	var weapon_data: Resource = inventory.weapon_data
 	var trigger_pulled := false
 	if movement.is_aiming() and weapon_data and weapon_data.is_automatic:
 		trigger_pulled = Input.is_action_pressed("shoot")
@@ -75,150 +42,34 @@ func shoot() -> void:
 	if not movement.is_aiming():
 		return
 
+	var weapon_data: Resource = inventory.weapon_data
 	if not weapon_data:
 		push_warning("Brak przypisanego WeaponData w Combat!")
 		return
 
-	if _is_reloading:
+	if not ammo.can_shoot():
+		if not ammo.is_reloading:
+			print("Pusty magazynek!")
+			_reload()
 		return
 
-	if current_ammo <= 0:
-		print("Pusty magazynek!")
-		_start_reload()
-		return
-
-	current_ammo -= 1
-	EventBus.ammo_changed.emit(current_ammo, weapon_data.magazine_size)
-
+	ammo.consume_round()
 	_cooldown_timer = weapon_data.cooldown
 
 	animation_tree.set(ANIM_SHOOT_SHOT, AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
-	_spawn_muzzle_flash()
-	_play_sound(weapon_data.fire_sound)
+	fx.spawn_muzzle_flash(weapon_data)
+	fx.play_sound(weapon_data.fire_sound)
 
-	var forward := player.global_transform.basis.z.normalized()
-
-	for i in weapon_data.pellets_per_shot:
-		var shot_dir := _apply_spread(forward, weapon_data.spread_angle)
-		_fire_ray(shot_dir)
-
-
-func _start_reload() -> void:
-	if not weapon_data:
-		return
-	if _is_reloading:
-		return
-	if current_ammo >= weapon_data.magazine_size:
-		return
-
-	_is_reloading = true
-	_reload_timer = weapon_data.reload_time
-	_play_sound(weapon_data.reload_sound)
-	EventBus.reload_started.emit(weapon_data.reload_time)
+	var hits: Array = firing.fire(weapon_data)
+	for hit in hits:
+		if hit.hit:
+			fx.spawn_impact_effect(weapon_data, hit.position, hit.normal)
+		fx.spawn_projectile_trail(weapon_data, fx.muzzle.global_position, hit.position)
 
 
-func _play_sound(stream: AudioStream) -> void:
-	if not stream:
-		return
-	audio_player.global_position = muzzle.global_position
-	audio_player.stream = stream
-	audio_player.play()
-
-
-func _finish_reload() -> void:
-	_is_reloading = false
-	current_ammo = weapon_data.magazine_size
-	EventBus.ammo_changed.emit(current_ammo, weapon_data.magazine_size)
-	EventBus.reload_finished.emit()
-	
-
-func _switch_weapon() -> void:
-	if weapon_list.is_empty():
-		return
-
-	_is_reloading = false
-	_current_weapon_index = wrapi(_current_weapon_index + 1, 0, weapon_list.size())
-	_cooldown_timer = 0.0
-
-	EventBus.weapon_changed.emit(weapon_data)
-	EventBus.ammo_changed.emit(current_ammo, weapon_data.magazine_size)
-	
-func _spawn_muzzle_flash() -> void:
-	if not weapon_data.muzzle_flash_scene:
-		return
-
-	var flash: Node = weapon_data.muzzle_flash_scene.instantiate()
-	muzzle.add_child(flash)
-
-func _apply_spread(direction: Vector3, angle_degrees: float) -> Vector3:
-	if angle_degrees <= 0.0:
-		return direction
-	var random_angle := deg_to_rad(randf_range(-angle_degrees, angle_degrees))
-	return direction.rotated(Vector3.UP, random_angle)
-
-
-func _fire_ray(direction: Vector3) -> void:
-	var space_state := player.get_world_3d().direct_space_state
-	var origin := aim_origin.global_position
-	var target: Vector3 = origin + direction * weapon_data.max_range
-
-	var query := PhysicsRayQueryParameters3D.create(origin, target)
-	query.exclude = [player.get_rid()]
-
-	var result := space_state.intersect_ray(query)
-
-	var hit_point: Vector3
-	if result:
-		hit_point = result.position
-		var distance := origin.distance_to(hit_point)
-		var dmg := _calculate_damage(distance)
-
-		var collider = result.collider
-		if collider.has_method("take_damage"):
-			collider.take_damage(dmg)
-
-		_spawn_impact_effect(result.position, result.normal)
-	else:
-		hit_point = target
-
-	_spawn_projectile_trail(hit_point)
-
-
-func _spawn_impact_effect(position: Vector3, normal: Vector3) -> void:
-	if not weapon_data.impact_effect_scene:
-		push_warning("Brak impact_effect_scene w WeaponData!")
-		return
-
-	var effect: Node3D = weapon_data.impact_effect_scene.instantiate()
-	player.get_tree().current_scene.add_child(effect)
-	effect.global_position = position
-
-	if normal != Vector3.ZERO:
-		var up_hint := Vector3.RIGHT if abs(normal.dot(Vector3.UP)) > 0.99 else Vector3.UP
-		effect.global_transform.basis = Basis.looking_at(normal, up_hint)
-
-	effect.emitting = true
-			
-
-func _calculate_damage(distance: float) -> float:
-	if distance <= weapon_data.min_falloff_range:
-		return weapon_data.damage
-
-	if distance >= weapon_data.max_range:
-		return weapon_data.damage * weapon_data.min_damage_multiplier
-
-	var t: float = (distance - weapon_data.min_falloff_range) / (weapon_data.max_range - weapon_data.min_falloff_range)
-	return lerp(weapon_data.damage, weapon_data.damage * weapon_data.min_damage_multiplier, t)
-
-
-func _spawn_projectile_trail(target_point: Vector3) -> void:
-	if not weapon_data.projectile_scene:
-		return
-
-	var projectile: Node = weapon_data.projectile_scene.instantiate()
-	player.get_tree().current_scene.add_child(projectile)
-	projectile.global_position = muzzle.global_position
-
-	if projectile.has_method("launch"):
-		projectile.launch(target_point, weapon_data.projectile_speed)
+func _reload() -> void:
+	var was_reloading := ammo.is_reloading
+	ammo.start_reload()
+	if not was_reloading and ammo.is_reloading:
+		fx.play_sound(inventory.weapon_data.reload_sound)
