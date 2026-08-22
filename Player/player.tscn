@@ -142,16 +142,15 @@ node_connections = [&"output", 0, &"JumpShot", &"IsAiming", 0, &"TimeScale", &"I
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
-emission_energy_multiplier = 10.33
+emission_energy_multiplier = 16.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_u5tep"]
 material = SubResource("StandardMaterial3D_roy6y")
-top_radius = 0.005
-bottom_radius = 0.005
-height = 5.0
+top_radius = 0.02
+bottom_radius = 0.02
+height = 10.0
 
 [node name="Player2" unique_id=812363354 groups=["player"] instance=ExtResource("1_v0mt8")]
-transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
 script = ExtResource("2_mujjb")
 
 [node name="AudioPlayer" type="AudioStreamPlayer3D" parent="." index="0" unique_id=1053742196]
@@ -161,6 +160,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49206543, 0)
 shape = SubResource("CapsuleShape3D_bcy2i")
 
 [node name="Skeleton3D" parent="." index="2" unique_id=1818099138]
+transform = Transform3D(1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 0, 0, 0)
 bones/0/position = Vector3(0.0041967733, 0.49715647, -0.00446856)
 bones/0/rotation = Quaternion(-0.7388036, -0.22264126, -0.25884002, 0.58103526)
 bones/1/rotation = Quaternion(0.72564214, 0.0022061977, -0.0021342996, 0.68806547)
@@ -230,7 +230,7 @@ unique_name_in_owner = true
 transform = Transform3D(0.9991999, -0.0021238523, -0.039945543, -0.039871782, 0.027551534, -0.99882483, 0.003221915, 0.9996179, 0.027444731, -0.00018087775, -0.100681186, 0.0030359458)
 
 [node name="AimOrigin" type="Marker3D" parent="." index="3" unique_id=1296831505]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08762794, 0.8577658, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15742227, 1.5443103, 0)
 
 [node name="AnimationPlayer" parent="." index="4" unique_id=1304539162]
 libraries/Moves = SubResource("AnimationLibrary_ty2rl")
@@ -277,11 +277,11 @@ right_foot_marker = NodePath("../Skeleton3D/BoneAttachment3D3/RightFootMarker")
 [node name="AimAssist" type="Node" parent="." index="10" unique_id=133123927]
 script = ExtResource("22_u5tep")
 assist_cone_angle = 15.0
-lose_target_angle = 30.0
+lose_target_angle = 15.0
 pull_strength = 1.0
 
 [node name="HUD" parent="." index="11" unique_id=319821492 instance=ExtResource("21_roy6y")]
 
 [node name="Laser" type="MeshInstance3D" parent="." index="12" unique_id=325458686]
-transform = Transform3D(1, -3.233759e-11, -7.737021e-13, -9.166002e-12, -4.373659e-08, -0.99999994, 6.467518e-11, 1.0000001, -4.3720423e-08, -0.08758368, 0.85811186, 2.9839816)
+transform = Transform3D(1, -3.233759e-11, -7.737021e-13, -9.166002e-12, -4.373659e-08, -0.99999994, 6.467518e-11, 1.0000001, -4.3720423e-08, -0.15766118, 1.5458837, 5.9411964)
 mesh = SubResource("CylinderMesh_u5tep")

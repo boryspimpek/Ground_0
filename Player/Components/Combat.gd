@@ -97,7 +97,7 @@ func shoot() -> void:
 	_spawn_muzzle_flash()
 	_play_sound(weapon_data.fire_sound)
 
-	var forward := player.transform.basis.z
+	var forward := player.global_transform.basis.z.normalized()
 
 	for i in weapon_data.pellets_per_shot:
 		var shot_dir := _apply_spread(forward, weapon_data.spread_angle)
