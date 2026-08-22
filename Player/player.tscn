@@ -227,7 +227,7 @@ unique_name_in_owner = true
 transform = Transform3D(0.9997582, 0.011396276, -0.01879546, -0.019425899, 0.05801841, -0.99812657, -0.010284413, 0.9982506, 0.058225702, -0.0037007704, -0.094415836, 0.0059760986)
 
 [node name="Jet2" parent="Skeleton3D/BoneAttachment3D2" index="1" unique_id=1805975067 instance=ExtResource("5_hqjia")]
-transform = Transform3D(-0.099500656, -0.004857684, -0.008719838, 0.008899856, -0.0036194432, -0.09953747, 0.0045195953, -0.099816434, 0.0040336354, -0.013920113, -0.10747045, -0.25356346)
+transform = Transform3D(-0.099500656, -0.004857673, -0.008719994, 0.008899925, -0.0036194716, -0.099537455, 0.0045195795, -0.099816434, 0.0040337234, -0.013920113, -0.10747045, -0.25356346)
 
 [node name="BoneAttachment3D3" type="BoneAttachment3D" parent="Skeleton3D" index="3" unique_id=1978779025]
 transform = Transform3D(-0.34048682, -0.9399551, 0.023517907, -0.014496252, 0.030257404, 0.9994371, -0.9401376, 0.33995408, -0.023928016, -0.19060545, 0.023539612, -0.06867043)
@@ -270,7 +270,8 @@ parameters/TimeScale/scale = 1.25
 
 [node name="Movement" type="Node" parent="." index="7" unique_id=1263305882]
 script = ExtResource("12_gu84g")
-run_speed = 10.0
+run_speed = 7.0
+aim_speed = 5.0
 blend_smooth_speed = 10.0
 
 [node name="Traversal" type="Node" parent="." index="8" unique_id=367092781]
@@ -311,7 +312,7 @@ muzzle = NodePath("../Skeleton3D/BoneAttachment3D/Rifle/Muzzle")
 [node name="Health" type="Node" parent="." index="16" unique_id=1628286876]
 script = ExtResource("26_s0mko")
 
-[node name="JetEffect" type="Node" parent="." index="18" unique_id=415378718 node_paths=PackedStringArray("left_jet", "right_jet")]
+[node name="JetEffect" type="Node" parent="." index="17" unique_id=415378718 node_paths=PackedStringArray("left_jet", "right_jet")]
 script = ExtResource("28_x70vp")
 left_jet = NodePath("../Skeleton3D/BoneAttachment3D2/Jet2")
 right_jet = NodePath("../Skeleton3D/BoneAttachment3D3/Jet")
