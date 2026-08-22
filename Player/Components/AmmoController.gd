@@ -35,9 +35,12 @@ func _ready() -> void:
 
 
 func _on_weapon_changed(_weapon: Resource) -> void:
+	var was_reloading := _is_reloading
 	_is_reloading = false
 	EventBus.ammo_changed.emit(current_ammo, inventory.weapon_data.magazine_size)
-
+	if was_reloading:
+		EventBus.reload_finished.emit()
+		
 
 func update(delta: float) -> void:
 	if _is_reloading:
