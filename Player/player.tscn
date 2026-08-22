@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://5r3vfv447j8e" path="res://Player/Components/AmmoController.gd" id="23_hqjia"]
 [ext_resource type="Script" uid="uid://ckwapauxrg2tg" path="res://Player/Components/WeaponFiring.gd" id="24_x70vp"]
 [ext_resource type="Script" uid="uid://ch02l5cb5g6c6" path="res://Player/Components/WeaponFX.gd" id="25_wo5nf"]
+[ext_resource type="Script" uid="uid://bgyjbtwbffq5h" path="res://Player/Components/Health.gd" id="26_s0mko"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bcy2i"]
 radius = 0.16601563
@@ -35,6 +36,18 @@ diffuse_mode = 3
 specular_mode = 1
 albedo_texture = ExtResource("3_um7uo")
 roughness = 0.45
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_roy6y"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u5tep"]
+material = SubResource("StandardMaterial3D_roy6y")
+top_radius = 0.02
+bottom_radius = 0.02
+height = 10.0
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ty2rl"]
 _data = {
@@ -141,18 +154,6 @@ nodes/TimeScale/position = Vector2(540, -40)
 "nodes/TimeScale 2/position" = Vector2(540, 160)
 node_connections = [&"output", 0, &"JumpShot", &"IsAiming", 0, &"TimeScale", &"IsAiming", 1, &"TimeScale 2", &"JumpShot", 0, &"FiringShot", &"JumpShot", 1, &"JumpAnim", &"FiringShot", 0, &"IsAiming", &"FiringShot", 1, &"FiringAnim", &"TimeScale", 0, &"NormalWalk", &"TimeScale 2", 0, &"Strafe"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_roy6y"]
-albedo_color = Color(1, 0, 0, 1)
-emission_enabled = true
-emission = Color(1, 0, 0, 1)
-emission_energy_multiplier = 16.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_u5tep"]
-material = SubResource("StandardMaterial3D_roy6y")
-top_radius = 0.02
-bottom_radius = 0.02
-height = 10.0
-
 [node name="Player2" unique_id=812363354 groups=["player"] instance=ExtResource("1_v0mt8")]
 script = ExtResource("2_mujjb")
 
@@ -235,10 +236,14 @@ transform = Transform3D(0.9991999, -0.0021238523, -0.039945543, -0.039871782, 0.
 [node name="AimOrigin" type="Marker3D" parent="." index="3" unique_id=1296831505]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15742227, 1.5443103, 0)
 
-[node name="AnimationPlayer" parent="." index="4" unique_id=1304539162]
+[node name="Laser" type="MeshInstance3D" parent="." index="4" unique_id=325458686]
+transform = Transform3D(1, -3.233759e-11, -7.737021e-13, -9.166002e-12, -4.373659e-08, -0.99999994, 6.467518e-11, 1.0000001, -4.3720423e-08, -0.15766118, 1.5458837, 5.9411964)
+mesh = SubResource("CylinderMesh_u5tep")
+
+[node name="AnimationPlayer" parent="." index="5" unique_id=1304539162]
 libraries/Moves = SubResource("AnimationLibrary_ty2rl")
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="5" unique_id=671859228]
+[node name="AnimationTree" type="AnimationTree" parent="." index="6" unique_id=671859228]
 tree_root = SubResource("AnimationNodeBlendTree_a6ncc")
 anim_player = NodePath("../AnimationPlayer")
 parameters/IsAiming/current_state = "strafe"
@@ -255,47 +260,46 @@ parameters/FiringShot/request = 0
 parameters/TimeScale/scale = 1.0
 "parameters/TimeScale 2/scale" = 4.0
 
-[node name="Movement" type="Node" parent="." index="6" unique_id=1263305882]
+[node name="Movement" type="Node" parent="." index="7" unique_id=1263305882]
 script = ExtResource("12_gu84g")
 walk_speed = 3.5
 run_speed = 5.0
 blend_smooth_speed = 10.0
 
-[node name="Traversal" type="Node" parent="." index="7" unique_id=367092781]
+[node name="Traversal" type="Node" parent="." index="8" unique_id=367092781]
 script = ExtResource("13_xxk7p")
 jump_velocity = 6.0
 gravity = 15.0
 
-[node name="Footprint" type="Node" parent="." index="8" unique_id=1457270189 node_paths=PackedStringArray("left_foot_marker", "right_foot_marker")]
+[node name="Footprint" type="Node" parent="." index="9" unique_id=1457270189 node_paths=PackedStringArray("left_foot_marker", "right_foot_marker")]
 script = ExtResource("17_slvjm")
 footprint_scene = ExtResource("18_m035p")
 left_foot_marker = NodePath("../Skeleton3D/BoneAttachment3D2/LeftFootMarker")
 right_foot_marker = NodePath("../Skeleton3D/BoneAttachment3D3/RightFootMarker")
 
-[node name="AimAssist" type="Node" parent="." index="9" unique_id=133123927]
+[node name="AimAssist" type="Node" parent="." index="10" unique_id=133123927]
 script = ExtResource("22_u5tep")
 assist_radius = 11.0
 assist_cone_angle = 15.0
 lose_target_angle = 15.0
 pull_strength = 1.0
 
-[node name="Combat" type="Node" parent="." index="10" unique_id=1252543771]
+[node name="Combat" type="Node" parent="." index="11" unique_id=1252543771]
 script = ExtResource("11_f4nco")
 
-[node name="WeaponInventory" type="Node" parent="." index="11" unique_id=1072025386]
+[node name="WeaponInventory" type="Node" parent="." index="12" unique_id=1072025386]
 script = ExtResource("19_s0mko")
 weapon_list = Array[Resource]([ExtResource("14_um7uo"), ExtResource("14_3nb2p"), ExtResource("16_evw08")])
 
-[node name="AmmoController" type="Node" parent="." index="12" unique_id=391878847]
+[node name="AmmoController" type="Node" parent="." index="13" unique_id=391878847]
 script = ExtResource("23_hqjia")
 
-[node name="WeaponFiring" type="Node" parent="." index="13" unique_id=342777760]
+[node name="WeaponFiring" type="Node" parent="." index="14" unique_id=342777760]
 script = ExtResource("24_x70vp")
 
-[node name="WeaponFX" type="Node" parent="." index="14" unique_id=607089948 node_paths=PackedStringArray("muzzle")]
+[node name="WeaponFX" type="Node" parent="." index="15" unique_id=607089948 node_paths=PackedStringArray("muzzle")]
 script = ExtResource("25_wo5nf")
 muzzle = NodePath("../Skeleton3D/BoneAttachment3D/Rifle/Muzzle")
 
-[node name="Laser" type="MeshInstance3D" parent="." index="15" unique_id=325458686]
-transform = Transform3D(1, -3.233759e-11, -7.737021e-13, -9.166002e-12, -4.373659e-08, -0.99999994, 6.467518e-11, 1.0000001, -4.3720423e-08, -0.15766118, 1.5458837, 5.9411964)
-mesh = SubResource("CylinderMesh_u5tep")
+[node name="Health" type="Node" parent="." index="16" unique_id=1628286876]
+script = ExtResource("26_s0mko")

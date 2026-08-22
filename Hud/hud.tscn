@@ -24,3 +24,7 @@ text = "- / -"
 [node name="ReloadLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1254571995]
 layout_mode = 2
 text = "Reloading..."
+
+[node name="HealthLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1121236706]
+layout_mode = 2
+text = "HP: - / -"

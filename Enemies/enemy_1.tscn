@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c7pifgmmeka61"]
 
 [ext_resource type="Script" uid="uid://j42e3rehfcda" path="res://Enemies/enemy.gd" id="1_2nuh0"]
+[ext_resource type="Script" uid="uid://bgyjbtwbffq5h" path="res://Player/Components/Health.gd" id="2_vy3xu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3klji"]
 diffuse_mode = 3
@@ -26,3 +27,6 @@ mesh = SubResource("CapsuleMesh_2nuh0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=885256060]
 shape = SubResource("ConcavePolygonShape3D_3klji")
+
+[node name="Health" type="Node" parent="." unique_id=300842045]
+script = ExtResource("2_vy3xu")
