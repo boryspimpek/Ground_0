@@ -69,6 +69,8 @@ _data = {
 animation = &"Moves/firing"
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_gu6f8"]
+filter_enabled = true
+filters = ["Skeleton3D:mixamorig_Head", "Skeleton3D:mixamorig_Hips", "Skeleton3D:mixamorig_LeftArm", "Skeleton3D:mixamorig_LeftForeArm", "Skeleton3D:mixamorig_LeftHand", "Skeleton3D:mixamorig_LeftHandIndex1", "Skeleton3D:mixamorig_LeftHandIndex2", "Skeleton3D:mixamorig_LeftHandIndex3", "Skeleton3D:mixamorig_LeftHandThumb1", "Skeleton3D:mixamorig_LeftHandThumb2", "Skeleton3D:mixamorig_LeftHandThumb3", "Skeleton3D:mixamorig_LeftShoulder", "Skeleton3D:mixamorig_Neck", "Skeleton3D:mixamorig_Spine", "Skeleton3D:mixamorig_Spine1", "Skeleton3D:mixamorig_Spine2"]
 fadein_time = 0.2
 fadeout_time = 0.2
 
@@ -137,6 +139,7 @@ blend_point_4/pos = Vector2(0, 0)
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_ps8ct"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_a6ncc"]
+graph_offset = Vector2(230.51257, -149.87686)
 nodes/output/position = Vector2(1420, 20)
 nodes/IsAiming/node = SubResource("AnimationNodeTransition_n471f")
 nodes/IsAiming/position = Vector2(780, -20)
@@ -145,7 +148,7 @@ nodes/NormalWalk/position = Vector2(340, -60)
 nodes/Strafe/node = SubResource("AnimationNodeBlendSpace2D_o28un")
 nodes/Strafe/position = Vector2(340, 180)
 nodes/JumpAnim/node = SubResource("AnimationNodeAnimation_dkpta")
-nodes/JumpAnim/position = Vector2(1220, 280)
+nodes/JumpAnim/position = Vector2(1040, 280)
 nodes/FiringAnim/node = SubResource("AnimationNodeAnimation_p5o4e")
 nodes/FiringAnim/position = Vector2(820, 280)
 nodes/JumpShot/node = SubResource("AnimationNodeOneShot_lfmf2")
@@ -268,7 +271,7 @@ parameters/FiringShot/active = false
 parameters/FiringShot/internal_active = false
 parameters/FiringShot/request = 0
 parameters/TimeScale/scale = 1.25
-"parameters/TimeScale 2/scale" = 4.0
+"parameters/TimeScale 2/scale" = 3.0
 
 [node name="Movement" type="Node" parent="." index="7" unique_id=1263305882]
 script = ExtResource("12_gu84g")
