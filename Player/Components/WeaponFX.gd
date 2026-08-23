@@ -10,7 +10,7 @@ class_name WeaponFX
 func play_sound(stream: AudioStream) -> void:
 	if not stream:
 		return
-	audio_player.global_position = muzzle.global_position
+	audio_player.global_position = player.global_position
 	audio_player.stream = stream
 	audio_player.play()
 
