@@ -28,6 +28,8 @@
 [ext_resource type="Script" uid="uid://ch02l5cb5g6c6" path="res://Player/Components/WeaponFX.gd" id="25_wo5nf"]
 [ext_resource type="Script" uid="uid://bgyjbtwbffq5h" path="res://Player/Components/Health.gd" id="26_s0mko"]
 [ext_resource type="Script" uid="uid://cmaqskpghmy5m" path="res://Player/Components/JetEffect.gd" id="28_x70vp"]
+[ext_resource type="Script" uid="uid://cjx2je3rdp83r" path="res://Player/Components/GrenadeThrower.gd" id="29_wo5nf"]
+[ext_resource type="Resource" uid="uid://b2ug84xww6j6n" path="res://WeaponResources/grenade.tres" id="30_croik"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bcy2i"]
 radius = 0.16601563
@@ -316,3 +318,11 @@ script = ExtResource("26_s0mko")
 script = ExtResource("28_x70vp")
 left_jet = NodePath("../Skeleton3D/BoneAttachment3D2/Jet2")
 right_jet = NodePath("../Skeleton3D/BoneAttachment3D3/Jet")
+
+[node name="GrenadeThrower" type="Node" parent="." index="18" unique_id=539634513 node_paths=PackedStringArray("throw_marker")]
+script = ExtResource("29_wo5nf")
+grenade_data = ExtResource("30_croik")
+throw_marker = NodePath("../Throw")
+
+[node name="Throw" type="Marker3D" parent="." index="19" unique_id=1285437165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5894446, 0.08435583)

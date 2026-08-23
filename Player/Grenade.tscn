@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cgmc3ny2mvo7d"]
+
+[ext_resource type="Script" uid="uid://d4jn48351tkjs" path="res://Player/Grenade.gd" id="1_83myn"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_vc2m8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4t8qc"]
+radius = 0.506
+
+[node name="Granade" type="RigidBody3D" unique_id=811907322]
+continuous_cd = true
+script = ExtResource("1_83myn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1433488971]
+mesh = SubResource("SphereMesh_vc2m8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2112662386]
+shape = SubResource("SphereShape3D_4t8qc")
