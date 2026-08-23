@@ -1,6 +1,7 @@
 [gd_resource type="Animation" format=3 uid="uid://3aydjsnxel04"]
 
 [ext_resource type="AudioStream" uid="uid://53rhq2jg0cla" path="res://assets/Sounds/granade/granade_throw.mp3" id="1_f6u7m"]
+[ext_resource type="AudioStream" uid="uid://dfrtfqsshxdgd" path="res://assets/Sounds/Shouted_male_voice_y_#1-1787498786506.wav" id="2_ma6h4"]
 
 [resource]
 resource_name = "mixamo_com"
@@ -279,3 +280,18 @@ tracks/36/keys = {
 "times": PackedFloat32Array(0.037861515)
 }
 tracks/36/use_blend = true
+tracks/37/type = "audio"
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/path = NodePath("AudioPlayer")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/keys = {
+"clips": [{
+"end_offset": 1.4737,
+"start_offset": 0.12710652,
+"stream": ExtResource("2_ma6h4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/37/use_blend = true

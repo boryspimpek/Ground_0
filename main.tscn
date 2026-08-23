@@ -66,7 +66,7 @@ transform = Transform3D(0.49999997, 0.61237246, -0.61237246, 0, 0.70710677, 0.70
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=346466420 node_paths=PackedStringArray("target")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.43837112, 0.898794, 0, -0.898794, 0.43837112, 0, 8.775, 6.1)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.43837112, 0.898794, 0, -0.898794, 0.43837112, 0, 13.605, 9.69)
 visible = false
 size = 15.0
 script = ExtResource("1_0xm2m")
@@ -163,13 +163,13 @@ use_collision = true
 size = Vector3(8, 2.5, 8)
 
 [node name="CSGBox3D25" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=1405774054]
-transform = Transform3D(0.86602527, 0, -0.49999982, 0, 1, 0, 0.49999982, 0, 0.86602527, 13.012318, 2.25, 16.079775)
+transform = Transform3D(0.86602527, 0, -0.49999982, 0, 1, 0, 0.49999982, 0, 0.86602527, 13.012318, 2.25, 17.079775)
 material_override = SubResource("StandardMaterial3D_vivmo")
 use_collision = true
 size = Vector3(8, 2.5, 8)
 
 [node name="CSGBox3D26" type="CSGBox3D" parent="Arena/CSGCombiner3D" unique_id=1134131491]
-transform = Transform3D(0.86602527, 0, -0.49999982, 0, 1, 0, 0.49999982, 0, 0.86602527, 13.512318, 3.25, 17.579775)
+transform = Transform3D(0.86602527, 0, -0.49999982, 0, 1, 0, 0.49999982, 0, 0.86602527, 13.512318, 3.25, 19.579775)
 material_override = SubResource("StandardMaterial3D_vivmo")
 use_collision = true
 size = Vector3(8, 2.5, 8)

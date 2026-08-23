@@ -4,7 +4,7 @@ class_name WeaponFX
 @export var muzzle: Marker3D
 
 @onready var player: CharacterBody3D = get_parent()
-@onready var audio_player: AudioStreamPlayer3D = $"../AudioPlayer"
+@onready var audio_player: AudioStreamPlayer3D = $"../WeaponAudioPlayer"
 
 
 func play_sound(stream: AudioStream) -> void:
