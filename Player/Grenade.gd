@@ -1,6 +1,9 @@
 extends RigidBody3D
 class_name Grenade
 
+@onready var audio_player: AudioStreamPlayer3D = $"AudioPlayer"
+
+
 var _data: Resource
 var _source: Node
 var _fuse_timer: float
@@ -41,6 +44,11 @@ func _explode() -> void:
 			body.take_damage(dmg, _source)
 
 	_spawn_explosion_effect()
+	if _data.explosion_sound:
+		audio_player.stream = _data.explosion_sound
+		audio_player.reparent(get_tree().current_scene, true)
+		audio_player.play()
+	get_tree().create_timer(audio_player.stream.get_length()).timeout.connect(audio_player.queue_free)
 	queue_free()
 
 func _calculate_damage(distance: float) -> float:
