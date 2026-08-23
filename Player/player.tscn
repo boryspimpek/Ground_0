@@ -10,6 +10,7 @@
 [ext_resource type="Animation" uid="uid://b63afhsfxxiu0" path="res://Player model/Animations/idle_aim.tres" id="5_slvjm"]
 [ext_resource type="Animation" uid="uid://bwpbn3583vk6n" path="res://Player model/Animations/jump.tres" id="6_m035p"]
 [ext_resource type="Animation" uid="uid://ga5t6rbyyuve" path="res://Player model/Animations/run.tres" id="7_ajnc2"]
+[ext_resource type="Animation" uid="uid://3aydjsnxel04" path="res://Player model/Animations/grenade.tres" id="7_bgaaw"]
 [ext_resource type="Animation" uid="uid://b5h1ab766uh0a" path="res://Player model/Animations/strafe_forward.tres" id="8_5ixca"]
 [ext_resource type="Animation" uid="uid://n4bxbugduknm" path="res://Player model/Animations/strafe_right.tres" id="9_y34vk"]
 [ext_resource type="Animation" uid="uid://27xord16tstm" path="res://Player model/Animations/upper_body_aim.tres" id="10_nxdv8"]
@@ -56,6 +57,7 @@ height = 10.0
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ty2rl"]
 _data = {
 &"firing": ExtResource("3_nxtay"),
+&"grenade": ExtResource("7_bgaaw"),
 &"idle": ExtResource("4_um7uo"),
 &"idle_aim": ExtResource("5_slvjm"),
 &"jump": ExtResource("6_m035p"),
@@ -134,32 +136,47 @@ blend_point_3/pos = Vector2(0, -1)
 blend_point_4/node = SubResource("AnimationNodeAnimation_y67rv")
 blend_point_4/pos = Vector2(0, 0)
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bgaaw"]
+animation = &"Moves/grenade"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_gv3fu"]
+fadein_time = 0.2
+fadeout_time = 0.2
+
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_u5tep"]
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_bgaaw"]
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_ps8ct"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_a6ncc"]
-graph_offset = Vector2(230.51257, -149.87686)
-nodes/output/position = Vector2(1420, 20)
+graph_offset = Vector2(102.84241, 206.57965)
+nodes/output/position = Vector2(1240, 320)
 nodes/IsAiming/node = SubResource("AnimationNodeTransition_n471f")
-nodes/IsAiming/position = Vector2(780, -20)
+nodes/IsAiming/position = Vector2(400, 280)
 nodes/NormalWalk/node = SubResource("AnimationNodeBlendSpace1D_b1ygp")
-nodes/NormalWalk/position = Vector2(340, -60)
+nodes/NormalWalk/position = Vector2(-40, 240)
 nodes/Strafe/node = SubResource("AnimationNodeBlendSpace2D_o28un")
-nodes/Strafe/position = Vector2(340, 180)
+nodes/Strafe/position = Vector2(-40, 480)
 nodes/JumpAnim/node = SubResource("AnimationNodeAnimation_dkpta")
-nodes/JumpAnim/position = Vector2(1040, 280)
+nodes/JumpAnim/position = Vector2(1020, 600)
 nodes/FiringAnim/node = SubResource("AnimationNodeAnimation_p5o4e")
-nodes/FiringAnim/position = Vector2(820, 280)
+nodes/FiringAnim/position = Vector2(340, 620)
 nodes/JumpShot/node = SubResource("AnimationNodeOneShot_lfmf2")
-nodes/JumpShot/position = Vector2(1220, -20)
+nodes/JumpShot/position = Vector2(1020, 280)
 nodes/FiringShot/node = SubResource("AnimationNodeOneShot_gu6f8")
-nodes/FiringShot/position = Vector2(1000, -20)
+nodes/FiringShot/position = Vector2(620, 280)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_ps8ct")
-nodes/TimeScale/position = Vector2(540, -40)
+nodes/TimeScale/position = Vector2(160, 260)
 "nodes/TimeScale 2/node" = SubResource("AnimationNodeTimeScale_u5tep")
-"nodes/TimeScale 2/position" = Vector2(540, 160)
-node_connections = [&"output", 0, &"JumpShot", &"IsAiming", 0, &"TimeScale", &"IsAiming", 1, &"TimeScale 2", &"JumpShot", 0, &"FiringShot", &"JumpShot", 1, &"JumpAnim", &"FiringShot", 0, &"IsAiming", &"FiringShot", 1, &"FiringAnim", &"TimeScale", 0, &"NormalWalk", &"TimeScale 2", 0, &"Strafe"]
+"nodes/TimeScale 2/position" = Vector2(160, 460)
+nodes/ThrowShot/node = SubResource("AnimationNodeOneShot_gv3fu")
+nodes/ThrowShot/position = Vector2(820, 280)
+nodes/ThrowAnim/node = SubResource("AnimationNodeAnimation_bgaaw")
+nodes/ThrowAnim/position = Vector2(600, 680)
+"nodes/TimeScale 3/node" = SubResource("AnimationNodeTimeScale_bgaaw")
+"nodes/TimeScale 3/position" = Vector2(820, 620)
+node_connections = [&"output", 0, &"JumpShot", &"IsAiming", 0, &"TimeScale", &"IsAiming", 1, &"TimeScale 2", &"JumpShot", 0, &"ThrowShot", &"JumpShot", 1, &"JumpAnim", &"FiringShot", 0, &"IsAiming", &"FiringShot", 1, &"FiringAnim", &"TimeScale", 0, &"NormalWalk", &"TimeScale 2", 0, &"Strafe", &"ThrowShot", 0, &"FiringShot", &"ThrowShot", 1, &"TimeScale 3", &"TimeScale 3", 0, &"ThrowAnim"]
 
 [node name="Player2" unique_id=812363354 groups=["player"] instance=ExtResource("1_v0mt8")]
 script = ExtResource("2_mujjb")
@@ -211,39 +228,47 @@ bones/39/rotation = Quaternion(0.3903892, 0.11025343, -0.047136813, 0.9128082)
 [node name="tripo_node_6edcec5a" parent="Skeleton3D" index="0" unique_id=1313409026]
 surface_material_override/0 = SubResource("StandardMaterial3D_slvjm")
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Skeleton3D" index="1" unique_id=1016012595]
+[node name="LeftArm" type="BoneAttachment3D" parent="Skeleton3D" index="1" unique_id=1016012595]
+transform = Transform3D(-0.43632457, -0.6579629, -0.6137635, -0.7872454, -0.051174685, 0.6145128, -0.4357356, 0.75130945, -0.49564958, -0.010551721, 0.78686553, 0.34396222)
+bone_name = "mixamorig_LeftHand"
+bone_idx = 10
+
+[node name="Rifle" parent="Skeleton3D/LeftArm" index="0" unique_id=1518743905 instance=ExtResource("3_mujjb")]
+transform = Transform3D(0.43590063, -0.7880206, 0.43475556, 0.6566773, -0.05185057, -0.7523861, 0.61543965, 0.6134603, 0.4948726, 0.1458425, -0.009062231, 0.03196901)
+
+[node name="Muzzle" type="Marker3D" parent="Skeleton3D/LeftArm/Rifle" index="1" unique_id=1361992852]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16777027, -0.33108506)
+
+[node name="RightHand" type="BoneAttachment3D" parent="Skeleton3D" index="2" unique_id=170917394]
 transform = Transform3D(0.52866834, 0.026840616, 0.8484041, 0.84259266, 0.10433815, -0.52834797, -0.102702044, 0.99417955, 0.032544635, -0.124929495, 0.7635021, 0.095886506)
 bone_name = "mixamorig_RightHand"
 bone_idx = 22
 
-[node name="Rifle" parent="Skeleton3D/BoneAttachment3D" index="0" unique_id=1518743905 instance=ExtResource("3_mujjb")]
-transform = Transform3D(-0.52851254, 0.8426464, 0.103057146, -0.027223337, 0.104511894, -0.9941492, -0.8484894, -0.5282263, -0.03229615, -0.05329746, 0.10551265, 0.07408047)
+[node name="Throw" type="Marker3D" parent="Skeleton3D/RightHand" index="0" unique_id=1285437165]
+transform = Transform3D(0.2937046, 0.46810684, -0.05705671, 0.0149114095, 0.05796563, 0.55232203, 0.47133556, -0.2935265, 0.01808031, 0.17178977, -0.03291288, 0.0412457)
 
-[node name="Muzzle" type="Marker3D" parent="Skeleton3D/BoneAttachment3D/Rifle" index="1" unique_id=1361992852]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16777027, -0.33108506)
-
-[node name="BoneAttachment3D2" type="BoneAttachment3D" parent="Skeleton3D" index="2" unique_id=1689866589]
+[node name="LeftFoot" type="BoneAttachment3D" parent="Skeleton3D" index="3" unique_id=1689866589]
 transform = Transform3D(-0.8851715, 0.46525684, -0.0027554333, 0.012349084, 0.029413939, 0.9994912, 0.46510115, 0.88468695, -0.03178191, 0.1712267, 0.022622084, 0.24595252)
 bone_name = "mixamorig_LeftToe_End"
 bone_idx = 35
 
-[node name="LeftFootMarker" type="Marker3D" parent="Skeleton3D/BoneAttachment3D2" index="0" unique_id=1598343247]
+[node name="LeftFootMarker" type="Marker3D" parent="Skeleton3D/LeftFoot" index="0" unique_id=1598343247]
 unique_name_in_owner = true
 transform = Transform3D(0.9997582, 0.011396276, -0.01879546, -0.019425899, 0.05801841, -0.99812657, -0.010284413, 0.9982506, 0.058225702, -0.0037007704, -0.094415836, 0.0059760986)
 
-[node name="Jet2" parent="Skeleton3D/BoneAttachment3D2" index="1" unique_id=1805975067 instance=ExtResource("5_hqjia")]
+[node name="Jet2" parent="Skeleton3D/LeftFoot" index="1" unique_id=1805975067 instance=ExtResource("5_hqjia")]
 transform = Transform3D(-0.099500656, -0.004857673, -0.008719994, 0.008899925, -0.0036194716, -0.099537455, 0.0045195795, -0.099816434, 0.0040337234, -0.013920113, -0.10747045, -0.25356346)
 
-[node name="BoneAttachment3D3" type="BoneAttachment3D" parent="Skeleton3D" index="3" unique_id=1978779025]
+[node name="RightFoot" type="BoneAttachment3D" parent="Skeleton3D" index="4" unique_id=1978779025]
 transform = Transform3D(-0.34048682, -0.9399551, 0.023517907, -0.014496252, 0.030257404, 0.9994371, -0.9401376, 0.33995408, -0.023928016, -0.19060545, 0.023539612, -0.06867043)
 bone_name = "mixamorig_RightToe_End"
 bone_idx = 40
 
-[node name="RightFootMarker" type="Marker3D" parent="Skeleton3D/BoneAttachment3D3" index="0" unique_id=1292851127]
+[node name="RightFootMarker" type="Marker3D" parent="Skeleton3D/RightFoot" index="0" unique_id=1292851127]
 unique_name_in_owner = true
 transform = Transform3D(0.9991999, -0.0021238523, -0.039945543, -0.039871782, 0.027551534, -0.99882483, 0.003221915, 0.9996179, 0.027444731, -0.00018087775, -0.100681186, 0.0030359458)
 
-[node name="Jet" parent="Skeleton3D/BoneAttachment3D3" index="1" unique_id=1172110131 instance=ExtResource("5_hqjia")]
+[node name="Jet" parent="Skeleton3D/RightFoot" index="1" unique_id=1172110131 instance=ExtResource("5_hqjia")]
 transform = Transform3D(-0.06896286, 0.0081896195, 0.07195184, -0.07156821, 0.0074544046, -0.06944365, -0.011050752, -0.09938495, 0.0007203583, 0.023405023, -0.08378069, -0.25254175)
 
 [node name="AimOrigin" type="Marker3D" parent="." index="3" unique_id=1296831505]
@@ -272,6 +297,10 @@ parameters/FiringShot/internal_active = false
 parameters/FiringShot/request = 0
 parameters/TimeScale/scale = 1.25
 "parameters/TimeScale 2/scale" = 3.0
+parameters/ThrowShot/active = false
+parameters/ThrowShot/internal_active = false
+parameters/ThrowShot/request = 0
+"parameters/TimeScale 3/scale" = 1.0
 
 [node name="Movement" type="Node" parent="." index="7" unique_id=1263305882]
 script = ExtResource("12_gu84g")
@@ -287,8 +316,8 @@ gravity = 15.0
 [node name="Footprint" type="Node" parent="." index="9" unique_id=1457270189 node_paths=PackedStringArray("left_foot_marker", "right_foot_marker")]
 script = ExtResource("17_slvjm")
 footprint_scene = ExtResource("18_m035p")
-left_foot_marker = NodePath("../Skeleton3D/BoneAttachment3D2/LeftFootMarker")
-right_foot_marker = NodePath("../Skeleton3D/BoneAttachment3D3/RightFootMarker")
+left_foot_marker = NodePath("../Skeleton3D/LeftFoot/LeftFootMarker")
+right_foot_marker = NodePath("../Skeleton3D/RightFoot/RightFootMarker")
 
 [node name="AimAssist" type="Node" parent="." index="10" unique_id=133123927]
 script = ExtResource("22_u5tep")
@@ -312,20 +341,17 @@ script = ExtResource("24_x70vp")
 
 [node name="WeaponFX" type="Node" parent="." index="15" unique_id=607089948 node_paths=PackedStringArray("muzzle")]
 script = ExtResource("25_wo5nf")
-muzzle = NodePath("../Skeleton3D/BoneAttachment3D/Rifle/Muzzle")
+muzzle = NodePath("../Skeleton3D/LeftArm/Rifle/Muzzle")
 
 [node name="Health" type="Node" parent="." index="16" unique_id=1628286876]
 script = ExtResource("26_s0mko")
 
 [node name="JetEffect" type="Node" parent="." index="17" unique_id=415378718 node_paths=PackedStringArray("left_jet", "right_jet")]
 script = ExtResource("28_x70vp")
-left_jet = NodePath("../Skeleton3D/BoneAttachment3D2/Jet2")
-right_jet = NodePath("../Skeleton3D/BoneAttachment3D3/Jet")
+left_jet = NodePath("../Skeleton3D/LeftFoot/Jet2")
+right_jet = NodePath("../Skeleton3D/RightFoot/Jet")
 
 [node name="GrenadeThrower" type="Node" parent="." index="18" unique_id=539634513 node_paths=PackedStringArray("throw_marker")]
 script = ExtResource("29_wo5nf")
 grenade_data = ExtResource("30_croik")
-throw_marker = NodePath("../Throw")
-
-[node name="Throw" type="Marker3D" parent="." index="19" unique_id=1285437165]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5894446, 0.08435583)
+throw_marker = NodePath("../Skeleton3D/RightHand/Throw")

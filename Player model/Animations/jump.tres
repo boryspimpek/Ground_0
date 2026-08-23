@@ -1,7 +1,8 @@
 [gd_resource type="Animation" format=3 uid="uid://bwpbn3583vk6n"]
 
 [ext_resource type="AudioStream" uid="uid://hst284h4lxom" path="res://assets/Sounds/walking/walking_single_step.mp3" id="1_2l6uk"]
-[ext_resource type="AudioStream" uid="uid://cp4m8e4qcjybc" path="res://assets/Sounds/walking/jump.mp3" id="2_31akd"]
+[ext_resource type="AudioStream" uid="uid://brn5hmv8e7jng" path="res://assets/Sounds/walking/space_jump.mp3" id="2_7stnd"]
+[ext_resource type="AudioStream" uid="uid://bvttlheug7m20" path="res://assets/Sounds/grunt/grunt5.mp3" id="3_31akd"]
 
 [resource]
 resource_name = "mixamo_com"
@@ -298,10 +299,25 @@ tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/keys = {
 "clips": [{
-"end_offset": 0.23655875,
-"start_offset": 0.025165824,
-"stream": ExtResource("2_31akd")
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_7stnd")
 }],
 "times": PackedFloat32Array(0)
 }
 tracks/37/use_blend = true
+tracks/38/type = "audio"
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/path = NodePath("AudioPlayer")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_31akd")
+}],
+"times": PackedFloat32Array(0.06666667)
+}
+tracks/38/use_blend = true

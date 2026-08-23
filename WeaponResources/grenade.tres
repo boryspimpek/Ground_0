@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://6okj4uhag0tm" path="res://assets/BinbunVFX_Vol2/ExplosionFX/effects/air/vfx_air_explosion_01.tscn" id="1_j722m"]
 [ext_resource type="PackedScene" uid="uid://cgmc3ny2mvo7d" path="res://Player/Grenade.tscn" id="2_3adnv"]
+[ext_resource type="AudioStream" uid="uid://o38i7dtswbct" path="res://assets/Sounds/granade/Sci-fi_plasma_grenad_#1-1787495286331.wav" id="2_exh8l"]
 [ext_resource type="Script" uid="uid://dlk6xct2a8v4c" path="res://WeaponResources/grenade_data.gd" id="3_exh8l"]
 
 [resource]
@@ -14,3 +15,4 @@ damage = 100.0
 min_damage_multiplier = 1.0
 grenade_scene = ExtResource("2_3adnv")
 explosion_effect_scene = ExtResource("1_j722m")
+explosion_sound = ExtResource("2_exh8l")
