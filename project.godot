@@ -26,6 +26,10 @@ settings/addon_root_folder="res://addons/debug_draw_3d"
 
 window/size/always_on_top=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
+
 [input]
 
 move_left={
