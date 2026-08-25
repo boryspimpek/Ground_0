@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://2unj4i8qa4wh"]
 
 [ext_resource type="Texture2D" uid="uid://5vkr6iwoprjc" path="res://assets/Textures/snow_01_1k/snow_01_color_1k.png" id="2_g0c8m"]
-[ext_resource type="Material" path="res://lava_shader_material.tres" id="3_g0c8m"]
+[ext_resource type="Material" uid="uid://dk55l8xqowa7n" path="res://lava_shader_material.tres" id="3_g0c8m"]
 [ext_resource type="Texture2D" uid="uid://btuhmrf04g2uu" path="res://assets/Textures/snow_01_1k/snow_01_normal_gl_1k.png" id="3_yk8xm"]
 [ext_resource type="Texture2D" uid="uid://dybx0qnnmropb" path="res://assets/Textures/old_road_01_1k/old_road_01_1k/old_road_01_baseColor_1k.png" id="5_yk8xm"]
 
