@@ -2,7 +2,15 @@
 
 [ext_resource type="Material" uid="uid://bvjpxvbua7asd" path="res://assets/Textures/Snow004_1K-JPG/Snow004_1K-JPG.tres" id="1_5qfex"]
 [ext_resource type="Material" uid="uid://dk55l8xqowa7n" path="res://lava_shader_material.tres" id="3_g0c8m"]
+[ext_resource type="PackedScene" uid="uid://cb8cr3v4jvxmc" path="res://Models/sci_fi_building.tscn" id="4_75m07"]
+[ext_resource type="PackedScene" uid="uid://cf6ciwcxasfm" path="res://Models/barrel.tscn" id="5_jnbv5"]
 [ext_resource type="Texture2D" uid="uid://dybx0qnnmropb" path="res://assets/Textures/old_road_01_1k/old_road_01_1k/old_road_01_baseColor_1k.png" id="5_yk8xm"]
+[ext_resource type="PackedScene" uid="uid://bae1v0kbh7ra4" path="res://assets/Models/Radio Telescope/Radio Telescope.fbx" id="6_pq03o"]
+[ext_resource type="PackedScene" uid="uid://b870jufkeqh1j" path="res://Models/sentry.tscn" id="7_khxe0"]
+[ext_resource type="PackedScene" uid="uid://bjup8uk8t245l" path="res://Models/uaz.tscn" id="8_ba8eo"]
+[ext_resource type="PackedScene" uid="uid://be1atn3wj1si7" path="res://Models/generator.tscn" id="9_w8iqc"]
+[ext_resource type="PackedScene" uid="uid://dykg20h7wu5y7" path="res://Models/rust_cars.tscn" id="10_vv2b1"]
+[ext_resource type="PackedScene" uid="uid://dxk77hdqi8h7m" path="res://Models/aircraft.tscn" id="11_vblce"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_veab6"]
 
@@ -69,3 +77,30 @@ transform = Transform3D(-0.9749631, 0, 0.22236532, 0, 1, 0, -0.22236532, 0, -0.9
 material_override = SubResource("StandardMaterial3D_612a5")
 use_collision = true
 size = Vector3(16, 1, 108)
+
+[node name="SciFiBuilding" parent="." unique_id=21498918 instance=ExtResource("4_75m07")]
+transform = Transform3D(0.2591831, 0, -0.2352108, 0, 0.35, 0, 0.2352108, 0, 0.2591831, 16.98776, 0, -8.952473)
+
+[node name="Barrel" parent="." unique_id=708475063 instance=ExtResource("5_jnbv5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.495039, 0, 8.218149)
+
+[node name="Radio Telescope" parent="." unique_id=1827562756 instance=ExtResource("6_pq03o")]
+transform = Transform3D(-0.9976997, 0, 0.06778904, 0, 1, 0, -0.06778904, 0, -0.9976997, -24.908493, -0.23670268, -58.306538)
+
+[node name="sentry" parent="." unique_id=353209582 instance=ExtResource("7_khxe0")]
+transform = Transform3D(-1.5668236, 0, 0.64659786, 0, 1.695, 0, -0.64659786, 0, -1.5668236, -35.694687, 0.031757355, -54.019615)
+
+[node name="sentry2" parent="." unique_id=1801391500 instance=ExtResource("7_khxe0")]
+transform = Transform3D(-1.5668236, 0, 0.64659786, 0, 1.695, 0, -0.64659786, 0, -1.5668236, -16.300255, 0.34790802, -56.567104)
+
+[node name="UAZ" parent="." unique_id=1126700190 instance=ExtResource("8_ba8eo")]
+transform = Transform3D(0.87858516, -0.4443869, 0.17495309, 0.37039044, 0.86527735, 0.33779618, -0.30149502, -0.23198174, 0.92481655, -8.266262, 0.4248415, 37.646965)
+
+[node name="generator" parent="." unique_id=158756211 instance=ExtResource("9_w8iqc")]
+transform = Transform3D(-0.6963388, 0, 0.71771324, 0, 1, 0, -0.71771324, 0, -0.6963388, 23.5797, -0.009791493, -7.0204306)
+
+[node name="rustcars" parent="." unique_id=552070772 instance=ExtResource("10_vv2b1")]
+transform = Transform3D(0.13421091, 0, -0.9909528, 0, 1, 0, 0.9909528, 0, 0.13421091, 4.9211, 0, 22.630642)
+
+[node name="aircraft" parent="." unique_id=514496576 instance=ExtResource("11_vblce")]
+transform = Transform3D(0.1142578, -0.33208257, 0.93630475, 0.20035765, 0.93081325, 0.305685, -0.9730376, 0.15266883, 0.17288752, 2.6762972, -0.25486755, -37.996925)

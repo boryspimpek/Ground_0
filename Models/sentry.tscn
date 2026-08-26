@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://b870jufkeqh1j"]
+
+[ext_resource type="PackedScene" uid="uid://rfsgn6pu21eb" path="res://assets/Models/Sentry/sentry.fbx" id="1_oqwm7"]
+
+[node name="sentry" unique_id=353209582 instance=ExtResource("1_oqwm7")]

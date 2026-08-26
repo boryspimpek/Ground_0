@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dykg20h7wu5y7"]
+
+[ext_resource type="PackedScene" uid="uid://wr61eevpi575" path="res://assets/Models/abandoned cars/fbx.fbx" id="1_2mtev"]
+[ext_resource type="Texture2D" uid="uid://dgl8bnw6juvcw" path="res://assets/Models/abandoned cars/textures/xmppmax_v1_1_4_3_d.jpg" id="2_ossbg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipw3t"]
+cull_mode = 2
+albedo_texture = ExtResource("2_ossbg")
+
+[node name="rustcars" unique_id=552070772 instance=ExtResource("1_2mtev")]
+
+[node name="Group001" parent="RustyCarsFree" parent_id_path=PackedInt32Array(1766319174) index="0" unique_id=766063306]
+visible = false
+
+[node name="SM_asset_04" parent="RustyCarsFree/Group001" index="0" unique_id=1796476082]
+surface_material_override/0 = SubResource("StandardMaterial3D_ipw3t")
+
+[node name="SM_ivy_00" parent="RustyCarsFree/Group001" index="1" unique_id=2059744707]
+visible = false
+
+[node name="SM_ivy_05" parent="RustyCarsFree/Group001/SM_ivy_00" index="0" unique_id=262229324]
+visible = false
+
+[node name="SM_ivy_06" parent="RustyCarsFree/Group001" index="2" unique_id=599522146]
+visible = false
+
+[node name="SM_ivy_07" parent="RustyCarsFree/Group001" index="3" unique_id=1379511631]
+visible = false
+
+[node name="SM_ivy_08" parent="RustyCarsFree/Group001" index="4" unique_id=1734210967]
+visible = false
+
+[node name="SM_ivy_09" parent="RustyCarsFree/Group001" index="5" unique_id=1619424926]
+visible = false
+
+[node name="SM_ivy_10" parent="RustyCarsFree/Group002" parent_id_path=PackedInt32Array(1165364412) index="1" unique_id=1315768911]
+visible = false
+
+[node name="SM_ivy_11" parent="RustyCarsFree/Group002" parent_id_path=PackedInt32Array(1165364412) index="2" unique_id=1773804639]
+visible = false
+
+[node name="Group003" parent="RustyCarsFree" parent_id_path=PackedInt32Array(1766319174) index="2" unique_id=1315500843]
+visible = false
+
+[node name="Group004" parent="RustyCarsFree" parent_id_path=PackedInt32Array(1766319174) index="3" unique_id=1631518227]
+visible = false
+
+[node name="SM_asset_02" parent="RustyCarsFree" parent_id_path=PackedInt32Array(1766319174) index="4" unique_id=1930369754]
+visible = false

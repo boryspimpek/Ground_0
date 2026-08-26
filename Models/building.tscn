@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dsjpub0tv01mf"]
+
+[ext_resource type="PackedScene" uid="uid://bxfktktwalaci" path="res://assets/Models/building/FBX/FBX/ABDN 5.fbx" id="1_4lt0c"]
+[ext_resource type="Texture2D" uid="uid://b6g8aycbqwwa2" path="res://assets/Models/building/textures/textures/ABDN 5 CON_Base_color.jpg" id="2_c7he3"]
+[ext_resource type="Texture2D" uid="uid://dm2mbwi50s5xm" path="res://assets/Models/building/textures/textures/ABDN BUILDING COMPONENT_Base_color.jpg" id="3_7xksg"]
+[ext_resource type="Texture2D" uid="uid://bng14y5uwknsm" path="res://assets/Models/building/textures/textures/ABDN RUBBLE_Base_color.jpg" id="4_agds7"]
+[ext_resource type="Texture2D" uid="uid://cpin3hdq4k4c6" path="res://assets/Models/building/textures/textures/ABND 5 WOOD GLASS_Base_color.jpg" id="5_u1h07"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1eq68"]
+albedo_texture = ExtResource("2_c7he3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7obdf"]
+albedo_texture = ExtResource("3_7xksg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prxap"]
+albedo_texture = ExtResource("4_agds7")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7371p"]
+albedo_texture = ExtResource("5_u1h07")
+
+[node name="building" unique_id=1341874286 instance=ExtResource("1_4lt0c")]
+
+[node name="ABDN 5" parent="." index="0" unique_id=1893911455]
+surface_material_override/0 = SubResource("StandardMaterial3D_1eq68")
+
+[node name="ABDN 5_002" parent="." index="1" unique_id=1486230205]
+surface_material_override/0 = SubResource("StandardMaterial3D_7obdf")
+
+[node name="ABDN 5_003" parent="." index="2" unique_id=776623921]
+surface_material_override/0 = SubResource("StandardMaterial3D_prxap")
+
+[node name="ABDN 5_004" parent="." index="3" unique_id=1996949481]
+surface_material_override/0 = SubResource("StandardMaterial3D_7371p")

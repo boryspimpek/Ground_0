@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://be1atn3wj1si7"]
+
+[ext_resource type="PackedScene" uid="uid://uu5wmmd7bob5" path="res://assets/Models/generator/electric+generator.fbx" id="1_7k4ff"]
+[ext_resource type="Texture2D" uid="uid://oel3qyiil4mm" path="res://assets/Models/generator/Textures/Textures/Generator_Base_Color.PNG" id="2_qmvr1"]
+[ext_resource type="Texture2D" uid="uid://cn7sjy5ux31hk" path="res://assets/Models/generator/Textures/Textures/Leaves/LeafSet017_1K-JPG_Color.jpg.png" id="3_oqb8q"]
+[ext_resource type="Texture2D" uid="uid://cdyiemsu1q4q4" path="res://assets/Models/generator/Textures/Textures/Bark/2K-ovankol_basecolor.png" id="4_u5wqx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlvgo"]
+albedo_texture = ExtResource("2_qmvr1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j06iv"]
+transparency = 1
+albedo_texture = ExtResource("3_oqb8q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qa58t"]
+albedo_texture = ExtResource("4_u5wqx")
+
+[node name="generator" unique_id=158756211 instance=ExtResource("1_7k4ff")]
+
+[node name="Generator" parent="." index="0" unique_id=725502110]
+surface_material_override/0 = SubResource("StandardMaterial3D_qlvgo")
+
+[node name="IvyLeaf" parent="Generator" index="0" unique_id=1869180813]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_j06iv")
+
+[node name="Branches" parent="Generator" index="1" unique_id=1416950004]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_qa58t")

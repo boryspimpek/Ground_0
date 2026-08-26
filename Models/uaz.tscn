@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bjup8uk8t245l"]
+
+[ext_resource type="PackedScene" uid="uid://cna5lv8qat3gh" path="res://assets/Models/uaz/Post_Apocalyptic_UAZ.fbx" id="1_j4i1f"]
+
+[node name="UAZ" unique_id=1126700190 instance=ExtResource("1_j4i1f")]

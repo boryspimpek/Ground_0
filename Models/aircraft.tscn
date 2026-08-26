@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dxk77hdqi8h7m"]
+
+[ext_resource type="PackedScene" uid="uid://bmyfmtjetxklk" path="res://assets/Models/airoplane/fbx.fbx" id="1_k3i7d"]
+[ext_resource type="Texture2D" uid="uid://btfwr8j6kgppc" path="res://assets/Models/airoplane/53.jpg" id="2_ycxrl"]
+[ext_resource type="Texture2D" uid="uid://bx4nquklriycy" path="res://assets/Models/airoplane/gtivy_Branch.jpg" id="3_b4epc"]
+[ext_resource type="Texture2D" uid="uid://dl7ynjwfje1at" path="res://assets/Models/airoplane/gtivy_leaf_diffuse.jpg" id="4_w3wlr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfjry"]
+albedo_texture = ExtResource("2_ycxrl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_acsfr"]
+albedo_texture = ExtResource("3_b4epc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c1pai"]
+albedo_texture = ExtResource("4_w3wlr")
+
+[node name="aircraft" unique_id=514496576 instance=ExtResource("1_k3i7d")]
+
+[node name="SM_aircraft_" parent="AbandonedAircraft/Group001" parent_id_path=PackedInt32Array(1845204104) index="0" unique_id=710688370]
+surface_material_override/0 = SubResource("StandardMaterial3D_dfjry")
+
+[node name="SM_ivyBranch_" parent="AbandonedAircraft/Group001" parent_id_path=PackedInt32Array(1845204104) index="1" unique_id=1078766255]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_acsfr")
+
+[node name="SM_ivyLeaves_" parent="AbandonedAircraft/Group001/SM_ivyBranch_" index="0" unique_id=423257725]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_c1pai")

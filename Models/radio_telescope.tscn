@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://gx7ge15t30jf"]
+
+[ext_resource type="PackedScene" uid="uid://bae1v0kbh7ra4" path="res://assets/Models/Radio Telescope/Radio Telescope.fbx" id="1_sygjs"]
+
+[node name="Radio Telescope" unique_id=1827562756 instance=ExtResource("1_sygjs")]

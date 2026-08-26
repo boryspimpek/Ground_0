@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cb8cr3v4jvxmc"]
+
+[ext_resource type="PackedScene" uid="uid://dmb6ir5cglimv" path="res://assets/Models/cgtrader_optimized_Sci+Fi+Building.fbx" id="1_jfe7y"]
+
+[node name="SciFiBuilding" unique_id=21498918 instance=ExtResource("1_jfe7y")]

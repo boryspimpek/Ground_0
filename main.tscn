@@ -3,8 +3,9 @@
 [ext_resource type="Script" uid="uid://c1g6u7c33v7jy" path="res://Player/Camera.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://ceapadi6n8wcj" path="res://assets/sky box/kloofendal_48d_partly_cloudy_puresky.jpg" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://ror7gej2r6ap" path="res://Player/Player.tscn" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://brme6u266if1i" path="res://assets/kenney_prototype-textures/Dark/texture_01.png" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://c7pifgmmeka61" path="res://Enemies/enemy_1.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://mscmcdj6uxcf" path="res://Hud/hud.tscn" id="7_272bh"]
-[ext_resource type="PackedScene" uid="uid://2unj4i8qa4wh" path="res://lake.tscn" id="8_5vw27"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lquwl"]
 panorama = ExtResource("1_1bvp3")
@@ -18,25 +19,45 @@ tonemap_mode = 4
 glow_enabled = true
 glow_intensity = 1.0
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_272bh"]
+vertices = PackedVector3Array(-45, 1, -38.25, -45, 1, 38.25, 45, 1, 38.25, 45, 1, -38.25)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
+albedo_texture = ExtResource("5_lquwl")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
 [node name="main" type="Node3D" unique_id=711130756]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=317984252]
 environment = SubResource("Environment_h2yge")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=877989289]
-transform = Transform3D(-0.90923613, 0.29435498, -0.29435498, 0, 0.70710677, 0.70710677, 0.4162808, 0.64292705, -0.64292705, 0, 6.9103527, 0)
+transform = Transform3D(0.47869188, 0.6208277, -0.6208277, 0, 0.70710677, 0.70710677, 0.877983, -0.33848625, 0.33848625, 0, 6.9103527, 0)
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=346466420 node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, 0, 0, 0.43837115, 0.89879405, 0, -0.89879405, 0.43837115, 0, 10, 6.61)
-visible = false
+transform = Transform3D(0.99999994, 0, 0, 0, 0.5562956, 0.8309845, 0, -0.8309844, 0.55629563, 0, 10, 6.61)
 size = 15.0
 script = ExtResource("1_0xm2m")
-target = NodePath("../Player2")
+target = NodePath("../Player")
 
-[node name="Player2" parent="." unique_id=812363354 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)
+[node name="Player" parent="." unique_id=812363354 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0.5, 0)
 
 [node name="HUD" parent="." unique_id=319821492 instance=ExtResource("7_272bh")]
 
-[node name="Lake" parent="." unique_id=1187443697 instance=ExtResource("8_5vw27")]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=436223479]
+navigation_mesh = SubResource("NavigationMesh_272bh")
+
+[node name="Node3D" type="CSGCombiner3D" parent="NavigationRegion3D" unique_id=1700766236]
+material_override = SubResource("StandardMaterial3D_lquwl")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Node3D" unique_id=522533730]
+use_collision = true
+size = Vector3(91, 1, 77.5)
+
+[node name="Enemy1" parent="." unique_id=1749527315 instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.745, -17.625)
