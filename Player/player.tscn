@@ -36,8 +36,6 @@
 radius = 0.16601563
 height = 0.9831543
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_bgaaw"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_roy6y"]
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
@@ -187,7 +185,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49206543, 0)
 shape = SubResource("CapsuleShape3D_bcy2i")
 
 [node name="AudioPlayer" type="AudioStreamPlayer3D" parent="." index="1" unique_id=1053742196]
-stream = SubResource("AudioStreamPolyphonic_bgaaw")
 
 [node name="WeaponAudioPlayer" type="AudioStreamPlayer3D" parent="." index="2" unique_id=352213565]
 

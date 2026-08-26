@@ -48,7 +48,8 @@ func _explode() -> void:
 		audio_player.stream = _data.explosion_sound
 		audio_player.reparent(get_tree().current_scene, true)
 		audio_player.play()
-	get_tree().create_timer(audio_player.stream.get_length()).timeout.connect(audio_player.queue_free)
+		var sound_length := audio_player.stream.get_length()
+		get_tree().create_timer(sound_length).timeout.connect(audio_player.queue_free)
 	queue_free()
 
 func _calculate_damage(distance: float) -> float:
