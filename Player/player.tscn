@@ -6,7 +6,7 @@
 [ext_resource type="Animation" uid="uid://d2c7r6swkepdb" path="res://Player model/Animations/firing.tres" id="3_nxtay"]
 [ext_resource type="Texture2D" uid="uid://ccqlhcarqfr3m" path="res://Player model/Model/T-Pose_0.png" id="3_um7uo"]
 [ext_resource type="Animation" uid="uid://dpvq8btbl1aop" path="res://Player model/Animations/idle.tres" id="4_um7uo"]
-[ext_resource type="PackedScene" uid="uid://j1lqk5wcskvm" path="res://jet_engine.tscn" id="5_hqjia"]
+[ext_resource type="PackedScene" uid="uid://j1lqk5wcskvm" path="res://Player/jet_engine.tscn" id="5_hqjia"]
 [ext_resource type="Animation" uid="uid://b63afhsfxxiu0" path="res://Player model/Animations/idle_aim.tres" id="5_slvjm"]
 [ext_resource type="Animation" uid="uid://bwpbn3583vk6n" path="res://Player model/Animations/jump.tres" id="6_m035p"]
 [ext_resource type="Animation" uid="uid://ga5t6rbyyuve" path="res://Player model/Animations/run.tres" id="7_ajnc2"]
@@ -327,7 +327,7 @@ right_foot_marker = NodePath("../Skeleton3D/RightFoot/RightFootMarker")
 script = ExtResource("22_u5tep")
 assist_radius = 11.0
 assist_cone_angle = 15.0
-lose_target_angle = 15.0
+lose_target_angle = 25.0
 pull_strength = 1.0
 
 [node name="Combat" type="Node" parent="." index="12" unique_id=1252543771]

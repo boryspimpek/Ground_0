@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://2unj4i8qa4wh"]
 
 [ext_resource type="Material" uid="uid://bvjpxvbua7asd" path="res://assets/Textures/Snow004_1K-JPG/Snow004_1K-JPG.tres" id="1_5qfex"]
-[ext_resource type="Material" uid="uid://dk55l8xqowa7n" path="res://lava_shader_material.tres" id="3_g0c8m"]
+[ext_resource type="Material" uid="uid://dk55l8xqowa7n" path="res://assets/Materials/lava_shader_material.tres" id="3_g0c8m"]
 [ext_resource type="PackedScene" uid="uid://cb8cr3v4jvxmc" path="res://Models/sci_fi_building.tscn" id="4_75m07"]
 [ext_resource type="PackedScene" uid="uid://cf6ciwcxasfm" path="res://Models/barrel.tscn" id="5_jnbv5"]
 [ext_resource type="Texture2D" uid="uid://dybx0qnnmropb" path="res://assets/Textures/old_road_01_1k/old_road_01_1k/old_road_01_baseColor_1k.png" id="5_yk8xm"]

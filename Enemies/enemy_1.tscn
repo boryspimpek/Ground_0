@@ -22,14 +22,18 @@ material = SubResource("StandardMaterial3D_3klji")
 top_radius = 0.145
 height = 0.997
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_vy3xu"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_detection"]
 radius = 10.0
 
-[node name="Enemy1" type="CharacterBody3D" unique_id=1756610018]
+[node name="Enemy1" type="CharacterBody3D" unique_id=1756610018 groups=["enemies"]]
 script = ExtResource("1_2nuh0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=885256060]
 shape = SubResource("CapsuleShape3D_vy3xu")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=245637817]
+target_desired_distance = 2.0
+avoidance_enabled = true
 
 [node name="Visuals" type="Node3D" parent="." unique_id=1827152631]
 
@@ -40,13 +44,14 @@ mesh = SubResource("CapsuleMesh_2nuh0")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.595, -0.24)
 mesh = SubResource("CylinderMesh_4cuqr")
 
-[node name="DetectionArea" type="Area3D" parent="." unique_id=199263394]
+[node name="DetectionArea" type="Area3D" parent="." unique_id=245637818]
+collision_layer = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=1650129362]
-shape = SubResource("SphereShape3D_vy3xu")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" unique_id=245637819]
+shape = SubResource("SphereShape3D_detection")
 
 [node name="Health" type="Node" parent="." unique_id=300842045]
 script = ExtResource("2_vy3xu")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=245637817]
-avoidance_enabled = true
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]

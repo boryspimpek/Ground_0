@@ -23,6 +23,10 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
+	if not is_instance_valid(target):
+		nav_agent.set_velocity(Vector3.ZERO)
+		return
+
 	# Ustawienie celu nawigacji
 	nav_agent.target_position = target.global_position
 
@@ -59,10 +63,12 @@ func _try_attack() -> void:
 
 # --- SYGNAŁY Z DETECTION AREA ---
 func _on_detection_area_body_entered(body: Node3D) -> void:
+	print("Wykryto ciało: ", body.name)
 	if body.is_in_group("player"):
 		target = body
 
 func _on_detection_area_body_exited(body: Node3D) -> void:
+	print("Ciało opuściło obszar: ", body.name)
 	if body == target:
 		target = null
 
