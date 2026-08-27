@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d0iuhrir7op47"]
+[gd_scene format=3 uid="uid://c8hvfkuy7ggfa"]
 
 [ext_resource type="PackedScene" uid="uid://w8ii3i4xaue5" path="res://Player model/Model/T-Pose.fbx" id="1_v0mt8"]
 [ext_resource type="Script" uid="uid://bfp4gifp06gdj" path="res://Player/Player.gd" id="2_mujjb"]
