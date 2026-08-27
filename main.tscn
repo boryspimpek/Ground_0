@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://c1g6u7c33v7jy" path="res://Player/Camera.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://ceapadi6n8wcj" path="res://assets/sky box/kloofendal_48d_partly_cloudy_puresky.jpg" id="1_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://ror7gej2r6ap" path="res://Player/Player.tscn" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://brme6u266if1i" path="res://assets/kenney_prototype-textures/Dark/texture_01.png" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c7pifgmmeka61" path="res://Enemies/enemy_1.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://dx0y6c20qn2le" path="res://Player2 model/Model/Player_2.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://mscmcdj6uxcf" path="res://Hud/hud.tscn" id="7_272bh"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lquwl"]
@@ -37,14 +37,10 @@ environment = SubResource("Environment_h2yge")
 transform = Transform3D(0.47869188, 0.6208277, -0.6208277, 0, 0.70710677, 0.70710677, 0.877983, -0.33848625, 0.33848625, 0, 6.9103527, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=346466420 node_paths=PackedStringArray("target")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.5562956, 0.8309845, 0, -0.8309844, 0.55629563, 0, 10, 9.425)
+[node name="Camera3D" type="Camera3D" parent="." unique_id=346466420]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.50452757, 0.8633956, 0, -0.86339545, 0.5045276, 0, 7.35, 4.48)
 size = 15.0
 script = ExtResource("1_0xm2m")
-target = NodePath("../Player")
-
-[node name="Player" parent="." unique_id=812363354 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0.5, 0)
 
 [node name="HUD" parent="." unique_id=319821492 instance=ExtResource("7_272bh")]
 
@@ -240,3 +236,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 1.5, -42)
 
 [node name="Enemy7" parent="Enemies" unique_id=1196504192 instance=ExtResource("6_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.5, 1.5, -43.5)
+
+[node name="Player" parent="." unique_id=1379137831 instance=ExtResource("6_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

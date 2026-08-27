@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://vt51tkut6ngq" path="res://assets/Guns/12 Sci-Fi Weapons Asset Pack.fbx" id="1_fkun3"]
 
 [node name="Rifle" unique_id=1518743905 instance=ExtResource("1_fkun3")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="Gun_3" parent="." index="0" unique_id=67322210]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, 0)

@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://dx0y6c20qn2le"]
-
-[ext_resource type="PackedScene" uid="uid://c71jp6t4wwe5l" path="res://Player2 model/SOLDIER2.glb" id="1_t1vmv"]
-
-[node name="Player2" unique_id=1473534939 instance=ExtResource("1_t1vmv")]

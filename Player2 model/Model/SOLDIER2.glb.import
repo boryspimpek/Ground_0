@@ -4,16 +4,16 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c71jp6t4wwe5l"
-path="res://.godot/imported/SOLDIER2.glb-958dde735e105bb09ca58273afe8b93f.scn"
+path="res://.godot/imported/SOLDIER2.glb-95983c1f11251c35684469fccbc4b4cf.scn"
 
 [deps]
 
-source_file="res://Player2 model/SOLDIER2.glb"
-dest_files=["res://.godot/imported/SOLDIER2.glb-958dde735e105bb09ca58273afe8b93f.scn"]
+source_file="res://Player2 model/Model/SOLDIER2.glb"
+dest_files=["res://.godot/imported/SOLDIER2.glb-95983c1f11251c35684469fccbc4b4cf.scn"]
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
