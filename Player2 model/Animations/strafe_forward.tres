@@ -1,5 +1,7 @@
 [gd_resource type="Animation" format=3 uid="uid://c3ttijrext6fq"]
 
+[ext_resource type="AudioStream" uid="uid://hst284h4lxom" path="res://assets/Sounds/walking/walking_single_step.mp3" id="1_prcje"]
+
 [resource]
 resource_name = "mixamo_com"
 length = 1.3666667
@@ -207,3 +209,39 @@ tracks/28/path = NodePath("Skeleton3D:mixamorig_RightHandIndex3")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = PackedFloat32Array(0, 1, 0.26860577, 0.02191171, 0.024301047, 0.9626943)
+tracks/29/type = "method"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Footprint")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0.43333334, 1.1163),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"left_footstep"
+}, {
+"args": [],
+"method": &"right_footstep"
+}]
+}
+tracks/30/type = "audio"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("AudioPlayer")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"clips": [{
+"end_offset": 0.42579782,
+"start_offset": 0.0,
+"stream": ExtResource("1_prcje")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.3273992,
+"stream": ExtResource("1_prcje")
+}],
+"times": PackedFloat32Array(0.43333334, 1.1163)
+}
+tracks/30/use_blend = true
