@@ -207,3 +207,20 @@ tracks/28/path = NodePath("Skeleton3D:mixamorig_RightHandIndex3")
 tracks/28/interp = 1
 tracks/28/loop_wrap = true
 tracks/28/keys = PackedFloat32Array(0, 1, 0.47172338, 0.033038165, 0.055844344, 0.87935597)
+tracks/29/type = "method"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("Footprint")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat32Array(0.23333333, 0.56666666),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"left_footstep"
+}, {
+"args": [],
+"method": &"right_footstep"
+}]
+}
