@@ -61,8 +61,7 @@ func _physics_process(delta: float) -> void:
 
 	if distance_to_target > pre_attack_trigger_distance:
 		pre_attack_done = false
-
-	_set_electric_visible(false)
+		_set_electric_visible(false)
 
 	if flying:
 		var flying_direction := target.global_position - global_position
@@ -109,13 +108,14 @@ func _rotate_towards_velocity() -> void:
 		visuals.global_transform.basis = visuals.global_transform.basis.slerp(target_basis, rotation_speed * get_physics_process_delta_time())
 
 func _prepare_attack() -> void:
+	# Włącz efekt elektryczny przed atakiem
+	_set_electric_visible(true)
 	print("Przygotowanie ataku")
 
 func _try_attack() -> void:
 	# Obróć wroga bezpośrednio w stronę gracza podczas ataku
 	if is_instance_valid(target):
 		visuals.look_at(Vector3(target.global_position.x, visuals.global_position.y, target.global_position.z), Vector3.UP)
-	_set_electric_visible(true)
 	print("Atakowanie celu: ", target.name)
 
 # --- SYGNAŁY Z DETECTION AREA ---
