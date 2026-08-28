@@ -38,7 +38,7 @@ func update(delta: float) -> void:
 	var move_dir := (cam_right * move_input.x + cam_forward * move_input.y).normalized()
 
 	_is_aiming = aim_input.length() > aim_threshold
-	laser.visible = _is_aiming
+	# laser.visible = _is_aiming
 	animation_tree.set(ANIM_IS_AIMING, "strafe" if _is_aiming else "normal")
 
 	if _is_aiming:

@@ -8,3 +8,8 @@ script = ExtResource("1_82oe0")
 
 [node name="MProjectileJavelinVFX_04" parent="." unique_id=2144625342 instance=ExtResource("2_c2vf2")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+preview = true
+one_shot = false
+autoplay = true
+primary_color = Color(0.58589965, 0, 0, 1)
+light_color = Color(0.50724363, 5.95618e-07, 2.8878452e-07, 1)
