@@ -4,12 +4,15 @@ extends CharacterBody3D
 @export var rotation_speed: float = 12.0
 @export var flying: bool = false
 
+
 @onready var health: Health = $Health
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var detection_area: Area3D = $DetectionArea
 @onready var visuals: Node3D = self
 @onready var electric: Node3D = get_node_or_null("ElectricAttack")
 
+var pre_attack_distance: float = 1.0
+var pre_attack_done := false
 
 var target: Node3D = null
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -44,20 +47,32 @@ func _physics_process(delta: float) -> void:
 		horizontal_offset.y = 0.0
 		distance_to_target = horizontal_offset.length()
 
+	var pre_attack_trigger_distance := nav_agent.target_desired_distance + pre_attack_distance
+
+	if distance_to_target <= pre_attack_trigger_distance and not pre_attack_done:
+		pre_attack_done = true
+		_prepare_attack()
+
 	if distance_to_target <= nav_agent.target_desired_distance:
 		velocity = Vector3.ZERO
 		nav_agent.set_velocity(Vector3.ZERO)
 		_try_attack()
 		return
+
+	if distance_to_target > pre_attack_trigger_distance:
+		pre_attack_done = false
+
 	_set_electric_visible(false)
 
 	if flying:
 		var flying_direction := target.global_position - global_position
 		flying_direction.y = 0.0
+
 		if flying_direction.length_squared() > 0.01:
 			velocity = flying_direction.normalized() * speed
 			move_and_slide()
 			_rotate_towards_velocity()
+
 		return
 
 	# Ustawienie celu nawigacji
@@ -93,6 +108,8 @@ func _rotate_towards_velocity() -> void:
 		var target_basis = visuals.global_transform.looking_at(target_dir, Vector3.UP).basis
 		visuals.global_transform.basis = visuals.global_transform.basis.slerp(target_basis, rotation_speed * get_physics_process_delta_time())
 
+func _prepare_attack() -> void:
+	print("Przygotowanie ataku")
 
 func _try_attack() -> void:
 	# Obróć wroga bezpośrednio w stronę gracza podczas ataku

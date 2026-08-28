@@ -73,6 +73,12 @@ flying = true
 [node name="Sci_Fi_Drone" parent="." index="0" unique_id=1385353527]
 transform = Transform3D(-0.25, 0, 3.4906465e-05, 0, 0.25, 0, -3.4906465e-05, 0, -0.25, 0.23531169, 0.13697577, -0.23636973)
 
+[node name="Cylinder_1_2" parent="Sci_Fi_Drone/Null" parent_id_path=PackedInt32Array(34397879) index="0" unique_id=1953401273]
+visible = false
+
+[node name="Cylinder" parent="Sci_Fi_Drone/Null" parent_id_path=PackedInt32Array(34397879) index="1" unique_id=951780875]
+visible = false
+
 [node name="Body" parent="Sci_Fi_Drone/Null" parent_id_path=PackedInt32Array(34397879) index="2" unique_id=2033765353]
 surface_material_override/0 = SubResource("StandardMaterial3D_ar37j")
 
