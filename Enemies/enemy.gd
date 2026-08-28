@@ -33,6 +33,18 @@ func _physics_process(delta: float) -> void:
 		nav_agent.set_velocity(Vector3.ZERO)
 		return
 
+	var distance_to_target := global_position.distance_to(target.global_position)
+	if flying:
+		var horizontal_offset := target.global_position - global_position
+		horizontal_offset.y = 0.0
+		distance_to_target = horizontal_offset.length()
+
+	if distance_to_target <= nav_agent.target_desired_distance:
+		velocity = Vector3.ZERO
+		nav_agent.set_velocity(Vector3.ZERO)
+		_try_attack()
+		return
+
 	if flying:
 		var flying_direction := target.global_position - global_position
 		flying_direction.y = 0.0
@@ -40,9 +52,6 @@ func _physics_process(delta: float) -> void:
 			velocity = flying_direction.normalized() * speed
 			move_and_slide()
 			_rotate_towards_velocity()
-		else:
-			velocity = Vector3.ZERO
-			_try_attack()
 		return
 
 	# Ustawienie celu nawigacji
