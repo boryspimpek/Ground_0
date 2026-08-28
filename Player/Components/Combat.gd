@@ -56,7 +56,7 @@ func shoot() -> void:
 	ammo.consume_round()
 	_cooldown_timer = weapon_data.cooldown
 
-	animation_tree.set(ANIM_SHOOT_SHOT, AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+	# animation_tree.set(ANIM_SHOOT_SHOT, AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
 	fx.spawn_muzzle_flash(weapon_data)
 	fx.play_sound(weapon_data.fire_sound)

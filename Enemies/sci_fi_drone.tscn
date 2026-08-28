@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://2wnqfmlvxldt"]
+
+[ext_resource type="PackedScene" uid="uid://k5wgm8y6h3ch" path="res://Enemies/Sci Fi Drone_Fbx/Sci Fi Drone.fbx" id="1_482if"]
+[ext_resource type="Script" uid="uid://j42e3rehfcda" path="res://Enemies/enemy.gd" id="2_kupem"]
+[ext_resource type="Script" uid="uid://bgyjbtwbffq5h" path="res://Player/Components/Health.gd" id="3_d8dht"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kupem"]
+radius = 1.0278585
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jnhbb"]
+radius = 10.0
+
+[node name="Sci Fi Drone" unique_id=309930858 groups=["enemies"] instance=ExtResource("1_482if")]
+script = ExtResource("2_kupem")
+
+[node name="Sci_Fi_Drone" parent="." index="0" unique_id=307179651]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.9380255, 0.5574148, 0.943868)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1170680034]
+shape = SubResource("SphereShape3D_kupem")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="2" unique_id=1882759097]
+target_desired_distance = 2.0
+avoidance_enabled = true
+
+[node name="DetectionArea" type="Area3D" parent="." index="3" unique_id=1341832199]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" index="0" unique_id=822100655]
+shape = SubResource("SphereShape3D_jnhbb")
+
+[node name="Health" type="Node" parent="." index="4" unique_id=1310895820]
+script = ExtResource("3_d8dht")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

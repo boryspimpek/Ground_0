@@ -5,7 +5,8 @@ extends CharacterBody3D
 
 @onready var health: Health = $Health
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
-@onready var visuals: Node3D = $Visuals
+@onready var detection_area: Area3D = $DetectionArea
+@onready var visuals: Node3D = self
 
 var target: Node3D = null
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -14,6 +15,10 @@ func _ready() -> void:
 	add_to_group("enemies")
 	health.died.connect(_on_died)
 	health.damaged.connect(_on_damaged)
+	if not detection_area.body_entered.is_connected(_on_detection_area_body_entered):
+		detection_area.body_entered.connect(_on_detection_area_body_entered)
+	if not detection_area.body_exited.is_connected(_on_detection_area_body_exited):
+		detection_area.body_exited.connect(_on_detection_area_body_exited)
 	
 	# Podpięcie bezpiecznego omijania innych wrogów (Avoidance)
 	nav_agent.velocity_computed.connect(_on_velocity_computed)

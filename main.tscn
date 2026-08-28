@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://brme6u266if1i" path="res://assets/kenney_prototype-textures/Dark/texture_01.png" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c7pifgmmeka61" path="res://Enemies/enemy_1.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://dx0y6c20qn2le" path="res://Player/Player_2.tscn" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://2wnqfmlvxldt" path="res://Enemies/sci_fi_drone.tscn" id="7_5vw27"]
 [ext_resource type="PackedScene" uid="uid://mscmcdj6uxcf" path="res://Hud/hud.tscn" id="7_272bh"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lquwl"]
@@ -239,3 +240,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.5, 1.5, -43.5)
 
 [node name="Player" parent="." unique_id=1379137831 instance=ExtResource("6_272bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Sci Fi Drone" parent="." unique_id=1010871186 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 4.084961, -20.345825)
