@@ -8,6 +8,8 @@ extends CharacterBody3D
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var detection_area: Area3D = $DetectionArea
 @onready var visuals: Node3D = self
+@onready var electric: Node3D = get_node_or_null("ElectricAttack")
+
 
 var target: Node3D = null
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -23,6 +25,8 @@ func _ready() -> void:
 	
 	# Podpięcie bezpiecznego omijania innych wrogów (Avoidance)
 	nav_agent.velocity_computed.connect(_on_velocity_computed)
+	if electric:
+		electric.visible = false  # Ukryj efekt elektryczny na początku
 
 func _physics_process(delta: float) -> void:
 	# Latajacy wrog utrzymuje wysokosc zamiast podlegac grawitacji.
@@ -68,6 +72,7 @@ func _physics_process(delta: float) -> void:
 		
 		# Wyszyłamy prośbę o bezpieczny ruch (z uwzględnieniem omijania innych wrogów)
 		nav_agent.set_velocity(target_velocity)
+		electric.visible = false  # Wyłącz efekt elektryczny, jeśli nie atakujemy
 
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
 	velocity.x = safe_velocity.x
@@ -88,7 +93,8 @@ func _try_attack() -> void:
 	# Obróć wroga bezpośrednio w stronę gracza podczas ataku
 	if is_instance_valid(target):
 		visuals.look_at(Vector3(target.global_position.x, visuals.global_position.y, target.global_position.z), Vector3.UP)
-	
+	electric.visible = true  # Włącz efekt elektryczny podczas ataku
+	print("Atakowanie celu: ", target.name)
 
 # --- SYGNAŁY Z DETECTION AREA ---
 func _on_detection_area_body_entered(body: Node3D) -> void:
@@ -98,6 +104,7 @@ func _on_detection_area_body_entered(body: Node3D) -> void:
 
 func _on_detection_area_body_exited(body: Node3D) -> void:
 	print("Ciało opuściło obszar: ", body.name)
+	electric.visible = false  # Wyłącz efekt elektryczny, jeśli cel opuścił obszar
 	if body == target:
 		target = null
 

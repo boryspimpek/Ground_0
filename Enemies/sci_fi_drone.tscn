@@ -68,6 +68,8 @@ radius = 0.08886719
 
 [node name="Sci Fi Drone" unique_id=309930858 groups=["enemies"] instance=ExtResource("1_482if")]
 script = ExtResource("2_kupem")
+speed = null
+rotation_speed = null
 flying = true
 
 [node name="Sci_Fi_Drone" parent="." index="0" unique_id=1385353527]
@@ -93,13 +95,13 @@ collision_layer = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" index="0" unique_id=822100655]
 shape = SubResource("SphereShape3D_jnhbb")
 
-[node name="Electric" type="Node3D" parent="." index="4" unique_id=460952712]
+[node name="ElectricAttack" type="Node3D" parent="." index="4" unique_id=460952712]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Electric" index="0" unique_id=2716417]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ElectricAttack" index="0" unique_id=2716417]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -0.645)
 mesh = SubResource("QuadMesh_lmnwc")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Electric" index="1" unique_id=1954242662]
+[node name="OmniLight3D" type="OmniLight3D" parent="ElectricAttack" index="1" unique_id=1954242662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.664917)
 light_color = Color(1, 0, 1, 1)
 light_energy = 8.0
@@ -107,9 +109,9 @@ light_size = 1.0
 light_specular = 10.0
 omni_range = 0.28
 
-[node name="Area3D" type="Area3D" parent="Electric" index="2" unique_id=1557577884]
+[node name="Area3D" type="Area3D" parent="ElectricAttack" index="2" unique_id=1557577884]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Electric/Area3D" index="0" unique_id=1781402164]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ElectricAttack/Area3D" index="0" unique_id=1781402164]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, -0.669)
 shape = SubResource("CylinderShape3D_mncod")
 
