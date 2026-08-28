@@ -68,8 +68,6 @@ radius = 0.08886719
 
 [node name="Sci Fi Drone" unique_id=309930858 groups=["enemies"] instance=ExtResource("1_482if")]
 script = ExtResource("2_kupem")
-speed = null
-rotation_speed = null
 flying = true
 
 [node name="Sci_Fi_Drone" parent="." index="0" unique_id=1385353527]
@@ -119,3 +117,5 @@ shape = SubResource("CylinderShape3D_mncod")
 script = ExtResource("3_d8dht")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_entered" from="ElectricAttack/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="ElectricAttack/Area3D" to="." method="_on_area_3d_body_exited"]

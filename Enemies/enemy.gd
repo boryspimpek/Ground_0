@@ -124,3 +124,13 @@ func _on_died(source: Node) -> void:
 	var source_name := str(source.name) if source else "nieznane źródło"
 	print(name, " zniszczony przez ", source_name)
 	queue_free()
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		print("Gracz wszedł w ElectricAttack/Area3D: ", body.name)
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		print("Gracz wyszedł z ElectricAttack/Area3D: ", body.name)
