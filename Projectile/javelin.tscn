@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d3pigm2371yh5"]
+
+[ext_resource type="Script" uid="uid://ddmxrq61le487" path="res://Projectile/projectile.gd" id="1_82oe0"]
+[ext_resource type="PackedScene" uid="uid://c3ef0ilf2xc1g" path="res://assets/BinbunVFX/magic_projectiles/effects/mprojectile_javelin/mprojectile_javelin_vfx_04.tscn" id="2_c2vf2"]
+
+[node name="javelin" type="Node3D" unique_id=465014309]
+script = ExtResource("1_82oe0")
+
+[node name="MProjectileJavelinVFX_04" parent="." unique_id=2144625342 instance=ExtResource("2_c2vf2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)

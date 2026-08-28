@@ -185,36 +185,37 @@ _data = {
 &"oneshot": SubResource("Animation_0wdjh")
 }
 
-[node name="MProjectileJavelinVFX_04" type="Node3D"]
+[node name="MProjectileJavelinVFX_04" type="Node3D" unique_id=2144625342]
 script = ExtResource("1_7tsqh")
+preview = false
+one_shot = true
+autoplay = false
 primary_color = Color(0.992157, 0.905882, 0.698039, 1)
 secondary_color = Color(0.945098, 0.356863, 0, 1)
 tertiary_color = Color(0.796078, 0.0352941, 0, 1)
 light_color = Color(0.945098, 0.356863, 0, 1)
 
-[node name="Head" type="MeshInstance3D" parent="."]
+[node name="Head" type="MeshInstance3D" parent="." unique_id=1635381650]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.77, 0, 0)
 material_override = ExtResource("1_dc7gh")
 mesh = SubResource("SphereMesh_1bf66")
 
-[node name="Trail" type="MeshInstance3D" parent="."]
+[node name="Trail" type="MeshInstance3D" parent="." unique_id=1758014547]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.84, 0, 0)
 material_override = ExtResource("2_dc7gh")
 mesh = SubResource("CylinderMesh_1bf66")
 
-[node name="Core" type="MeshInstance3D" parent="."]
+[node name="Core" type="MeshInstance3D" parent="." unique_id=487614859]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.317, 0, 0)
 material_override = ExtResource("3_dc7gh")
 mesh = SubResource("SphereMesh_dc7gh")
 
-[node name="Light" type="OmniLight3D" parent="."]
+[node name="Light" type="OmniLight3D" parent="." unique_id=527356908]
 light_color = Color(0.945098, 0.356863, 0, 1)
 light_energy = 4.0
 script = ExtResource("4_osv0r")
 base_energy = 4.0
 metadata/_custom_type_script = "uid://bdk8hhttligw"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_0wdjh")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=552052258]
+libraries/ = SubResource("AnimationLibrary_0wdjh")
