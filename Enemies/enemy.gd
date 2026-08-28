@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 
 	if not is_instance_valid(target):
 		nav_agent.set_velocity(Vector3.ZERO)
+		_set_electric_visible(false)
 		return
 
 	var distance_to_target := global_position.distance_to(target.global_position)
@@ -48,6 +49,7 @@ func _physics_process(delta: float) -> void:
 		nav_agent.set_velocity(Vector3.ZERO)
 		_try_attack()
 		return
+	_set_electric_visible(false)
 
 	if flying:
 		var flying_direction := target.global_position - global_position
@@ -72,7 +74,10 @@ func _physics_process(delta: float) -> void:
 		
 		# Wyszyłamy prośbę o bezpieczny ruch (z uwzględnieniem omijania innych wrogów)
 		nav_agent.set_velocity(target_velocity)
-		electric.visible = false  # Wyłącz efekt elektryczny, jeśli nie atakujemy
+
+func _set_electric_visible(effect_visible: bool) -> void:
+	if electric:
+		electric.visible = effect_visible
 
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
 	velocity.x = safe_velocity.x
@@ -93,7 +98,7 @@ func _try_attack() -> void:
 	# Obróć wroga bezpośrednio w stronę gracza podczas ataku
 	if is_instance_valid(target):
 		visuals.look_at(Vector3(target.global_position.x, visuals.global_position.y, target.global_position.z), Vector3.UP)
-	electric.visible = true  # Włącz efekt elektryczny podczas ataku
+	_set_electric_visible(true)
 	print("Atakowanie celu: ", target.name)
 
 # --- SYGNAŁY Z DETECTION AREA ---
@@ -104,7 +109,6 @@ func _on_detection_area_body_entered(body: Node3D) -> void:
 
 func _on_detection_area_body_exited(body: Node3D) -> void:
 	print("Ciało opuściło obszar: ", body.name)
-	electric.visible = false  # Wyłącz efekt elektryczny, jeśli cel opuścił obszar
 	if body == target:
 		target = null
 
