@@ -5,22 +5,22 @@
 [ext_resource type="Script" uid="uid://bgyjbtwbffq5h" path="res://Player/Components/Health.gd" id="3_d8dht"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kupem"]
-radius = 1.0278585
+radius = 0.26763922
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_jnhbb"]
 radius = 10.0
 
 [node name="Sci Fi Drone" unique_id=309930858 groups=["enemies"] instance=ExtResource("1_482if")]
 script = ExtResource("2_kupem")
+flying = true
 
 [node name="Sci_Fi_Drone" parent="." index="0" unique_id=307179651]
-transform = Transform3D(-1, 0, 0.00013962586, 0, 1, 0, -0.00013962586, 0, -1, 0.9386461, 0.5574148, -0.9208429)
+transform = Transform3D(-0.25, 0, 3.4906465e-05, 0, 0.25, 0, -3.4906465e-05, 0, -0.25, 0.23531169, 0.13697577, -0.23636973)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1170680034]
 shape = SubResource("SphereShape3D_kupem")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="2" unique_id=1882759097]
-target_desired_distance = 2.0
 avoidance_enabled = true
 
 [node name="DetectionArea" type="Area3D" parent="." index="3" unique_id=1341832199]
@@ -31,8 +31,5 @@ shape = SubResource("SphereShape3D_jnhbb")
 
 [node name="Health" type="Node" parent="." index="4" unique_id=1310895820]
 script = ExtResource("3_d8dht")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." index="5" unique_id=1625790332]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9907227, 0, 0)
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]

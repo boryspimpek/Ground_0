@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var speed: float = 4.0
 @export var rotation_speed: float = 12.0
+@export var flying: bool = false
 
 @onready var health: Health = $Health
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
@@ -24,12 +25,24 @@ func _ready() -> void:
 	nav_agent.velocity_computed.connect(_on_velocity_computed)
 
 func _physics_process(delta: float) -> void:
-	# Grawitacja
-	if not is_on_floor():
+	# Latajacy wrog utrzymuje wysokosc zamiast podlegac grawitacji.
+	if not flying and not is_on_floor():
 		velocity.y -= gravity * delta
 
 	if not is_instance_valid(target):
 		nav_agent.set_velocity(Vector3.ZERO)
+		return
+
+	if flying:
+		var flying_direction := target.global_position - global_position
+		flying_direction.y = 0.0
+		if flying_direction.length_squared() > 0.01:
+			velocity = flying_direction.normalized() * speed
+			move_and_slide()
+			_rotate_towards_velocity()
+		else:
+			velocity = Vector3.ZERO
+			_try_attack()
 		return
 
 	# Ustawienie celu nawigacji
@@ -51,7 +64,9 @@ func _on_velocity_computed(safe_velocity: Vector3) -> void:
 	velocity.x = safe_velocity.x
 	velocity.z = safe_velocity.z
 	move_and_slide()
+	_rotate_towards_velocity()
 
+func _rotate_towards_velocity() -> void:
 	# Obrót modelu w stronę ruchu
 	var horizontal_vel = Vector3(velocity.x, 0, velocity.z)
 	if horizontal_vel.length_squared() > 0.01:
