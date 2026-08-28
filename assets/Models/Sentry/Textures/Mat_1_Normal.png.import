@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://5do2o4ekgkp5"
-path.s3tc="res://.godot/imported/Mat_1_Normal.png-83c0cad3f81c254cc1da7f0e5eae9da4.s3tc.ctex"
+path.s3tc="res://.godot/imported/Mat_1_Normal.png-a0e74b652df50bf7b18e8a5ec78d0897.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Models/Sentry/textures/Mat_1_Normal.png"
-dest_files=["res://.godot/imported/Mat_1_Normal.png-83c0cad3f81c254cc1da7f0e5eae9da4.s3tc.ctex"]
+source_file="res://assets/Models/Sentry/Textures/Mat_1_Normal.png"
+dest_files=["res://.godot/imported/Mat_1_Normal.png-a0e74b652df50bf7b18e8a5ec78d0897.s3tc.ctex"]
 
 [params]
 

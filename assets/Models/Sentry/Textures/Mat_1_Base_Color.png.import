@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0sck4iek725d"
-path.s3tc="res://.godot/imported/Mat_1_Base_Color.png-e58346f36e0d72bce6eec5713e3f43c7.s3tc.ctex"
+path.s3tc="res://.godot/imported/Mat_1_Base_Color.png-32a259e6d239da98e02f368323c62722.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Models/Sentry/textures/Mat_1_Base_Color.png"
-dest_files=["res://.godot/imported/Mat_1_Base_Color.png-e58346f36e0d72bce6eec5713e3f43c7.s3tc.ctex"]
+source_file="res://assets/Models/Sentry/Textures/Mat_1_Base_Color.png"
+dest_files=["res://.godot/imported/Mat_1_Base_Color.png-32a259e6d239da98e02f368323c62722.s3tc.ctex"]
 
 [params]
 

@@ -3,6 +3,38 @@
 [ext_resource type="PackedScene" uid="uid://k5wgm8y6h3ch" path="res://Enemies/Sci Fi Drone_Fbx/Sci Fi Drone.fbx" id="1_482if"]
 [ext_resource type="Script" uid="uid://j42e3rehfcda" path="res://Enemies/enemy.gd" id="2_kupem"]
 [ext_resource type="Script" uid="uid://bgyjbtwbffq5h" path="res://Player/Components/Health.gd" id="3_d8dht"]
+[ext_resource type="Texture2D" uid="uid://ktfppfvr83ub" path="res://assets/Textures/industrial_wall_8_1k/industrial_wall_8_1k/industrial_wall_8_baseColor_1k.png" id="3_i4jad"]
+[ext_resource type="Texture2D" uid="uid://crqf0upklmvlo" path="res://assets/Textures/industrial_wall_8_1k/industrial_wall_8_1k/industrial_wall_8_normal_dx_1k.png" id="4_mncod"]
+[ext_resource type="Texture2D" uid="uid://dpekvdtq5edxo" path="res://assets/Textures/floor_tiles_16_1k/floor_tiles_16_1k/floor_tiles_16_basecolor_1k.png" id="5_maf1y"]
+[ext_resource type="Texture2D" uid="uid://b6kqr8bsq02bg" path="res://assets/Textures/floor_tiles_16_1k/floor_tiles_16_1k/floor_tiles_16_normal_gl_1k.png" id="6_lmnwc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ar37j"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("3_i4jad")
+roughness = 0.2
+normal_enabled = true
+normal_scale = 5.95
+normal_texture = ExtResource("4_mncod")
+clearcoat_enabled = true
+uv1_offset = Vector3(-1.74, -0.705, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b20op"]
+albedo_texture = ExtResource("5_maf1y")
+normal_enabled = true
+normal_scale = 14.96
+normal_texture = ExtResource("6_lmnwc")
+uv1_scale = Vector3(1.645, 1.645, 1.645)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fa6ut"]
+albedo_texture = ExtResource("5_maf1y")
+uv1_scale = Vector3(9.64, 9.64, 9.64)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32wny"]
+shading_mode = 0
+albedo_color = Color(0, 0, 5.912981, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_kupem"]
 radius = 0.26763922
@@ -14,8 +46,16 @@ radius = 10.0
 script = ExtResource("2_kupem")
 flying = true
 
-[node name="Sci_Fi_Drone" parent="." index="0" unique_id=307179651]
+[node name="Sci_Fi_Drone" parent="." index="0" unique_id=1385353527]
 transform = Transform3D(-0.25, 0, 3.4906465e-05, 0, 0.25, 0, -3.4906465e-05, 0, -0.25, 0.23531169, 0.13697577, -0.23636973)
+
+[node name="Body" parent="Sci_Fi_Drone/Null" parent_id_path=PackedInt32Array(34397879) index="2" unique_id=2033765353]
+surface_material_override/0 = SubResource("StandardMaterial3D_ar37j")
+
+[node name="Sphere_1" parent="Sci_Fi_Drone/Null/Body_Front" parent_id_path=PackedInt32Array(2129653401) index="1" unique_id=1353849712]
+surface_material_override/0 = SubResource("StandardMaterial3D_b20op")
+surface_material_override/1 = SubResource("StandardMaterial3D_fa6ut")
+surface_material_override/3 = SubResource("StandardMaterial3D_32wny")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1170680034]
 shape = SubResource("SphereShape3D_kupem")
