@@ -103,13 +103,13 @@ func _try_attack() -> void:
 
 # --- SYGNAŁY Z DETECTION AREA ---
 func _on_detection_area_body_entered(body: Node3D) -> void:
-	print("Wykryto ciało: ", body.name)
 	if body.is_in_group("player"):
+		print("Wykryto: ", body.name, " | typ: ", body.get_class(), " | ścieżka: ", body.get_path())
 		target = body
 
 func _on_detection_area_body_exited(body: Node3D) -> void:
-	print("Ciało opuściło obszar: ", body.name)
 	if body == target:
+		print("Ciało opuściło obszar: ", body.name)
 		target = null
 
 # --- OBSŁUGA OBRAŻEŃ (TWÓJ ISTNIEJĄCY KOD) ---
