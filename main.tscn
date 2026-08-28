@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ceapadi6n8wcj" path="res://assets/sky box/kloofendal_48d_partly_cloudy_puresky.jpg" id="1_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://brme6u266if1i" path="res://assets/kenney_prototype-textures/Dark/texture_01.png" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://c7pifgmmeka61" path="res://Enemies/enemy_1.tscn" id="6_7mycd"]
-[ext_resource type="PackedScene" uid="uid://dx0y6c20qn2le" path="res://Player2 model/Model/Player_2.tscn" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://dx0y6c20qn2le" path="res://Player/Player_2.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://mscmcdj6uxcf" path="res://Hud/hud.tscn" id="7_272bh"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_lquwl"]
