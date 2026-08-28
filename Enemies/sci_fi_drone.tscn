@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://crqf0upklmvlo" path="res://assets/Textures/industrial_wall_8_1k/industrial_wall_8_1k/industrial_wall_8_normal_dx_1k.png" id="4_mncod"]
 [ext_resource type="Texture2D" uid="uid://dpekvdtq5edxo" path="res://assets/Textures/floor_tiles_16_1k/floor_tiles_16_1k/floor_tiles_16_basecolor_1k.png" id="5_maf1y"]
 [ext_resource type="Texture2D" uid="uid://b6kqr8bsq02bg" path="res://assets/Textures/floor_tiles_16_1k/floor_tiles_16_1k/floor_tiles_16_normal_gl_1k.png" id="6_lmnwc"]
+[ext_resource type="Shader" uid="uid://brk4hb7hi4b0d" path="res://assets/Shader/lightning.gdshader" id="8_mncod"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ar37j"]
 diffuse_mode = 3
@@ -42,6 +43,29 @@ radius = 0.26763922
 [sub_resource type="SphereShape3D" id="SphereShape3D_jnhbb"]
 radius = 10.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mncod"]
+render_priority = 0
+shader = ExtResource("8_mncod")
+shader_parameter/Main_Color = Color(1, 1, 1, 1)
+shader_parameter/Effect_Color = Color(0.3, 0.3, 1, 1)
+shader_parameter/Octave_Count = 10
+shader_parameter/Amp_Start = 0.5
+shader_parameter/Amp_Coeff = 0.5
+shader_parameter/Freq_Coeff = 2.0
+shader_parameter/Speed = 3.0
+shader_parameter/Y_Size = 4.0
+shader_parameter/X_Size = 1.0
+shader_parameter/Emission_Power = 10.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_lmnwc"]
+material = SubResource("ShaderMaterial_mncod")
+size = Vector2(1.72, 0.65)
+orientation = 1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mncod"]
+height = 0.65145874
+radius = 0.08886719
+
 [node name="Sci Fi Drone" unique_id=309930858 groups=["enemies"] instance=ExtResource("1_482if")]
 script = ExtResource("2_kupem")
 flying = true
@@ -69,7 +93,27 @@ collision_layer = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" index="0" unique_id=822100655]
 shape = SubResource("SphereShape3D_jnhbb")
 
-[node name="Health" type="Node" parent="." index="4" unique_id=1310895820]
+[node name="Electric" type="Node3D" parent="." index="4" unique_id=460952712]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Electric" index="0" unique_id=2716417]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -0.645)
+mesh = SubResource("QuadMesh_lmnwc")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Electric" index="1" unique_id=1954242662]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.664917)
+light_color = Color(1, 0, 1, 1)
+light_energy = 8.0
+light_size = 1.0
+light_specular = 10.0
+omni_range = 0.28
+
+[node name="Area3D" type="Area3D" parent="Electric" index="2" unique_id=1557577884]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Electric/Area3D" index="0" unique_id=1781402164]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, -0.669)
+shape = SubResource("CylinderShape3D_mncod")
+
+[node name="Health" type="Node" parent="." index="5" unique_id=1310895820]
 script = ExtResource("3_d8dht")
 
 [connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
