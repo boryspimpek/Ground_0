@@ -130,11 +130,11 @@ func _try_attack() -> void:
 		return  # jeszcze cooldown, nie zadajemy obrażeń
 
 	attack_timer = attack_cooldown
-	print("Atakowanie celu: ", target.name)
+	print("Atakowanie celu: ", target.name, " | ma take_damage? ", target.has_method("take_damage"))
 
 	if target.has_method("take_damage"):
 		target.take_damage(attack_damage, self)
-		
+
 # --- SYGNAŁY Z DETECTION AREA ---
 func _on_detection_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):

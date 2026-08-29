@@ -20,6 +20,7 @@ func _ready() -> void:
 
 
 func take_damage(amount: float, source: Node = null) -> void:
+	print("Health: Taking damage: ", amount, " from source: ", source)
 	if is_dead:
 		return
 	if amount <= 0.0:

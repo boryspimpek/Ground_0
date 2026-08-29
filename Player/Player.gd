@@ -5,12 +5,9 @@ extends CharacterBody3D
 @onready var combat: Node = $Combat
 @onready var grenade_thrower: Node = $GrenadeThrower
 @onready var animation_tree: AnimationTree = $AnimationTree
+@onready var health: Health = $Health
 
 func _ready() -> void:
-	if not animation_tree:
-		push_error("Brak węzła AnimationTree o nazwie 'AnimationTree' jako dziecko Gracza!")
-		return
-	
 	animation_tree.active = true
 
 func _physics_process(delta: float) -> void:
@@ -23,3 +20,6 @@ func _physics_process(delta: float) -> void:
 	grenade_thrower.update(delta)
 
 	move_and_slide()
+
+func take_damage(amount: float, source: Node = null) -> void:
+	health.take_damage(amount, source)
