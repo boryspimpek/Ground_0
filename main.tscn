@@ -91,13 +91,13 @@ transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 5.60
 transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, 0.5603056, -9.536743e-07, 18.333893)
 
 [node name="Barrel3" parent="Arena" unique_id=893497734 instance=ExtResource("8_2cqfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12105703, 4.7683716e-07, -23.028244)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3602905, 4.7683716e-07, -21.340023)
 
 [node name="Barrel5" parent="Arena" unique_id=987457117 instance=ExtResource("8_2cqfq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.600815, 4.7683716e-07, -42.18983)
 
 [node name="rustcars" parent="Arena" unique_id=552070772 instance=ExtResource("9_yaehf")]
-transform = Transform3D(0.76965594, 0, 0.6384589, 0, 1, 0, -0.6384589, 0, 0.76965594, -4.3323107, 0, 8.499804)
+transform = Transform3D(0.84962034, 0, 1.3439664, 0, 1.59, 0, -1.3439664, 0, 0.84962034, -4.3323107, 0, 8.499804)
 
 [node name="sentry" parent="Arena" unique_id=353209582 instance=ExtResource("10_074og")]
 transform = Transform3D(1.86, 0, 0, 0, 1.86, 0, 0, 0, 1.86, -6.0624437, 0, 20.427076)
@@ -112,7 +112,7 @@ transform = Transform3D(-1.8038116, 0, 0.45372188, 0, 1.8599999, 0, -0.45372188,
 transform = Transform3D(-1.8289131, 0, -0.33863908, 0, 1.8600001, 0, 0.33863908, 0, -1.8289131, -8.122014, 0, -40.251633)
 
 [node name="UAZ" parent="Arena" unique_id=1126700190 instance=ExtResource("11_cegan")]
-transform = Transform3D(0.59591657, 0, -0.80304635, 0, 1, 0, 0.80304635, 0, 0.59591657, 7.0517073, 0, 1.9300919)
+transform = Transform3D(0.77171195, 0, -1.039945, 0, 1.295, 0, 1.039945, 0, 0.77171195, 7.0517073, 0, 1.9300919)
 
 [node name="aircraft" parent="Arena" unique_id=514496576 instance=ExtResource("12_82xsv")]
 transform = Transform3D(0.8894384, -0.19206254, 0.4147426, 0.21477939, 0.976627, -0.008341418, -0.4034466, 0.09649735, 0.9099008, -3.4189644, -0.717507, -23.49813)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cdheuxdwqku1h"]
+
+[ext_resource type="PackedScene" uid="uid://h0r0yhge0nfe" path="res://assets/Weapons/rifle.glb" id="1_016xb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_016xb"]
+albedo_color = Color(0.427493, 0.42749307, 0.42749307, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufaed"]
+albedo_color = Color(0.646029, 0.646029, 0.646029, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x2dat"]
+
+[node name="weapon" unique_id=1935236791 instance=ExtResource("1_016xb")]
+
+[node name="WEAPON_007" parent="." index="0" unique_id=1159424715]
+surface_material_override/0 = SubResource("StandardMaterial3D_016xb")
+surface_material_override/1 = SubResource("StandardMaterial3D_ufaed")
+surface_material_override/2 = SubResource("StandardMaterial3D_x2dat")
