@@ -65,7 +65,9 @@ light_energy = 0.5
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=346466420]
-transform = Transform3D(0.7071067, 0.6105128, -0.3567549, 0, 0.50452757, 0.8633956, 0.7071067, -0.6105128, 0.3567549, -5, 9.535, 5)
+transform = Transform3D(0.7071067, 0.40557975, -0.579228, 0, 0.81915194, 0.57357645, 0.7071067, -0.40557975, 0.579228, -5, 10, 5)
+v_offset = -4.0
+projection = 1
 size = 15.0
 script = ExtResource("1_0xm2m")
 
