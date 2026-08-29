@@ -15,6 +15,8 @@ extends CharacterBody3D
 @onready var detection_area: Area3D = $DetectionArea
 @onready var visuals: Node3D = self
 @onready var electric: Node3D = get_node_or_null("ElectricAttack")
+@onready var activation_sound: AudioStreamPlayer3D = get_node_or_null("ActivationSound")
+@onready var attack_sound: AudioStreamPlayer3D = get_node_or_null("AttackSound")
 
 var pre_attack_distance: float = 1.0
 var pre_attack_done := false
@@ -119,6 +121,7 @@ func _rotate_towards_velocity() -> void:
 func _prepare_attack() -> void:
 	# Włącz efekt elektryczny przed atakiem
 	_set_electric_visible(true)
+	attack_sound.play()
 	print("Przygotowanie ataku")
 
 func _try_attack() -> void:
@@ -140,6 +143,7 @@ func _try_attack() -> void:
 # --- SYGNAŁY Z DETECTION AREA ---
 func _on_detection_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		activation_sound.play()
 		print("Wykryto: ", body.name, " | typ: ", body.get_class(), " | ścieżka: ", body.get_path())
 		target = body
 
@@ -148,7 +152,7 @@ func _on_detection_area_body_exited(body: Node3D) -> void:
 		print("Ciało opuściło obszar: ", body.name)
 		target = null
 
-# --- OBSŁUGA OBRAŻEŃ (TWÓJ ISTNIEJĄCY KOD) ---
+# --- OBSŁUGA OBRAŻEŃ ---
 func take_damage(amount: float, source: Node = null) -> void:
 	health.take_damage(amount, source)
 
