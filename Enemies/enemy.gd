@@ -4,6 +4,9 @@ extends CharacterBody3D
 @export var rotation_speed: float = 12.0
 @export var flying: bool = false
 
+@export var attack_damage: float = 10.0
+@export var attack_cooldown: float = 1.5  # sekundy między atakami
+
 
 @onready var health: Health = $Health
 @onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
@@ -13,6 +16,7 @@ extends CharacterBody3D
 
 var pre_attack_distance: float = 1.0
 var pre_attack_done := false
+var attack_timer: float = 0.0
 
 var target: Node3D = null
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -32,6 +36,9 @@ func _ready() -> void:
 		electric.visible = false  # Ukryj efekt elektryczny na początku
 
 func _physics_process(delta: float) -> void:
+	if attack_timer > 0.0:
+		attack_timer -= delta
+
 	# Latajacy wrog utrzymuje wysokosc zamiast podlegac grawitacji.
 	if not flying and not is_on_floor():
 		velocity.y -= gravity * delta
@@ -113,11 +120,21 @@ func _prepare_attack() -> void:
 	print("Przygotowanie ataku")
 
 func _try_attack() -> void:
+	if not is_instance_valid(target):
+		return
+
 	# Obróć wroga bezpośrednio w stronę gracza podczas ataku
-	if is_instance_valid(target):
-		visuals.look_at(Vector3(target.global_position.x, visuals.global_position.y, target.global_position.z), Vector3.UP)
+	visuals.look_at(Vector3(target.global_position.x, visuals.global_position.y, target.global_position.z), Vector3.UP)
+
+	if attack_timer > 0.0:
+		return  # jeszcze cooldown, nie zadajemy obrażeń
+
+	attack_timer = attack_cooldown
 	print("Atakowanie celu: ", target.name)
 
+	if target.has_method("take_damage"):
+		target.take_damage(attack_damage, self)
+		
 # --- SYGNAŁY Z DETECTION AREA ---
 func _on_detection_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
