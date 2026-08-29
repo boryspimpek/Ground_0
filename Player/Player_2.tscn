@@ -34,8 +34,6 @@
 radius = 0.2861328
 height = 1.9752808
 
-[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_e0agi"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_roy6y"]
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
@@ -292,7 +290,6 @@ visible = false
 shape = SubResource("CapsuleShape3D_u6c5r")
 
 [node name="AudioPlayer" type="AudioStreamPlayer3D" parent="." index="1" unique_id=1082943573]
-stream = SubResource("AudioStreamPolyphonic_e0agi")
 
 [node name="WeaponAudioPlayer" type="AudioStreamPlayer3D" parent="." index="2" unique_id=2091273071]
 
@@ -306,38 +303,38 @@ mesh = SubResource("CylinderMesh_7w4td")
 
 [node name="Skeleton3D" parent="." index="5" unique_id=1429643177]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
-bones/0/position = Vector3(0.007521246, 10.770742, -0.025578737)
-bones/0/rotation = Quaternion(-0.11063064, -0.3402625, -0.025130386, 0.9334617)
-bones/1/rotation = Quaternion(0.035469357, -0.0005611363, 0.0019620443, 0.9993687)
-bones/2/rotation = Quaternion(0.13418476, 0.00026313274, -0.0050523966, 0.99094343)
-bones/3/rotation = Quaternion(0.13872981, -1.9890454e-05, -0.0050066304, 0.9903177)
-bones/4/rotation = Quaternion(0.0283417, 0.06500276, 0.009090019, 0.9974411)
-bones/5/rotation = Quaternion(-0.029365312, 0.19134198, 0.091299124, 0.9768268)
-bones/7/rotation = Quaternion(-0.38637984, -0.23749803, 0.6403295, -0.61990595)
-bones/8/rotation = Quaternion(0.3861422, -0.22025788, 0.2349085, 0.8644065)
-bones/9/rotation = Quaternion(0.0213761, 0.0008647555, 0.5298753, 0.84780574)
-bones/10/rotation = Quaternion(-0.13517961, -0.8287279, -0.23446603, 0.48985943)
-bones/11/rotation = Quaternion(0.31431448, -0.026933132, -0.043349966, 0.9479462)
-bones/12/rotation = Quaternion(0.3025573, -0.016305966, -0.018372674, 0.9528147)
+bones/0/position = Vector3(0.008382612, 10.770502, -0.027651072)
+bones/0/rotation = Quaternion(-0.11087224, -0.34013537, -0.025003476, 0.9334829)
+bones/1/rotation = Quaternion(0.035376154, -0.0005509786, 0.0019764302, 0.999372)
+bones/2/rotation = Quaternion(0.13451159, 0.00026271495, -0.005053519, 0.9908991)
+bones/3/rotation = Quaternion(0.13910848, -1.8328043e-05, -0.0050013685, 0.9902646)
+bones/4/rotation = Quaternion(0.02844265, 0.06500156, 0.009102058, 0.99743825)
+bones/5/rotation = Quaternion(-0.028448185, 0.1912614, 0.09144557, 0.976856)
+bones/7/rotation = Quaternion(-0.38639554, -0.23749185, 0.6404062, -0.61981946)
+bones/8/rotation = Quaternion(0.38611236, -0.2203489, 0.23527254, 0.86429775)
+bones/9/rotation = Quaternion(0.021368561, 0.0008648393, 0.52968776, 0.8479231)
+bones/10/rotation = Quaternion(-0.13509533, -0.82888323, -0.23432003, 0.4896897)
+bones/11/rotation = Quaternion(0.31433818, -0.026936233, -0.043346547, 0.9479383)
+bones/12/rotation = Quaternion(0.3025873, -0.016306866, -0.018377855, 0.95280504)
 bones/13/rotation = Quaternion(0.16565447, 0.016429007, -0.06474404, 0.98391926)
 bones/15/rotation = Quaternion(0.28404582, -0.29324964, 0.69974357, 0.5862436)
-bones/16/rotation = Quaternion(0.43437964, -0.21035501, -0.50853807, 0.7130598)
-bones/17/rotation = Quaternion(0.023094742, -0.0008277261, -0.75744015, 0.6524956)
-bones/18/rotation = Quaternion(-0.16772151, 0.3869333, 0.24229942, 0.8737523)
-bones/19/rotation = Quaternion(0.10897075, 0.025101494, -0.01185373, 0.99365735)
+bones/16/rotation = Quaternion(0.43436894, -0.21005492, -0.5085272, 0.7131625)
+bones/17/rotation = Quaternion(0.02309411, -0.0008277559, -0.7574192, 0.6525198)
+bones/18/rotation = Quaternion(-0.16741613, 0.38666776, 0.24266382, 0.8738273)
+bones/19/rotation = Quaternion(0.109001264, 0.025102725, -0.011843501, 0.993654)
 bones/20/rotation = Quaternion(0.08220333, 0.005916719, -0.009234733, 0.9965553)
 bones/21/rotation = Quaternion(0.26860577, 0.021911625, 0.024301108, 0.9626943)
-bones/23/rotation = Quaternion(0.39155167, 0.06396821, 0.90678674, -0.14259458)
-bones/24/rotation = Quaternion(-0.21347389, -0.0029532732, 0.00076122885, 0.976944)
-bones/25/rotation = Quaternion(0.458664, 0.004967294, 0.012818614, 0.88850355)
+bones/23/rotation = Quaternion(0.39134565, 0.06390328, 0.9069025, -0.14245325)
+bones/24/rotation = Quaternion(-0.21321307, -0.0030249248, 0.0008012165, 0.9770008)
+bones/25/rotation = Quaternion(0.4585001, 0.0049744346, 0.012858764, 0.8885875)
 bones/26/rotation = Quaternion(0.30996475, -0.1431801, 0.047277883, 0.93871516)
-bones/28/rotation = Quaternion(0.05253653, -0.043964695, 0.9965799, 0.046212528)
-bones/29/rotation = Quaternion(-0.28779796, 0.013480539, 0.0020677694, 0.9575941)
-bones/30/rotation = Quaternion(0.61239123, 0.12875302, -0.03275604, 0.7793117)
-bones/31/rotation = Quaternion(0.32072854, 0.1397281, -0.04772631, 0.93559164)
+bones/28/rotation = Quaternion(0.05255113, -0.04379879, 0.9965825, 0.046296675)
+bones/29/rotation = Quaternion(-0.28819785, 0.013395828, 0.0020022674, 0.9574752)
+bones/30/rotation = Quaternion(0.6124885, 0.1289926, -0.032815747, 0.7791931)
+bones/31/rotation = Quaternion(0.3209434, 0.13973743, -0.04771575, 0.9355171)
 
 [node name="mixamorig_Head" parent="Skeleton3D" index="0" unique_id=208000057]
-transform = Transform3D(0.008849098, -0.004400904, -0.0015249646, 0.0038755783, 0.008773368, -0.0028298192, 0.0025832842, 0.0019131232, 0.009469245, -0.53801864, 17.357347, 0.37579915)
+transform = Transform3D(0.008842807, -0.004417182, -0.0015143517, 0.0038875174, 0.008760568, -0.0028530103, 0.0025868863, 0.0019341544, 0.009463986, -0.5397794, 17.355852, 0.37318224)
 
 [node name="GLASS" parent="Skeleton3D/mixamorig_Head" index="0" unique_id=964753799]
 surface_material_override/0 = SubResource("StandardMaterial3D_uy7kh")
@@ -356,14 +353,14 @@ surface_material_override/5 = SubResource("StandardMaterial3D_bjey4")
 surface_material_override/0 = SubResource("StandardMaterial3D_s70li")
 
 [node name="mixamorig_LeftHand" parent="Skeleton3D" index="1" unique_id=219445862]
-transform = Transform3D(-0.0074994373, -0.0066135894, -0.00013712607, 0.00028376235, -0.0005287386, 0.009981976, -0.006608917, 0.0074820356, 0.0005841941, -0.4414301, 15.825403, 6.4331694)
+transform = Transform3D(-0.007500359, -0.0066125235, -0.0001380844, 0.00028532417, -0.0005320726, 0.009981753, -0.0066078017, 0.007482742, 0.0005877458, -0.44085944, 15.823085, 6.429755)
 
 [node name="HAND ARMOR_001" parent="Skeleton3D/mixamorig_LeftHand" index="0" unique_id=498415084]
 surface_material_override/0 = SubResource("StandardMaterial3D_vsjgs")
 surface_material_override/1 = SubResource("StandardMaterial3D_0jlvx")
 
 [node name="mixamorig_LeftForeArm" parent="Skeleton3D" index="2" unique_id=790316913]
-transform = Transform3D(0.0007278191, -0.005673757, -0.008202359, -0.007848941, 0.0047482736, -0.003980948, 0.006153398, 0.00672773, -0.0041077062, 1.1868751, 14.462701, 4.502384)
+transform = Transform3D(0.0007344124, -0.0056754416, -0.008200605, -0.007850481, 0.0047422713, -0.0039850674, 0.0061506527, 0.006730543, -0.0041072126, 1.1879293, 14.462105, 4.4981627)
 
 [node name="FOREARM_002" parent="Skeleton3D/mixamorig_LeftForeArm" index="0" unique_id=1208260381]
 transform = Transform3D(117.10084, -1.7292898, -62.554985, -1.2550786, -128.19385, 1.4513278, -62.56801, -0.66500336, -117.105576, -10.996467, 156.18799, -29.629007)
@@ -372,7 +369,7 @@ surface_material_override/1 = SubResource("StandardMaterial3D_1hxtu")
 surface_material_override/2 = SubResource("StandardMaterial3D_460vb")
 
 [node name="mixamorig_LeftArm" parent="Skeleton3D" index="3" unique_id=2053625310]
-transform = Transform3D(0.005218732, -0.0015388278, -0.0083902795, -0.007803459, -0.0048340173, -0.0039671455, -0.003445404, 0.008617669, -0.0037235587, 1.6589298, 15.945595, 1.8588098)
+transform = Transform3D(0.0052225003, -0.0015361661, -0.008388423, -0.0078009814, -0.004834504, -0.0039714286, -0.0034453112, 0.008617873, -0.0037231767, 1.6591675, 15.945148, 1.8545256)
 
 [node name="ARMOR_002" parent="Skeleton3D/mixamorig_LeftArm" index="0" unique_id=1308200655]
 transform = Transform3D(-44.942814, -1.7119186, 89.81628, 9.081777, -114.07534, 2.8738258, -89.36856, -10.731607, -44.875927, -0.7720194, 122.59989, -26.328484)
@@ -381,14 +378,14 @@ surface_material_override/1 = SubResource("StandardMaterial3D_veqdu")
 surface_material_override/2 = SubResource("StandardMaterial3D_wfd0o")
 
 [node name="mixamorig_LeftShoulder" parent="Skeleton3D" index="4" unique_id=1532806150]
-transform = Transform3D(0.0066958666, 0.006790893, -0.0030081742, -0.0026087365, -0.0016417974, -0.009513093, -0.006954124, 0.0071545914, 0.00067223934, 0.4245594, 16.244022, 0.5583304)
+transform = Transform3D(0.006694395, 0.006795667, -0.0030006592, -0.0025998976, -0.0016405615, -0.009515728, -0.0069588497, 0.007150342, 0.0006685469, 0.4239293, 16.243351, 0.55481845)
 
 [node name="ARMOR" parent="Skeleton3D/mixamorig_LeftShoulder" index="0" unique_id=860444003]
 transform = Transform3D(-8.686573, -11.279313, -119.33922, 110.34475, 3.1223667, -9.829492, 4.017791, -110.13896, 11.94285, 8.628309, 136.61455, -85.54109)
 surface_material_override/0 = SubResource("StandardMaterial3D_885x3")
 
 [node name="mixamorig_RightHand" parent="Skeleton3D" index="5" unique_id=2019570491]
-transform = Transform3D(-0.0011470802, 0.0002288167, 0.009931359, 0.00988508, 0.0010171513, 0.001118301, -0.0009845784, 0.009945505, -0.0003428629, -2.57195, 15.33348, 1.9710304)
+transform = Transform3D(-0.0011464152, 0.00022991584, 0.00993141, 0.009885791, 0.0010108347, 0.0011177487, -0.0009781994, 0.009946124, -0.00034317194, -2.5727873, 15.331579, 1.9684805)
 
 [node name="HAND ARMOR" parent="Skeleton3D/mixamorig_RightHand" index="0" unique_id=1454417811]
 transform = Transform3D(93.020134, -3.417492, -36.545452, 36.651924, 13.995367, 91.98239, 1.9711787, -98.95681, 14.271087, -17.75827, 69.065445, -39.887108)
@@ -396,7 +393,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_d3tfr")
 surface_material_override/1 = SubResource("StandardMaterial3D_il7lb")
 
 [node name="mixamorig_RightForeArm" parent="Skeleton3D" index="6" unique_id=1108341736]
-transform = Transform3D(0.0051125665, 0.0046252916, 0.007243507, 0.00586702, 0.0042804596, -0.00687428, -0.0062801074, 0.0077643017, -0.00052525615, -3.89987, 14.104561, -0.25809848)
+transform = Transform3D(0.005108456, 0.0046217106, 0.0072486894, 0.005870392, 0.004284506, -0.00686888, -0.0062802997, 0.007764203, -0.0005244054, -3.8996792, 14.101499, -0.26062024)
 
 [node name="FOREARM_001" parent="Skeleton3D/mixamorig_RightForeArm" index="0" unique_id=892688162]
 transform = Transform3D(-117.729576, 2.449845, 61.33717, -1.9320664, -128.18202, 1.7825247, -61.359207, -0.6643347, -117.74342, 10.286529, 156.27655, -29.750502)
@@ -405,7 +402,7 @@ surface_material_override/1 = SubResource("StandardMaterial3D_fjp23")
 surface_material_override/2 = SubResource("StandardMaterial3D_l2chq")
 
 [node name="mixamorig_RightArm" parent="Skeleton3D" index="7" unique_id=1994140954]
-transform = Transform3D(0.003556703, -0.0059497952, 0.0072076246, 0.0036138063, -0.0062365737, -0.0069314893, 0.008619182, 0.0050700195, -6.802485e-05, -2.0748115, 16.017586, -1.8132913)
+transform = Transform3D(0.003553962, -0.005945108, 0.007212841, 0.0036175125, -0.006240446, -0.0069260695, 0.008618758, 0.00507075, -6.718177e-05, -2.0760586, 16.01571, -1.8160372)
 
 [node name="ARMOR_001" parent="Skeleton3D/mixamorig_RightArm" index="0" unique_id=146032371]
 transform = Transform3D(44.10509, 1.2512765, -90.23644, 8.952979, -114.0787, 3.1605697, -89.79787, -10.759238, -44.00539, 0.4245534, 122.59121, -26.337626)
@@ -414,14 +411,14 @@ surface_material_override/1 = SubResource("StandardMaterial3D_ur7sj")
 surface_material_override/2 = SubResource("StandardMaterial3D_as235")
 
 [node name="mixamorig_RightShoulder" parent="Skeleton3D" index="8" unique_id=110014267]
-transform = Transform3D(-0.0071718907, -0.0067794872, -0.001613254, 0.0031832822, -0.0011277272, -0.009412488, 0.0061992537, -0.007264077, 0.0029668938, -0.8425144, 16.222574, -0.4929127)
+transform = Transform3D(-0.0071725063, -0.0067810034, -0.0016041128, 0.0031745979, -0.0011306563, -0.0094150705, 0.0062029916, -0.007262206, 0.0029636577, -0.84348595, 16.221231, -0.4959986)
 
 [node name="ARMOR_003" parent="Skeleton3D/mixamorig_RightShoulder" index="0" unique_id=390474161]
 transform = Transform3D(8.497034, 11.185993, 119.3657, 110.36002, 3.133553, -9.620129, 4.0024886, -110.148155, 11.848393, -9.093861, 136.59216, -85.55119)
 surface_material_override/0 = SubResource("StandardMaterial3D_xjae1")
 
 [node name="mixamorig_Spine2" parent="Skeleton3D" index="9" unique_id=715939264]
-transform = Transform3D(0.007689878, -0.0025364584, -0.005867893, 0.00012623127, 0.009237603, -0.003827625, 0.006391389, 0.0028693262, 0.007135622, 0.14426418, 14.908599, -0.3661351)
+transform = Transform3D(0.0076919585, -0.0025434438, -0.0058621382, 0.00013029756, 0.009234257, -0.0038355584, 0.0063888025, 0.0028739125, 0.007136091, 0.14446941, 14.908056, -0.37008804)
 
 [node name="CHEST_003" parent="Skeleton3D/mixamorig_Spine2" index="0" unique_id=1966665982]
 transform = Transform3D(100.000015, 3.8146973e-06, 7.6293945e-06, 1.9073486e-06, 99.91881, -4.0295544, -3.8146973e-06, 4.029558, 99.9188, 0.018593915, 32.697693, 38.343597)
@@ -438,7 +435,7 @@ surface_material_override/1 = SubResource("StandardMaterial3D_gabog")
 surface_material_override/2 = SubResource("StandardMaterial3D_ubnrm")
 
 [node name="mixamorig_Spine" parent="Skeleton3D" index="10" unique_id=129267967]
-transform = Transform3D(0.007668539, 0.0007421652, -0.0063751624, 0.0003243401, 0.009875415, 0.0015397887, 0.0064100167, -0.0013875653, 0.007548929, 0.18487254, 11.930563, -0.289255)
+transform = Transform3D(0.007670555, 0.00074228295, -0.006372723, 0.00032830608, 0.009874421, 0.001545321, 0.0064074015, -0.0013945673, 0.007549858, 0.1856041, 11.930192, -0.2919895)
 
 [node name="SPINE_003" parent="Skeleton3D/mixamorig_Spine" index="0" unique_id=2080914801]
 transform = Transform3D(100, 0, 6.516828e-05, 2.6259859e-06, 99.918816, -4.0295453, -6.511536e-05, 4.0295467, 99.91878, -5.8530113e-05, 86.47553, -132.28435)
@@ -450,7 +447,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5s1ra")
 surface_material_override/1 = SubResource("StandardMaterial3D_0tl5i")
 
 [node name="mixamorig_LeftLeg" parent="Skeleton3D" index="11" unique_id=2137670204]
-transform = Transform3D(-0.009838221, 0.00054302136, 0.0017072493, -0.00059143046, -0.009979757, -0.00023391517, 0.0016910878, -0.00033112825, 0.009850438, 1.3959165, 5.8319087, 2.6141078)
+transform = Transform3D(-0.009838342, 0.00054397667, 0.0017062494, -0.0005909016, -0.009979985, -0.00022538961, 0.0016905712, -0.0003225936, 0.009850808, 1.3964357, 5.8327055, 2.613642)
 
 [node name="KNEE R" parent="Skeleton3D/mixamorig_LeftLeg" index="0" unique_id=2069535865]
 surface_material_override/0 = SubResource("StandardMaterial3D_3tsge")
@@ -467,14 +464,14 @@ transform = Transform3D(106.66757, -9.769687, -1.3640776, -9.840374, -104.350845
 surface_material_override/0 = SubResource("StandardMaterial3D_7unes")
 
 [node name="mixamorig_LeftUpLeg" parent="Skeleton3D" index="12" unique_id=1100380164]
-transform = Transform3D(-0.009848569, 0.001178584, 0.0012715459, -0.0005877337, -0.009169362, 0.0039468305, 0.0016310895, 0.0038123135, 0.009099802, 0.84132946, 10.146585, 0.82020956)
+transform = Transform3D(-0.009848969, 0.0011772718, 0.0012696632, -0.00058672973, -0.009168185, 0.003949713, 0.0016290364, 0.0038155478, 0.009098813, 0.8424662, 10.146829, 0.818222)
 
 [node name="THIGH R_003" parent="Skeleton3D/mixamorig_LeftUpLeg" index="0" unique_id=1958792715]
 transform = Transform3D(-103.1194, -7.453987, -1.0407399, 7.464177, -102.97898, -14.375543, -0.00018285222, -14.413215, 103.24806, -15.426058, 187.58481, 17.241701)
 surface_material_override/0 = SubResource("StandardMaterial3D_k2drx")
 
 [node name="mixamorig_RightLeg" parent="Skeleton3D" index="13" unique_id=1448793158]
-transform = Transform3D(-0.008015546, 0.001974735, -0.0056436243, 0.0008156626, -0.008989467, -0.0043039653, -0.005923277, -0.0039101546, 0.007044433, -1.6029668, 5.4274054, -0.38766134)
+transform = Transform3D(-0.00801812, 0.0019741612, -0.005640168, 0.0008150831, -0.00898899, -0.0043050693, -0.00591987, -0.00391154, 0.0070465254, -1.6035328, 5.4271784, -0.3857037)
 
 [node name="KNEE L" parent="Skeleton3D/mixamorig_RightLeg" index="0" unique_id=2079922037]
 surface_material_override/0 = SubResource("StandardMaterial3D_iwe1p")
@@ -491,14 +488,14 @@ transform = Transform3D(106.66602, 9.790158, 1.3711663, 9.871371, -104.68096, -2
 surface_material_override/0 = SubResource("StandardMaterial3D_a20qi")
 
 [node name="mixamorig_RightUpLeg" parent="Skeleton3D" index="14" unique_id=1319410464]
-transform = Transform3D(-0.008174695, -0.0014329632, -0.005578531, 0.00081471505, -0.009875865, 0.0013429218, -0.0057017603, 0.0006433145, 0.008189908, -0.9286311, 10.07487, -0.6903974)
+transform = Transform3D(-0.008176164, -0.0014356514, -0.0055756867, 0.0008131899, -0.009875001, 0.0013501681, -0.00569987, 0.00065051834, 0.008190653, -0.92793214, 10.074237, -0.6918298)
 
 [node name="THIGH R_001" parent="Skeleton3D/mixamorig_RightUpLeg" index="0" unique_id=1812134201]
 transform = Transform3D(103.119865, 7.452987, 1.044014, 7.4636645, -102.971664, -14.429262, 0.00035434382, -14.466854, 103.24194, 15.45316, 187.22481, 19.850702)
 surface_material_override/0 = SubResource("StandardMaterial3D_p8khm")
 
 [node name="mixamorig_Hips" parent="Skeleton3D" index="15" unique_id=1394935505]
-transform = Transform3D(0.0076717976, 0.0012220342, -0.006296837, 0.0002837041, 0.009742586, 0.0022364077, 0.0064080446, -0.0018943708, 0.0074396455, 0.007521246, 10.770742, -0.025578737)
+transform = Transform3D(0.0076736556, 0.0012210374, -0.0062947655, 0.00028742498, 0.009741643, 0.0022400373, 0.0064056525, -0.001899855, 0.007440306, 0.008382612, 10.770502, -0.027651072)
 
 [node name="HIP" parent="Skeleton3D/mixamorig_Hips" index="0" unique_id=1145187487]
 surface_material_override/0 = SubResource("StandardMaterial3D_0ngl5")
@@ -592,7 +589,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_adqnm")
 surface_material_override/1 = SubResource("StandardMaterial3D_aja8m")
 
 [node name="RightHand" type="BoneAttachment3D" parent="Skeleton3D" index="44" unique_id=599765569]
-transform = Transform3D(-0.0011470802, 0.0002288167, 0.009931359, 0.00988508, 0.0010171513, 0.001118301, -0.0009845784, 0.009945505, -0.0003428629, -2.57195, 15.33348, 1.9710304)
+transform = Transform3D(-0.0011464152, 0.00022991584, 0.00993141, 0.009885791, 0.0010108347, 0.0011177487, -0.0009781994, 0.009946124, -0.00034317194, -2.5727873, 15.331579, 1.9684805)
 bone_name = "mixamorig_RightHand"
 bone_idx = 18
 
@@ -600,7 +597,7 @@ bone_idx = 18
 transform = Transform3D(-116.61172, 987.25116, -108.335625, 17.258696, 111.0777, 993.66205, 993.0277, 114.00293, -29.991371, -24.624268, 145.73502, 31.183418)
 
 [node name="LeftHand" type="BoneAttachment3D" parent="Skeleton3D" index="45" unique_id=486008669]
-transform = Transform3D(-0.0074994373, -0.0066135894, -0.00013712607, 0.00028376235, -0.0005287386, 0.009981976, -0.006608917, 0.0074820356, 0.0005841941, -0.4414301, 15.825403, 6.4331694)
+transform = Transform3D(-0.007500359, -0.0066125235, -0.0001380844, 0.00028532417, -0.0005320726, 0.009981753, -0.0066078017, 0.007482742, 0.0005877458, -0.44085944, 15.823085, 6.429755)
 bone_name = "mixamorig_LeftHand"
 bone_idx = 10
 
@@ -611,7 +608,7 @@ transform = Transform3D(-64.980934, 7.0717278, 75.67998, 74.92555, -10.796938, 6
 transform = Transform3D(-0.37997827, 1.3379371, -14.935366, -0.056247585, 14.939921, 1.339784, 14.995087, 0.089939155, -0.3734434, 4.2296934, 0.021623611, -0.024564505)
 
 [node name="RightFoot" type="BoneAttachment3D" parent="Skeleton3D" index="46" unique_id=1816066453]
-transform = Transform3D(-0.006163041, -0.0065230425, -0.004412013, 0.00086461107, -0.006129169, 0.007854021, -0.007827435, 0.0044589564, 0.0043413704, -0.6978636, 1.3071585, -2.179848)
+transform = Transform3D(-0.006162522, -0.006524037, -0.004411269, 0.0008639832, -0.006127568, 0.007855339, -0.007827911, 0.0044597024, 0.004339743, -0.69869256, 1.3071499, -2.1785254)
 bone_name = "mixamorig_RightFoot"
 bone_idx = 30
 
@@ -619,7 +616,7 @@ bone_idx = 30
 transform = Transform3D(995.99664, 85.07539, 27.59903, 74.189545, -613.4041, -786.285, -49.960907, 785.175, -617.2592, 0.29977417, 130.35583, -56.331966)
 
 [node name="LeftFoot" type="BoneAttachment3D" parent="Skeleton3D" index="47" unique_id=1523082534]
-transform = Transform3D(-0.009814652, 0.0018853516, 0.0003438007, -0.0008646933, -0.0059574465, 0.007985059, 0.001710278, 0.007807329, 0.0060100826, 1.6455904, 1.2433548, 2.4618595)
+transform = Transform3D(-0.009814653, 0.0018855644, 0.00034261623, -0.00086493156, -0.0059535294, 0.0079879565, 0.001710155, 0.007810264, 0.006006301, 1.6465489, 1.2440467, 2.4653177)
 bone_name = "mixamorig_LeftFoot"
 bone_idx = 25
 
@@ -627,7 +624,7 @@ bone_idx = 25
 transform = Transform3D(995.73785, -85.2403, 35.184464, -22.697372, -596.3501, -802.3999, 89.379074, 798.1855, -595.74475, -0.8463745, 139.50879, -51.591156)
 
 [node name="LeftLeg" type="BoneAttachment3D" parent="Skeleton3D" index="48" unique_id=805548277]
-transform = Transform3D(-0.009838221, 0.00054302136, 0.0017072493, -0.00059143046, -0.009979757, -0.00023391517, 0.0016910878, -0.00033112825, 0.009850438, 1.3959165, 5.8319087, 2.6141078)
+transform = Transform3D(-0.009838342, 0.00054397667, 0.0017062494, -0.0005909016, -0.009979985, -0.00022538961, 0.0016905712, -0.0003225936, 0.009850808, 1.3964357, 5.8327055, 2.613642)
 bone_name = "mixamorig_LeftLeg"
 bone_idx = 24
 
@@ -635,7 +632,7 @@ bone_idx = 24
 transform = Transform3D(94.11365, -4.3235645, -33.52501, 16.336956, 92.64407, 33.914284, 29.592564, -37.394936, 87.89709, -11.650726, 747.86035, -219.76521)
 
 [node name="RightLeg" type="BoneAttachment3D" parent="Skeleton3D" index="49" unique_id=1004148861]
-transform = Transform3D(-0.008015546, 0.001974735, -0.0056436243, 0.0008156626, -0.008989467, -0.0043039653, -0.005923277, -0.0039101546, 0.007044433, -1.6029668, 5.4274054, -0.38766134)
+transform = Transform3D(-0.00801812, 0.0019741612, -0.005640168, 0.0008150831, -0.00898899, -0.0043050693, -0.00591987, -0.00391154, 0.0070465254, -1.6035328, 5.4271784, -0.3857037)
 bone_name = "mixamorig_RightLeg"
 bone_idx = 29
 
@@ -716,3 +713,6 @@ throw_marker = NodePath("../Skeleton3D/RightHand/Throw")
 script = ExtResource("32_dj6xq")
 left_jet = NodePath("../Skeleton3D/LeftLeg/Jet")
 right_jet = NodePath("../Skeleton3D/RightLeg/Jet")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="." index="20" unique_id=1923483853]
+current = true

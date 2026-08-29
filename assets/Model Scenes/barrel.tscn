@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bd78cycd6ks31" path="res://assets/Models/Barrel/Texture/Used_Sci fi barrel_Normal.png" id="3_n128h"]
 [ext_resource type="PackedScene" uid="uid://dra0ivq7stx8c" path="res://assets/BinbunVFX_Vol2/FlameFX/effects/fire/vfx_basic_fire_01.tscn" id="4_bohss"]
 [ext_resource type="Script" uid="uid://bgyjbtwbffq5h" path="res://Player/Components/Health.gd" id="5_4dig6"]
+[ext_resource type="AudioStream" uid="uid://bjyspu0ccsu8m" path="res://assets/Sounds/fire/soundreality-fire-crackling-sound-499636.mp3" id="7_pxg68"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cwtes"]
 friction = 0.8
@@ -80,3 +81,11 @@ shape = SubResource("CylinderShape3D_cwtes")
 
 [node name="Health" type="Node" parent="." unique_id=606606722]
 script = ExtResource("5_4dig6")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=970389955]
+stream = ExtResource("7_pxg68")
+attenuation_model = 2
+autoplay = true
+max_distance = 15.0
+attenuation_filter_db = -70.0
+parameters/looping = true
