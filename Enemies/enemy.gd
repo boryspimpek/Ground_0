@@ -5,7 +5,9 @@ extends CharacterBody3D
 @export var flying: bool = false
 
 @export var attack_damage: float = 10.0
-@export var attack_cooldown: float = 1.5  # sekundy między atakami
+@export var attack_cooldown: float = 1.5  # sekundy między 
+
+@export var explosion_effect_scene: PackedScene
 
 
 @onready var health: Health = $Health
@@ -156,8 +158,14 @@ func _on_damaged(amount: float, source: Node) -> void:
 
 func _on_died(source: Node) -> void:
 	var source_name := str(source.name) if source else "nieznane źródło"
+	explode()
 	print(name, " zniszczony przez ", source_name)
 	queue_free()
+
+func explode() -> void:
+	var effect: Node3D = explosion_effect_scene.instantiate()
+	get_tree().current_scene.add_child(effect)
+	effect.global_position = global_position
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

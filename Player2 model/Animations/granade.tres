@@ -1,7 +1,5 @@
 [gd_resource type="Animation" format=3 uid="uid://d0pt7mxs4dkad"]
 
-[ext_resource type="AudioStream" uid="uid://53rhq2jg0cla" path="res://assets/Sounds/granade/granade_throw.mp3" id="2_2ctq2"]
-
 [resource]
 resource_name = "mixamo_com"
 length = 0.5667
@@ -222,18 +220,3 @@ tracks/29/keys = {
 "method": &"release_grenade"
 }]
 }
-tracks/30/type = "audio"
-tracks/30/imported = false
-tracks/30/enabled = true
-tracks/30/path = NodePath("AudioPlayer")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/keys = {
-"clips": [{
-"end_offset": 0.38163927,
-"start_offset": 0.0,
-"stream": ExtResource("2_2ctq2")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/30/use_blend = true
