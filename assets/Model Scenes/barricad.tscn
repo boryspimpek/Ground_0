@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bc5y8apdjseq2"]
+
+[ext_resource type="PackedScene" uid="uid://dyu8pibjgie8" path="res://assets/Models/barricad/Barricad.fbx" id="1_i223r"]
+[ext_resource type="Texture2D" uid="uid://cca1vqn81g5v0" path="res://assets/Models/barricad/Barricad_0.png" id="2_als8h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02wjc"]
+albedo_texture = ExtResource("2_als8h")
+
+[node name="Barricad" unique_id=61497852 instance=ExtResource("1_i223r")]
+
+[node name="g Box003_Box003_1001" parent="Barricad" parent_id_path=PackedInt32Array(441168465) index="0" unique_id=1549325898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128.781, 0, 40.00019)
+surface_material_override/0 = SubResource("StandardMaterial3D_02wjc")

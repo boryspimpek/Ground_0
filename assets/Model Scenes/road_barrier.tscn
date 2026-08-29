@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://s64nkoqom5ew"]
+
+[ext_resource type="PackedScene" uid="uid://dxefu3kpm3ur" path="res://assets/Models/road barier/road_barrier.fbx" id="1_x6uhq"]
+
+[node name="road_barrier" unique_id=1372022710 instance=ExtResource("1_x6uhq")]

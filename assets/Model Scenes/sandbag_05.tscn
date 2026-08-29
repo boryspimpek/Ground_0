@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dokwsl5eh5amu"]
+
+[ext_resource type="PackedScene" uid="uid://cry27x3o2h7ba" path="res://assets/Models/sandbags/color1/Low poly Sandbag 05/s5-10k.FBX" id="1_xfe66"]
+[ext_resource type="Texture2D" uid="uid://h37ltlstle8c" path="res://assets/Models/sandbags/color1/Low poly Sandbag 05/s5_Base_Color.png" id="2_d3vk1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axpj7"]
+albedo_texture = ExtResource("2_d3vk1")
+
+[node name="sandbag05" unique_id=1697217428 instance=ExtResource("1_xfe66")]
+
+[node name="s5-10k" parent="." index="0" unique_id=852465863]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0, -111.704575)
+surface_material_override/0 = SubResource("StandardMaterial3D_axpj7")

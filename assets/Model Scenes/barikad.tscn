@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://q3y7tf8qlf33"]
+
+[ext_resource type="PackedScene" uid="uid://bpwa63bw2y07l" path="res://assets/Models/baricad/barikad.glb" id="1_u48l2"]
+[ext_resource type="Texture2D" uid="uid://cqm0o5e0teutf" path="res://assets/Models/baricad/barikad_3_None_BaseColor.png" id="2_8wvx1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pbfb2"]
+albedo_texture = ExtResource("2_8wvx1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ww46q"]
+albedo_texture = ExtResource("2_8wvx1")
+
+[node name="barikad" unique_id=1919969693 instance=ExtResource("1_u48l2")]
+
+[node name="1_001" parent="." index="0" unique_id=274802851]
+transform = Transform3D(0.06726985, 0, 0, 0, 0.06726985, 0, 0, 0, 0.06726985, 1.1878328, 2.6249566, 2.7279367)
+
+[node name="2_001" parent="." index="1" unique_id=125551780]
+transform = Transform3D(0.140519, -0.065361425, -0.0055870255, 0, -0.01320767, 0.15451373, -0.06559975, -0.1400085, -0.011967778, -4.9189157, 3.2363157, 3.3242044)
+surface_material_override/0 = SubResource("StandardMaterial3D_pbfb2")
+
+[node name="3_001" parent="." index="2" unique_id=1861711932]
+transform = Transform3D(0.041015837, 0, -0.021700274, 0, 0.046402596, 0, 0.021700274, 0, 0.041015837, 3.5423436, 3.3580997, 3.496746)
+surface_material_override/0 = SubResource("StandardMaterial3D_ww46q")
+
+[node name="4_001" parent="." index="3" unique_id=1167262633]
+transform = Transform3D(0.039183088, 0, 0, 0, 0.039183088, 0, 0, 0, 0.039183088, -2.79216, 3.1768553, 2.4503558)
+
+[node name="5_001" parent="." index="4" unique_id=1893716598]
+transform = Transform3D(0.03844229, -0.017927254, -0.0068291184, 0.007633203, 0.028325291, -0.031388626, 0.017599924, 0.026872393, 0.028529821, -2.6731095, 2.8050427, 4.27036)
+
+[node name="6" parent="." index="5" unique_id=868286092]
+transform = Transform3D(0.01913381, 0, 0, 0, 0.01913381, 0, 0, 0, 0.01913381, -0.49625397, 3.015738, 3.0049481)

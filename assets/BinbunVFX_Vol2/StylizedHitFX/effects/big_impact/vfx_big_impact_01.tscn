@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://caaf041f7i2at" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/script/VFXImpactBB.gd" id="1_2yumw"]
 [ext_resource type="Shader" uid="uid://ceosk10icoef8" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/shader/impact_sphere.gdshader" id="2_bskiu"]
+[ext_resource type="AudioStream" uid="uid://cvehg54aks4xe" path="res://assets/Sounds/granade/Heavy_indoor_grenade_#3-1787495217101.wav" id="2_h0vf1"]
 [ext_resource type="Shader" uid="uid://cmioii1ohvdbf" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/shader/impact_slash.gdshader" id="3_5wh8n"]
 [ext_resource type="Shader" uid="uid://kn7c12451x80" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/shader/impact_core.gdshader" id="4_4awib"]
 [ext_resource type="Shader" uid="uid://d2u23w24knljb" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/shader/glow.gdshader" id="5_s5ly8"]
@@ -581,6 +582,9 @@ script = ExtResource("1_2yumw")
 primary_color = Color(1, 1, 1, 1)
 secondary_color = Color(1, 0.8, 0.4, 1)
 light_color = Color(1, 0.8, 0.4, 1)
+audio_stream = ExtResource("2_h0vf1")
+one_shot = true
+autoplay = true
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=2141584362]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.089589, 0)
@@ -661,3 +665,4 @@ draw_pass_1 = SubResource("QuadMesh_uo6t8")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=645766212]
 visible = false
+stream = ExtResource("2_h0vf1")

@@ -4,15 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://dybx0qnnmropb" path="res://assets/Textures/old_road_01_1k/old_road_01_1k/old_road_01_baseColor_1k.png" id="4_w48qg"]
 [ext_resource type="Texture2D" uid="uid://dvxh8spjhehcc" path="res://assets/Textures/old_road_01_1k/old_road_01_1k/old_road_01_normal_gl_1k.png" id="5_vivmo"]
 [ext_resource type="PackedScene" uid="uid://dx0y6c20qn2le" path="res://Player/Player_2.tscn" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://s64nkoqom5ew" path="res://assets/Model Scenes/road_barrier.tscn" id="6_yaehf"]
 [ext_resource type="PackedScene" uid="uid://2wnqfmlvxldt" path="res://Enemies/sci_fi_drone.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://s05o5b5y8qhs" path="res://assets/Model Scenes/road_closed.tscn" id="7_074og"]
 [ext_resource type="PackedScene" uid="uid://mscmcdj6uxcf" path="res://Hud/hud.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://cf6ciwcxasfm" path="res://assets/Model Scenes/barrel.tscn" id="8_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://dokwsl5eh5amu" path="res://assets/Model Scenes/sandbag_05.tscn" id="8_074og"]
 [ext_resource type="PackedScene" uid="uid://dykg20h7wu5y7" path="res://assets/Model Scenes/rust_cars.tscn" id="9_yaehf"]
 [ext_resource type="PackedScene" uid="uid://b870jufkeqh1j" path="res://assets/Model Scenes/sentry.tscn" id="10_074og"]
 [ext_resource type="PackedScene" uid="uid://bjup8uk8t245l" path="res://assets/Model Scenes/uaz.tscn" id="11_cegan"]
 [ext_resource type="PackedScene" uid="uid://dxk77hdqi8h7m" path="res://assets/Model Scenes/aircraft.tscn" id="12_82xsv"]
 [ext_resource type="PackedScene" uid="uid://be1atn3wj1si7" path="res://assets/Model Scenes/generator.tscn" id="13_getpj"]
 [ext_resource type="PackedScene" uid="uid://gx7ge15t30jf" path="res://assets/Model Scenes/radio_telescope.tscn" id="14_ryguw"]
+[ext_resource type="PackedScene" uid="uid://q3y7tf8qlf33" path="res://assets/Model Scenes/barikad.tscn" id="14_w48qg"]
+[ext_resource type="PackedScene" uid="uid://bc5y8apdjseq2" path="res://assets/Model Scenes/barricad.tscn" id="15_vivmo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ycdy4"]
 sky_top_color = Color(0.039215688, 0.05490196, 0.101960786, 1)
@@ -81,7 +86,31 @@ size = Vector3(22.084717, 1, 78.28015)
 [node name="Enemies" type="Node3D" parent="." unique_id=480286661]
 
 [node name="Sci Fi Drone" parent="Enemies" unique_id=1010871186 instance=ExtResource("7_5vw27")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 5.6015625, 1.6671269, -20.866796)
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.36488914, 1.6671269, -23.635254)
+
+[node name="road_barrier" parent="Enemies" unique_id=1372022710 instance=ExtResource("6_yaehf")]
+transform = Transform3D(-0.9978142, 0, 0.06608221, 0, 1, 0, -0.06608221, 0, -0.9978142, -8.520667, 0.4400345, -6.4265003)
+
+[node name="road_barrier2" parent="Enemies" unique_id=988126492 instance=ExtResource("6_yaehf")]
+transform = Transform3D(-0.9864063, 0, 0.16432446, 0, 1, 0, -0.16432446, 0, -0.9864063, 1.2250757, 0.4400345, -7.103481)
+
+[node name="road_barrier3" parent="Enemies" unique_id=1126970498 instance=ExtResource("6_yaehf")]
+transform = Transform3D(-0.9864063, 0, 0.16432446, 0, 1, 0, -0.16432446, 0, -0.9864063, 4.2629004, 0.4400345, -6.5789776)
+
+[node name="RoadClosed" parent="Enemies" unique_id=1487756970 instance=ExtResource("7_074og")]
+transform = Transform3D(-0.9999969, 0, 0.0024784505, 0, 1, 0, -0.0024784505, 0, -0.9999969, -1.4978027, -1.9073486e-06, 10.674614)
+
+[node name="sandbag05" parent="Enemies" unique_id=1697217428 instance=ExtResource("8_074og")]
+transform = Transform3D(0.008463018, 0, -0.022458347, 0, 0.024, 0, 0.022458347, 0, 0.008463018, -7.435975, 0, -38.789574)
+
+[node name="sandbag06" parent="Enemies" unique_id=852470511 instance=ExtResource("8_074og")]
+transform = Transform3D(-0.0011372487, 0, -0.02397304, 0, 0.024, 0, 0.02397304, 0, -0.0011372487, 7.6432657, 9.536743e-07, -38.63547)
+
+[node name="sandbag07" parent="Enemies" unique_id=898798946 instance=ExtResource("8_074og")]
+transform = Transform3D(-0.0007387857, 0, 0.023988627, 0, 0.023999998, 0, -0.023988627, 0, -0.0007387857, 6.467678, 0, 18.9039)
+
+[node name="sandbag08" parent="Enemies" unique_id=1388273218 instance=ExtResource("8_074og")]
+transform = Transform3D(-0.0007387857, 0, 0.023988627, 0, 0.023999998, 0, -0.023988627, 0, -0.0007387857, -5.861747, 0, 19.77806)
 
 [node name="Player" parent="." unique_id=1379137831 instance=ExtResource("6_272bh")]
 
@@ -90,8 +119,17 @@ transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 5.60
 [node name="Barrel" parent="Arena" unique_id=708475063 instance=ExtResource("8_2cqfq")]
 transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, 0.5603056, -9.536743e-07, 18.333893)
 
+[node name="Barrel2" parent="Arena" unique_id=1315396493 instance=ExtResource("8_2cqfq")]
+transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, -3.2733598, -1.4305115e-06, 12.722351)
+
 [node name="Barrel3" parent="Arena" unique_id=893497734 instance=ExtResource("8_2cqfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3602905, 4.7683716e-07, -21.340023)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.002855, 4.7683716e-07, -14.54879)
+
+[node name="Barrel4" parent="Arena" unique_id=1284619419 instance=ExtResource("8_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.774112, 4.7683716e-07, -25.858248)
+
+[node name="Barrel6" parent="Arena" unique_id=1318349924 instance=ExtResource("8_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7674613, 4.7683716e-07, -25.707127)
 
 [node name="Barrel5" parent="Arena" unique_id=987457117 instance=ExtResource("8_2cqfq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.600815, 4.7683716e-07, -42.18983)
@@ -112,10 +150,10 @@ transform = Transform3D(-1.8038116, 0, 0.45372188, 0, 1.8599999, 0, -0.45372188,
 transform = Transform3D(-1.8289131, 0, -0.33863908, 0, 1.8600001, 0, 0.33863908, 0, -1.8289131, -8.122014, 0, -40.251633)
 
 [node name="UAZ" parent="Arena" unique_id=1126700190 instance=ExtResource("11_cegan")]
-transform = Transform3D(0.77171195, 0, -1.039945, 0, 1.295, 0, 1.039945, 0, 0.77171195, 7.0517073, 0, 1.9300919)
+transform = Transform3D(1.0551603, 0, -0.9017656, 0, 1.388, 0, 0.9017656, 0, 1.0551603, 7.3216314, -9.536743e-07, 1.1342926)
 
 [node name="aircraft" parent="Arena" unique_id=514496576 instance=ExtResource("12_82xsv")]
-transform = Transform3D(0.8894384, -0.19206254, 0.4147426, 0.21477939, 0.976627, -0.008341418, -0.4034466, 0.09649735, 0.9099008, -3.4189644, -0.717507, -23.49813)
+transform = Transform3D(0.8894384, -0.19206254, 0.4147426, 0.21477939, 0.976627, -0.008341418, -0.4034466, 0.09649735, 0.9099008, -3.4189644, -0.717507, -16.198841)
 
 [node name="generator" parent="Arena" unique_id=158756211 instance=ExtResource("13_getpj")]
 transform = Transform3D(-0.20777507, 0, 0.97817665, 0, 1, 0, -0.97817665, 0, -0.20777507, -5.7476497, 0, -48.589622)
@@ -125,3 +163,9 @@ transform = Transform3D(-0.20777507, 0, 0.97817665, 0, 1, 0, -0.97817665, 0, -0.
 
 [node name="Radio Telescope" parent="Arena" unique_id=1827562756 instance=ExtResource("14_ryguw")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 4.105, 0, -47.359)
+
+[node name="barikad" parent="." unique_id=1919969693 instance=ExtResource("14_w48qg")]
+transform = Transform3D(1.6892046, 0, 0.051846296, 0, 1.6899999, 0, -0.051846296, 0, 1.6892046, 1.0406151, -3.6617384, -32.840866)
+
+[node name="Barricad" parent="." unique_id=61497852 instance=ExtResource("15_vivmo")]
+transform = Transform3D(0.0049964795, 0, -0.00018757896, 0, 0.005, 0, 0.00018757896, 0, 0.0049964795, -6.2253513, 0, -6.0099072)
