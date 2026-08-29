@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bjup8uk8t245l"]
 
 [ext_resource type="PackedScene" uid="uid://cna5lv8qat3gh" path="res://assets/Models/uaz/Post_Apocalyptic_UAZ.fbx" id="1_j4i1f"]
-[ext_resource type="Script" uid="uid://bdhog1xd334l7" path="res://car_lights.gd" id="2_g3qa8"]
+[ext_resource type="Script" uid="uid://da4sfcgqbv8lg" path="res://Scripts/car_lights.gd" id="2_g3qa8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcu3q"]
 albedo_color = Color(1, 1, 0, 1)
@@ -20,7 +20,7 @@ spot_light_left = NodePath("SpotLight3D")
 spot_light_right = NodePath("SpotLight3D2")
 mesh_left = NodePath("MeshInstance3D")
 mesh_right = NodePath("MeshInstance3D2")
-flicker_speed = 0.08
+flicker_speed = 0.085
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights" index="0" unique_id=1993165320]
 transform = Transform3D(-1, -3.2466012e-08, 8.117081e-08, 0, 0.9284859, 0.37136787, -8.742278e-08, 0.37136787, -0.9284859, 0.7650411, 0.123, 2.143)
