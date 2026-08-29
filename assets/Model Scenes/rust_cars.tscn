@@ -1,49 +1,33 @@
 [gd_scene format=3 uid="uid://dykg20h7wu5y7"]
 
 [ext_resource type="PackedScene" uid="uid://wr61eevpi575" path="res://assets/Models/abandoned cars/fbx.fbx" id="1_2mtev"]
-[ext_resource type="Texture2D" uid="uid://dgl8bnw6juvcw" path="res://assets/Models/abandoned cars/textures/xmppmax_v1_1_4_3_d.jpg" id="2_ossbg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ipw3t"]
-cull_mode = 2
-albedo_texture = ExtResource("2_ossbg")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ymqi0"]
+points = PackedVector3Array(0.0095365085, 0.013262214, 0.0059998557, -0.009415872, 0.0025250053, 0.0015797361, -0.009415872, 0.0025250053, 0.0034753452, 0.0070079165, -0.018945456, 0.0015797361, -0.0037297872, -0.0025250053, 0.011055555, -0.001833807, 0.019582642, 0.0009486084, -0.008150649, -0.017682953, 0.00031636748, 0.008271285, 0.0075789737, -0.00031587295, -0.0068872804, 0.017682953, 0.007264337, 0.005744548, -0.0006292725, 0.011055555, -0.008150649, -0.014524717, 0.0066332095, 0.008903896, -0.014524717, 0.0059998557, -0.008150649, 0.015791178, 0.00031636748, 0.0025870549, 0.018316181, 0.007896578, 0.008271285, -0.014524717, -0.00031587295, -0.005623912, 0.006316471, 0.011055555, 0.0070079165, 0.018945456, 0.0015797361, -0.00878326, -0.008208246, -0.00031587295, -0.009415872, 0.012632942, 0.0066332095, -0.00057043857, -0.019582642, 0.0047398265, 0.0051137917, 0.0075789737, 0.011055555, 0.0095365085, 0.0075789737, 0.00031636748, 0.0076405285, -0.013262214, 0.007264337, -0.0068872804, 0.012632942, -0.00031587295, 0.0013236864, -0.020215873, 0.00031636748, -0.00878326, -0.013262214, 0.0066332095, -0.0037297872, 0.020215873, 0.0047398265, 0.0076405285, 0.01642045, 0.00031636748, 0.005744548, 0.018316181, 0.007264337, -0.005623912, -0.019582642, 0.0034753452, -0.009415872, 0.015157947, 0.0015797361, 0.0051137917, -0.019582642, 0.0041064727)
 
-[node name="rustcars" unique_id=552070772 instance=ExtResource("1_2mtev")]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ejie3"]
+points = PackedVector3Array(-7.1320246e-05, -0.0066285715, -0.00013717636, 0.0024132316, -0.002484633, 0.0092523815, -0.002555872, -0.002484633, 0.0092523815, -0.00062326866, 0.008838096, 0.0034537597, 0.0018612832, 0.002484633, 0.0006918546, -0.0017279495, 0.0027614722, 0.0006918546, 0.004071429, -0.0019326846, 0.00787005, 0.00020465397, -0.008838096, 0.0053847954, -0.003938095, -0.002484633, 0.00787005, 0.0007566024, 0.008838096, 0.0056605265, 0.0013085508, -0.0077324687, 0.00041520456, -0.0014519753, -0.0074556293, 0.0015199666, 0.0010325767, 0.0066285715, 0.0006918546, -0.00062326866, 0.00718052, 0.0067652883, -0.00062326866, -0.005246105, 0.008974813, -0.0008992429, 0.0066285715, 0.00041520456, -0.0008992429, -0.008838096, 0.0051081455, -0.0011752171, 0.008561256, 0.0034537597, 0.004071429, -0.002484633, 0.008422432, 0.0010325767, 0.008561256, 0.0034537597, -0.003938095, -0.0019326846, 0.008422432, 0.0010325767, -0.008561256, 0.0051081455, 0.0007566024, -0.005246105, 0.008974813, -0.0008992429, 0.008838096, 0.0053847954, -0.00062326866, -0.008561256, 0.0009675855, -0.0017279495, 0.005799784, 0.0023489976, 0.0010325767, 0.0069019506, 0.0067652883, 0.00020465397, 0.006351732, 0.00013947347, 0.0010325767, -0.0077324687, -0.00013717636, -0.0020047077, -0.0013807361, 0.0015199666, 0.0021380414, -0.0013807361, 0.0015199666, -0.00034729444, -0.00718052, -0.00013717636)
 
-[node name="Group001" parent="RustyCarsFree" parent_id_path=PackedInt32Array(1766319174) index="0" unique_id=766063306]
-visible = false
+[node name="rustcars" unique_id=298416723 instance=ExtResource("1_2mtev")]
 
-[node name="SM_asset_04" parent="RustyCarsFree/Group001" index="0" unique_id=1796476082]
-surface_material_override/0 = SubResource("StandardMaterial3D_ipw3t")
+[node name="SM_asset_03" parent="RustyCarsFree/Group002" parent_id_path=PackedInt32Array(1812345359) index="0" unique_id=335913932]
+transform = Transform3D(1.0000002, 0, 0, 0, 1.0000002, -2.842171e-14, 0, 2.842171e-14, 1.0000002, 0.0266151, 0.00041931696, -0.005636668)
 
-[node name="SM_ivy_00" parent="RustyCarsFree/Group001" index="1" unique_id=2059744707]
-visible = false
+[node name="StaticBody3D" type="StaticBody3D" parent="RustyCarsFree/Group002/SM_asset_03" index="0" unique_id=531767229]
 
-[node name="SM_ivy_05" parent="RustyCarsFree/Group001/SM_ivy_00" index="0" unique_id=262229324]
-visible = false
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RustyCarsFree/Group002/SM_asset_03/StaticBody3D" index="0" unique_id=1833585618]
+shape = SubResource("ConvexPolygonShape3D_ymqi0")
 
-[node name="SM_ivy_06" parent="RustyCarsFree/Group001" index="2" unique_id=599522146]
-visible = false
+[node name="Group003" parent="RustyCarsFree" parent_id_path=PackedInt32Array(1646637049) index="1" unique_id=28428783]
+transform = Transform3D(0.022635037, -0.99974406, -1.1917878e-07, 0.99974406, 0.022635037, -1.1651103e-07, 1.1917879e-07, -1.1651101e-07, 1.0000002, 0.04970114, 5.551115e-17, 0.004572278)
 
-[node name="SM_ivy_07" parent="RustyCarsFree/Group001" index="3" unique_id=1379511631]
-visible = false
+[node name="SM_asset_00" parent="RustyCarsFree/Group003" index="0" unique_id=94940967]
+transform = Transform3D(0.06293986, -0.021215942, 0.9977917, -0.021215707, 0.9995197, 0.02259095, -0.9977917, -0.022590725, 0.062459506, -1.1641532e-10, 2.6077032e-08, -0.0045722765)
 
-[node name="SM_ivy_08" parent="RustyCarsFree/Group001" index="4" unique_id=1734210967]
-visible = false
+[node name="StaticBody3D" type="StaticBody3D" parent="RustyCarsFree/Group003/SM_asset_00" index="0" unique_id=1479260087]
 
-[node name="SM_ivy_09" parent="RustyCarsFree/Group001" index="5" unique_id=1619424926]
-visible = false
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RustyCarsFree/Group003/SM_asset_00/StaticBody3D" index="0" unique_id=635311246]
+shape = SubResource("ConvexPolygonShape3D_ejie3")
 
-[node name="SM_ivy_10" parent="RustyCarsFree/Group002" parent_id_path=PackedInt32Array(1165364412) index="1" unique_id=1315768911]
-visible = false
-
-[node name="SM_ivy_11" parent="RustyCarsFree/Group002" parent_id_path=PackedInt32Array(1165364412) index="2" unique_id=1773804639]
-visible = false
-
-[node name="Group003" parent="RustyCarsFree" parent_id_path=PackedInt32Array(1766319174) index="2" unique_id=1315500843]
-visible = false
-
-[node name="Group004" parent="RustyCarsFree" parent_id_path=PackedInt32Array(1766319174) index="3" unique_id=1631518227]
-visible = false
-
-[node name="SM_asset_02" parent="RustyCarsFree" parent_id_path=PackedInt32Array(1766319174) index="4" unique_id=1930369754]
-visible = false
+[node name="SM_asset_01" parent="RustyCarsFree/Group004" parent_id_path=PackedInt32Array(812407895) index="0" unique_id=1620908347]
+transform = Transform3D(0.6313442, -0.7217484, -0.2836977, 0.65833664, 0.692156, -0.29582688, 0.40987554, -2.6224342e-08, 0.91214174, -0.015043296, -0.00056940503, -0.003635994)

@@ -2,4 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dxefu3kpm3ur" path="res://assets/Models/road barier/road_barrier.fbx" id="1_x6uhq"]
 
-[node name="road_barrier" unique_id=1372022710 instance=ExtResource("1_x6uhq")]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_x6uhq"]
+points = PackedVector3Array(-1.1323411, -0.42854065, -0.2668, 1.1752205, 0.4510458, 0.13132583, 1.2132227, -0.23130292, 0.2830492, -1.2132227, -0.23130292, 0.2830492, -1.1752205, 0.4510458, -0.13403694, 1.2132227, -0.23130292, -0.2857603, 1.1419091, -0.43212864, 0.2663318, -1.1752205, 0.4510458, 0.13132583, 1.1201885, 0.42974147, -0.091629416, -1.1419091, -0.43212864, 0.2663318, 1.1323411, -0.42854065, -0.2668, -1.2132227, -0.23130292, -0.2857603, 0.34107044, 0.4510458, -0.13403694, -1.2132227, 0.18562365, 0.13132583, 1.2132227, -0.003912717, -0.17189819, 1.2132227, -0.003912717, 0.16918707)
+
+[node name="road_barrier" unique_id=141869839 instance=ExtResource("1_x6uhq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="road_barrier" parent_id_path=PackedInt32Array(1725374364) index="0" unique_id=25363153]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="road_barrier/StaticBody3D" index="0" unique_id=2096309338]
+shape = SubResource("ConvexPolygonShape3D_x6uhq")

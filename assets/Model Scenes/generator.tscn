@@ -2,28 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://uu5wmmd7bob5" path="res://assets/Models/generator/electric+generator.fbx" id="1_7k4ff"]
 [ext_resource type="Texture2D" uid="uid://oel3qyiil4mm" path="res://assets/Models/generator/Textures/Textures/Generator_Base_Color.PNG" id="2_qmvr1"]
-[ext_resource type="Texture2D" uid="uid://cn7sjy5ux31hk" path="res://assets/Models/generator/Textures/Textures/Leaves/LeafSet017_1K-JPG_Color.jpg.png" id="3_oqb8q"]
-[ext_resource type="Texture2D" uid="uid://cdyiemsu1q4q4" path="res://assets/Models/generator/Textures/Textures/Bark/2K-ovankol_basecolor.png" id="4_u5wqx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlvgo"]
 albedo_texture = ExtResource("2_qmvr1")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j06iv"]
-transparency = 1
-albedo_texture = ExtResource("3_oqb8q")
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rqtq2"]
+points = PackedVector3Array(0.0024111795, 0.021452341, 0.015570074, -0.009687642, -0.021355104, 0, 0.00966542, -0.021355104, 0, 0.00517923, -0.021452341, 0.017647076, 0.00966542, 0.021355104, 0, -0.010046031, 0.022146031, 0.002423307, -0.005199487, 0.004149129, 0.019031746, -0.005199487, -0.021452341, 0.01764518, 0.01002381, 0.022146031, 0.002423307, -0.009687642, 0.021355104, 0, -0.010046031, -0.022146031, 0.002423307, -0.006445383, 0.0149, 0.01611597, 0.0058687874, 0.01937561, 0.014185404, 0.01002381, -0.022146031, 0.002423307, 0.007253795, -0.0034597754, 0.01349307, 0.0017176933, 0.020064963, 0.016954742, -0.003816444, 0.021452341, 0.014877739, -0.0072999997, 0.012674882, 0.013779761, -0.0017399146, 0.022146031, 0.0134949675, -0.0031249223, 0.0048428182, 0.019031746, -0.0017399146, 0.020064963, 0.016954742, 0.00517923, -0.016609523, 0.017647076, 0.0037942226, 0.01937561, 0.016262408, -0.005199487, 0.020064963, 0.014877739, 0.0044877087, 0.021452341, 0.014185404, 0.0017176933, 0.022146031, 0.01349307, 0.0010261717, -0.0034597754, 0.018337514, 0.007253795, -0.005536508, 0.01349307, 0.0065622735, -0.0034597754, 0.014877739, -0.0031249223, 0.0034597754, 0.019031746, -0.005199487, 0.0048428182, 0.019031746, 0.00517923, 0.020064963, 0.014877739)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qa58t"]
-albedo_texture = ExtResource("4_u5wqx")
+[node name="generator" unique_id=1511842767 instance=ExtResource("1_7k4ff")]
 
-[node name="generator" unique_id=158756211 instance=ExtResource("1_7k4ff")]
-
-[node name="Generator" parent="." index="0" unique_id=725502110]
+[node name="Generator" parent="." index="0" unique_id=1704053679]
 surface_material_override/0 = SubResource("StandardMaterial3D_qlvgo")
 
-[node name="IvyLeaf" parent="Generator" index="0" unique_id=1869180813]
-visible = false
-surface_material_override/0 = SubResource("StandardMaterial3D_j06iv")
+[node name="StaticBody3D" type="StaticBody3D" parent="Generator" index="0" unique_id=1862893910]
 
-[node name="Branches" parent="Generator" index="1" unique_id=1416950004]
-visible = false
-surface_material_override/0 = SubResource("StandardMaterial3D_qa58t")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Generator/StaticBody3D" index="0" unique_id=1767488992]
+shape = SubResource("ConvexPolygonShape3D_rqtq2")

@@ -37,7 +37,49 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:RustyCarsFree/Group001": {
+"import/skip_import": true
+},
+"PATH:RustyCarsFree/Group001/SM_ivy_00": {
+"import/skip_import": true
+},
+"PATH:RustyCarsFree/Group001/SM_ivy_06": {
+"import/skip_import": true
+},
+"PATH:RustyCarsFree/Group001/SM_ivy_07": {
+"import/skip_import": true
+},
+"PATH:RustyCarsFree/Group001/SM_ivy_08": {
+"import/skip_import": true
+},
+"PATH:RustyCarsFree/Group001/SM_ivy_09": {
+"import/skip_import": true
+},
+"PATH:RustyCarsFree/Group002/SM_ivy_10": {
+"import/skip_import": true
+},
+"PATH:RustyCarsFree/Group002/SM_ivy_11": {
+"import/skip_import": true
+},
+"PATH:RustyCarsFree/Group003/SM_ivy_02": {
+"import/skip_import": true
+},
+"PATH:RustyCarsFree/Group003/SM_ivy_03": {
+"import/skip_import": true
+},
+"PATH:RustyCarsFree/Group004/SM_ivy_01": {
+"import/skip_import": true
+},
+"PATH:RustyCarsFree/Group004/SM_ivy_04": {
+"import/skip_import": true
+},
+"PATH:RustyCarsFree/SM_asset_02": {
+"import/skip_import": true
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

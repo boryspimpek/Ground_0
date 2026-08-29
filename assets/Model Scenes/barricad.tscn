@@ -6,8 +6,16 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02wjc"]
 albedo_texture = ExtResource("2_als8h")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i223r"]
+points = PackedVector3Array(32.574574, 9.341158, -100.591835, 229.002, 256.8838, -41.885155, 233.0925, 258.0035, -33.865734, 7.2646213, 215.34259, -11.024383, 225.96902, 3.263436, 21.76352, 257.12476, 51.51291, -101.30619, 30.892132, 3.2634158, 21.763529, 3.1229577, 218.18938, -65.78274, 255.11401, 52.769417, 24.386934, 233.0925, -0.7463379, -87.24447, 5.738495, 52.769417, 24.386932, 257.72955, 218.18938, -65.78274, 3.7277665, 51.51291, -101.30619, 253.58789, 215.34259, -11.024383, 27.760002, 258.0035, -33.865734, 31.115156, 3.5489318, -93.573654, 228.27798, 9.341085, -100.59187, 31.668074, 257.11734, -41.892426, 249.16203, 71.31917, -97.32484, 221.33119, 247.06363, -48.858707, 11.483415, 175.27898, -75.120766, 11.690476, 71.31917, -97.32484, 39.52131, 247.06363, -48.858707, 249.3691, 175.27898, -75.120766, 248.91806, 101.0641, 13.877421)
+
 [node name="Barricad" unique_id=61497852 instance=ExtResource("1_i223r")]
 
 [node name="g Box003_Box003_1001" parent="Barricad" parent_id_path=PackedInt32Array(441168465) index="0" unique_id=1549325898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128.781, 0, 40.00019)
 surface_material_override/0 = SubResource("StandardMaterial3D_02wjc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Barricad/g Box003_Box003_1001" index="0" unique_id=1282021142]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Barricad/g Box003_Box003_1001/StaticBody3D" index="0" unique_id=2017493300]
+shape = SubResource("ConvexPolygonShape3D_i223r")

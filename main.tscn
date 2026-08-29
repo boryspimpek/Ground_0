@@ -65,7 +65,7 @@ light_energy = 0.5
 shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=346466420]
-transform = Transform3D(0.7071067, 0.6105128, -0.3567549, 0, 0.50452757, 0.8633956, 0.7071067, -0.6105128, 0.3567549, -3.695, 7.44, 3.81)
+transform = Transform3D(0.7071067, 0.6105128, -0.3567549, 0, 0.50452757, 0.8633956, 0.7071067, -0.6105128, 0.3567549, -5, 9.535, 5)
 size = 15.0
 script = ExtResource("1_0xm2m")
 
@@ -88,29 +88,47 @@ size = Vector3(22.084717, 1, 78.28015)
 [node name="Sci Fi Drone" parent="Enemies" unique_id=1010871186 instance=ExtResource("7_5vw27")]
 transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.36488914, 1.6671269, -23.635254)
 
-[node name="road_barrier" parent="Enemies" unique_id=1372022710 instance=ExtResource("6_yaehf")]
-transform = Transform3D(-0.9978142, 0, 0.06608221, 0, 1, 0, -0.06608221, 0, -0.9978142, -8.520667, 0.4400345, -6.4265003)
+[node name="Sci Fi Drone2" parent="Enemies" unique_id=309930858 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.83847237, 1.6671269, -22.371387)
 
-[node name="road_barrier2" parent="Enemies" unique_id=988126492 instance=ExtResource("6_yaehf")]
-transform = Transform3D(-0.9864063, 0, 0.16432446, 0, 1, 0, -0.16432446, 0, -0.9864063, 1.2250757, 0.4400345, -7.103481)
+[node name="Sci Fi Drone3" parent="Enemies" unique_id=1002698052 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.19360447, 1.6671269, -24.905714)
 
-[node name="road_barrier3" parent="Enemies" unique_id=1126970498 instance=ExtResource("6_yaehf")]
-transform = Transform3D(-0.9864063, 0, 0.16432446, 0, 1, 0, -0.16432446, 0, -0.9864063, 4.2629004, 0.4400345, -6.5789776)
+[node name="Sci Fi Drone4" parent="Enemies" unique_id=1619799608 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -1.3622589, 1.6671269, -23.84116)
 
-[node name="RoadClosed" parent="Enemies" unique_id=1487756970 instance=ExtResource("7_074og")]
-transform = Transform3D(-0.9999969, 0, 0.0024784505, 0, 1, 0, -0.0024784505, 0, -0.9999969, -1.4978027, -1.9073486e-06, 10.674614)
+[node name="Sci Fi Drone5" parent="Enemies" unique_id=895280333 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 1.3473039, 1.6671269, -23.809698)
 
-[node name="sandbag05" parent="Enemies" unique_id=1697217428 instance=ExtResource("8_074og")]
-transform = Transform3D(0.008463018, 0, -0.022458347, 0, 0.024, 0, 0.022458347, 0, 0.008463018, -7.435975, 0, -38.789574)
+[node name="Sci Fi Drone6" parent="Enemies" unique_id=2039299671 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -4.567911, 1.6671269, -42.66244)
 
-[node name="sandbag06" parent="Enemies" unique_id=852470511 instance=ExtResource("8_074og")]
-transform = Transform3D(-0.0011372487, 0, -0.02397304, 0, 0.024, 0, 0.02397304, 0, -0.0011372487, 7.6432657, 9.536743e-07, -38.63547)
+[node name="Sci Fi Drone7" parent="Enemies" unique_id=1624201152 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -5.2552795, 1.6671269, -41.324806)
 
-[node name="sandbag07" parent="Enemies" unique_id=898798946 instance=ExtResource("8_074og")]
-transform = Transform3D(-0.0007387857, 0, 0.023988627, 0, 0.023999998, 0, -0.023988627, 0, -0.0007387857, 6.467678, 0, 18.9039)
+[node name="Sci Fi Drone8" parent="Enemies" unique_id=322577117 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -3.7225122, 1.6563742, -41.122326)
 
-[node name="sandbag08" parent="Enemies" unique_id=1388273218 instance=ExtResource("8_074og")]
-transform = Transform3D(-0.0007387857, 0, 0.023988627, 0, 0.023999998, 0, -0.023988627, 0, -0.0007387857, -5.861747, 0, 19.77806)
+[node name="Sci Fi Drone9" parent="Enemies" unique_id=1108682301 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -1.5478239, 1.6671269, -42.24313)
+
+[node name="Sci Fi Drone10" parent="Enemies" unique_id=71115345 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -3.2720394, 1.6671269, -43.386127)
+
+[node name="Sci Fi Drone11" parent="Enemies" unique_id=68117711 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.9538326, 1.6671269, 16.999933)
+
+[node name="Sci Fi Drone12" parent="Enemies" unique_id=641869288 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.0016622543, 1.6671269, 18.58456)
+
+[node name="Sci Fi Drone13" parent="Enemies" unique_id=1223833340 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 1.8933077, 1.6671269, 18.73096)
+
+[node name="Sci Fi Drone14" parent="Enemies" unique_id=1038661222 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -0.6719122, 1.6671269, 16.102077)
+
+[node name="Sci Fi Drone15" parent="Enemies" unique_id=818481436 instance=ExtResource("7_5vw27")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 2.2320375, 1.6671269, 16.46924)
 
 [node name="Player" parent="." unique_id=1379137831 instance=ExtResource("6_272bh")]
 
@@ -135,7 +153,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7674613, 4.7683716e-07, -2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.600815, 4.7683716e-07, -42.18983)
 
 [node name="rustcars" parent="Arena" unique_id=552070772 instance=ExtResource("9_yaehf")]
-transform = Transform3D(0.84962034, 0, 1.3439664, 0, 1.59, 0, -1.3439664, 0, 0.84962034, -4.3323107, 0, 8.499804)
+transform = Transform3D(0.84962034, 0, 1.3439664, 0, 1.59, 0, -1.3439664, 0, 0.84962034, -6.542184, 0, 11.227959)
 
 [node name="sentry" parent="Arena" unique_id=353209582 instance=ExtResource("10_074og")]
 transform = Transform3D(1.86, 0, 0, 0, 1.86, 0, 0, 0, 1.86, -6.0624437, 0, 20.427076)
@@ -158,14 +176,38 @@ transform = Transform3D(0.8894384, -0.19206254, 0.4147426, 0.21477939, 0.976627,
 [node name="generator" parent="Arena" unique_id=158756211 instance=ExtResource("13_getpj")]
 transform = Transform3D(-0.20777507, 0, 0.97817665, 0, 1, 0, -0.97817665, 0, -0.20777507, -5.7476497, 0, -48.589622)
 
-[node name="generator2" parent="Arena" unique_id=1917322386 instance=ExtResource("13_getpj")]
+[node name="generator2" parent="Arena" unique_id=2069074318 instance=ExtResource("13_getpj")]
 transform = Transform3D(-0.20777507, 0, 0.97817665, 0, 1, 0, -0.97817665, 0, -0.20777507, -4.6447444, 0, -46.38082)
 
 [node name="Radio Telescope" parent="Arena" unique_id=1827562756 instance=ExtResource("14_ryguw")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 4.105, 0, -47.359)
 
-[node name="barikad" parent="." unique_id=1919969693 instance=ExtResource("14_w48qg")]
+[node name="road_barrier" parent="Arena" unique_id=1372022710 instance=ExtResource("6_yaehf")]
+transform = Transform3D(-0.9978142, 0, 0.06608221, 0, 1, 0, -0.06608221, 0, -0.9978142, -8.520667, 0.4400345, -6.4265003)
+
+[node name="road_barrier2" parent="Arena" unique_id=519436234 instance=ExtResource("6_yaehf")]
+transform = Transform3D(-0.9864063, 0, 0.16432446, 0, 1, 0, -0.16432446, 0, -0.9864063, 1.2250757, 0.4400345, -7.103481)
+
+[node name="road_barrier3" parent="Arena" unique_id=1131285344 instance=ExtResource("6_yaehf")]
+transform = Transform3D(-0.9864063, 0, 0.16432446, 0, 1, 0, -0.16432446, 0, -0.9864063, 4.2629004, 0.4400345, -6.5789776)
+
+[node name="RoadClosed" parent="Arena" unique_id=1487756970 instance=ExtResource("7_074og")]
+transform = Transform3D(-0.9999969, 0, 0.0024784505, 0, 1, 0, -0.0024784505, 0, -0.9999969, 1.9165225, -1.9073486e-06, 5.8191695)
+
+[node name="sandbag05" parent="Arena" unique_id=1697217428 instance=ExtResource("8_074og")]
+transform = Transform3D(0.008463018, 0, -0.022458347, 0, 0.024, 0, 0.022458347, 0, 0.008463018, -7.435975, 0, -38.789574)
+
+[node name="sandbag06" parent="Arena" unique_id=852470511 instance=ExtResource("8_074og")]
+transform = Transform3D(-0.0011372487, 0, -0.02397304, 0, 0.024, 0, 0.02397304, 0, -0.0011372487, 7.6432657, 9.536743e-07, -38.63547)
+
+[node name="sandbag07" parent="Arena" unique_id=898798946 instance=ExtResource("8_074og")]
+transform = Transform3D(-0.0007387857, 0, 0.023988627, 0, 0.023999998, 0, -0.023988627, 0, -0.0007387857, 6.467678, 0, 18.9039)
+
+[node name="sandbag08" parent="Arena" unique_id=1388273218 instance=ExtResource("8_074og")]
+transform = Transform3D(-0.0007387857, 0, 0.023988627, 0, 0.023999998, 0, -0.023988627, 0, -0.0007387857, -5.861747, 0, 19.77806)
+
+[node name="barikad" parent="Arena" unique_id=1919969693 instance=ExtResource("14_w48qg")]
 transform = Transform3D(1.6892046, 0, 0.051846296, 0, 1.6899999, 0, -0.051846296, 0, 1.6892046, 1.0406151, -3.6617384, -32.840866)
 
-[node name="Barricad" parent="." unique_id=61497852 instance=ExtResource("15_vivmo")]
+[node name="Barricad" parent="Arena" unique_id=61497852 instance=ExtResource("15_vivmo")]
 transform = Transform3D(0.0049964795, 0, -0.00018757896, 0, 0.005, 0, 0.00018757896, 0, 0.0049964795, -6.2253513, 0, -6.0099072)

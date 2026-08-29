@@ -3,6 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cna5lv8qat3gh" path="res://assets/Models/uaz/Post_Apocalyptic_UAZ.fbx" id="1_j4i1f"]
 [ext_resource type="Script" uid="uid://da4sfcgqbv8lg" path="res://Scripts/car_lights.gd" id="2_g3qa8"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g3qa8"]
+points = PackedVector3Array(0.010824006, 0.02263086, 0.007595083, -0.012092839, -0.020838523, -0.0074236547, -0.012092839, -0.020838523, -0.0010981429, 0.011617964, -0.02242319, -0.008210958, -0.01050972, 0.024210572, -0.009004066, -0.0057699583, -0.016886761, 0.009966667, -0.01050972, 0.021833573, 0.0083823865, 0.011617964, 0.02263086, -0.009004066, 0.010824006, -0.017679095, 0.007595083, -0.01050972, -0.019253857, -0.009795238, -0.0018145596, -0.024795238, 0.00048033334, 0.006084244, 0.021046191, 0.009966667, 0.010037244, 0.02579524, 0.0012695715, -0.012092839, 0.023423191, -0.0026804882, -0.011303678, -0.012142666, 0.007595083, 0.012407125, -0.008983238, -0.0010981429, 0.010824006, -0.019253857, -0.009795238, -0.011303678, 0.021046191, -0.009795238, 0.0052950834, -0.017679095, 0.009966667, -0.008139839, 0.023423191, 0.009175494, -0.004189238, -0.024795238, -0.008210958, -0.009722958, 0.02579524, 0.0012695715, 0.0076625654, -0.024002904, 0.00048033334, 0.0076625654, 0.02579524, -0.006632482, 0.010824006, 0.021046191, -0.009795238, -0.008929, -0.019253857, 0.007595083, 0.008454125, 0.024210572, 0.0083823865, -0.0057699583, 0.021833573, 0.009966667, 0.010824006, -0.015302096, 0.0083823865, -0.008139839, -0.024002904, -0.0003089048, 0.011617964, 0.024210572, 0.00048033334, 0.004503524, -0.024795238, -0.008210958)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcu3q"]
 albedo_color = Color(1, 1, 0, 1)
 emission_enabled = true
@@ -13,6 +16,20 @@ emission_energy_multiplier = 2.0
 material = SubResource("StandardMaterial3D_pcu3q")
 
 [node name="UAZ" unique_id=1126700190 instance=ExtResource("1_j4i1f")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="_body_source" parent_id_path=PackedInt32Array(1985736451) index="0" unique_id=1264805841]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="_body_source/StaticBody3D" index="0" unique_id=291494116]
+shape = SubResource("ConvexPolygonShape3D_g3qa8")
+
+[node name="_whels" parent="." index="1" unique_id=1405078579]
+visible = false
+
+[node name="wheels_left_1" parent="." index="3" unique_id=14238820]
+visible = false
+
+[node name="wheels_left_2" parent="." index="4" unique_id=447949258]
+visible = false
 
 [node name="Lights" type="Node3D" parent="." index="8" unique_id=315297535 node_paths=PackedStringArray("spot_light_left", "spot_light_right", "mesh_left", "mesh_right")]
 script = ExtResource("2_g3qa8")
