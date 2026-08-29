@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dra0ivq7stx8c" path="res://assets/BinbunVFX_Vol2/FlameFX/effects/fire/vfx_basic_fire_01.tscn" id="4_bohss"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cwtes"]
-friction = 0.5
+friction = 0.8
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7g55"]
 resource_name = "Sci_fi_Barrel_Mat"
@@ -57,6 +57,7 @@ height = 0.9609375
 radius = 0.31201172
 
 [node name="Barrel" type="RigidBody3D" unique_id=1315396493]
+mass = 3.0
 physics_material_override = SubResource("PhysicsMaterial_cwtes")
 
 [node name="Sci_fi_Barrel" type="MeshInstance3D" parent="." unique_id=1455303862]
