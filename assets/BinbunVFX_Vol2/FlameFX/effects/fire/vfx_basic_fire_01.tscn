@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://cneaifchvd2co" path="res://assets/BinbunVFX_Vol2/FlameFX/shader/fire_particle.gdshader" id="2_m3gkq"]
 [ext_resource type="Shader" uid="uid://eycsgqxkqq0o" path="res://assets/BinbunVFX_Vol2/FlameFX/shader/fire_core.gdshader" id="3_exy6d"]
 [ext_resource type="Script" uid="uid://det5ial4w3y6k" path="res://Scripts/fire_light.gd" id="4_1kvkf"]
+[ext_resource type="AudioStream" uid="uid://bjyspu0ccsu8m" path="res://assets/Sounds/fire/soundreality-fire-crackling-sound-499636.mp3" id="5_ifr6m"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_wbfbh"]
 noise_type = 2
@@ -237,12 +238,15 @@ range_flicker = null
 noise_speed = null
 color_bright = null
 color_dim = null
-light_mult = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1647106649]
 libraries/ = SubResource("AnimationLibrary_exy6d")
 playback_default_blend_time = 0.2
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=246486139]
+stream = ExtResource("5_ifr6m")
+attenuation_model = 2
 volume_db = -24.0
-max_distance = 3.0
+autoplay = true
+max_distance = 15.0
+attenuation_filter_db = -70.0
