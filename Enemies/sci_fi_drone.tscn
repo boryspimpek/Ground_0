@@ -109,7 +109,6 @@ mesh = SubResource("QuadMesh_lmnwc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.664917)
 light_color = Color(1, 0, 1, 1)
 light_energy = 8.0
-light_size = 1.0
 light_specular = 10.0
 omni_range = 0.28
 

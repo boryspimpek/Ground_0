@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dqq47w73611dv" path="res://assets/Models/Barrel/Sci+fi+Barrel.fbx" id="1_bcutj"]
 [ext_resource type="Texture2D" uid="uid://cva4y8rjkqtyt" path="res://assets/Models/Barrel/Texture/Used_Sci fi barrel_AlbedoTransparency.png" id="2_7ykqa"]
 [ext_resource type="Texture2D" uid="uid://bd78cycd6ks31" path="res://assets/Models/Barrel/Texture/Used_Sci fi barrel_Normal.png" id="3_n128h"]
+[ext_resource type="PackedScene" uid="uid://dra0ivq7stx8c" path="res://assets/BinbunVFX_Vol2/FlameFX/effects/fire/vfx_basic_fire_01.tscn" id="4_bohss"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3oe7g"]
 albedo_texture = ExtResource("2_7ykqa")
@@ -13,3 +14,7 @@ normal_texture = ExtResource("3_n128h")
 
 [node name="Sci_fi_Barrel" parent="." index="0" unique_id=1455303862]
 surface_material_override/0 = SubResource("StandardMaterial3D_3oe7g")
+
+[node name="VFXBasicFire_01" parent="." index="1" unique_id=2052583828 instance=ExtResource("4_bohss")]
+transform = Transform3D(-0.40937388, 0, 0.91236687, 0, 1, 0, -0.91236687, 0, -0.40937388, 0, 1.0236647, 0)
+flame_scale = Vector2(1.205, 0.8)

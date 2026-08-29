@@ -1,5 +1,45 @@
 [gd_scene format=3 uid="uid://bjup8uk8t245l"]
 
 [ext_resource type="PackedScene" uid="uid://cna5lv8qat3gh" path="res://assets/Models/uaz/Post_Apocalyptic_UAZ.fbx" id="1_j4i1f"]
+[ext_resource type="Script" uid="uid://bdhog1xd334l7" path="res://car_lights.gd" id="2_g3qa8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pcu3q"]
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_g3qa8"]
+material = SubResource("StandardMaterial3D_pcu3q")
 
 [node name="UAZ" unique_id=1126700190 instance=ExtResource("1_j4i1f")]
+
+[node name="Lights" type="Node3D" parent="." index="8" unique_id=315297535 node_paths=PackedStringArray("spot_light_left", "spot_light_right", "mesh_left", "mesh_right")]
+script = ExtResource("2_g3qa8")
+spot_light_left = NodePath("SpotLight3D")
+spot_light_right = NodePath("SpotLight3D2")
+mesh_left = NodePath("MeshInstance3D")
+mesh_right = NodePath("MeshInstance3D2")
+flicker_speed = 0.08
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights" index="0" unique_id=1993165320]
+transform = Transform3D(-1, -3.2466012e-08, 8.117081e-08, 0, 0.9284859, 0.37136787, -8.742278e-08, 0.37136787, -0.9284859, 0.7650411, 0.123, 2.143)
+light_color = Color(1, 1, 0, 1)
+light_energy = 4.0
+spot_attenuation = -0.15
+spot_angle = 25.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights" index="1" unique_id=611771839]
+transform = Transform3D(-1, -3.2466012e-08, 8.117081e-08, 0, 0.9284859, 0.37136787, -8.742278e-08, 0.37136787, -0.9284859, -0.5519707, 0.123, 2.143)
+light_color = Color(1, 1, 0, 1)
+light_energy = 4.0
+spot_attenuation = -0.15
+spot_angle = 25.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Lights" index="2" unique_id=1262863971]
+transform = Transform3D(0.181, 0, 0, 0, 0.181, 0, 0, 0, 0.181, 0.76299727, 1.3702652, 0.66580105)
+mesh = SubResource("SphereMesh_g3qa8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Lights" index="3" unique_id=999864606]
+transform = Transform3D(0.181, 0, 0, 0, 0.181, 0, 0, 0, 0.181, -0.5620984, 1.3702652, 0.66580105)
+mesh = SubResource("SphereMesh_g3qa8")

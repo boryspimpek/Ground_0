@@ -2,9 +2,9 @@
 
 [ext_resource type="AudioStream" uid="uid://btvvhtfmt45e" path="res://assets/Sounds/guns/shotgun_shot2.mp3" id="1_eytye"]
 [ext_resource type="PackedScene" uid="uid://dbxojkr0k7vsg" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/hit/vfx_hit_01.tscn" id="1_fnmix"]
-[ext_resource type="PackedScene" uid="uid://cmmlja5n8gvuh" path="res://Projectile/projectile.tscn" id="1_mqijo"]
 [ext_resource type="Script" uid="uid://vfi6dybnjra6" path="res://WeaponResources/weapon_data.gd" id="1_msmrs"]
 [ext_resource type="PackedScene" uid="uid://djei8rcsa8lfv" path="res://assets/BinbunVFX/muzzle_flash/effects/wide_flash/wide_flash_01.tscn" id="2_nglgl"]
+[ext_resource type="PackedScene" uid="uid://d3pigm2371yh5" path="res://Projectile/javelin.tscn" id="4_eytye"]
 [ext_resource type="AudioStream" uid="uid://o4lmpj6n5yu" path="res://assets/Sounds/guns/shotgun_reload.mp3" id="5_f3vi1"]
 
 [resource]
@@ -19,7 +19,7 @@ min_falloff_range = 5.0
 min_damage_multiplier = 0.0
 pellets_per_shot = 20
 spread_angle = 5.0
-projectile_scene = ExtResource("1_mqijo")
+projectile_scene = ExtResource("4_eytye")
 muzzle_flash_scene = ExtResource("2_nglgl")
 impact_effect_scene = ExtResource("1_fnmix")
 fire_sound = ExtResource("1_eytye")

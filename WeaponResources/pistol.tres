@@ -1,23 +1,23 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://p85v5fyrnfnx"]
 
-[ext_resource type="PackedScene" uid="uid://cmmlja5n8gvuh" path="res://Projectile/projectile.tscn" id="1_6230l"]
 [ext_resource type="AudioStream" uid="uid://cdxmbbc00ktdn" path="res://assets/Sounds/guns/Full Sounds/9mm/MP3/9mm Single.mp3" id="1_nebce"]
 [ext_resource type="PackedScene" uid="uid://dbxojkr0k7vsg" path="res://assets/BinbunVFX_Vol2/StylizedHitFX/effects/hit/vfx_hit_01.tscn" id="2_y8r88"]
 [ext_resource type="Script" uid="uid://vfi6dybnjra6" path="res://WeaponResources/weapon_data.gd" id="3_m5av0"]
 [ext_resource type="PackedScene" uid="uid://cu2ipnvx6wrv2" path="res://assets/BinbunVFX/muzzle_flash/effects/muzzle_flash/muzzle_flash_02.tscn" id="3_y8r88"]
 [ext_resource type="AudioStream" uid="uid://6pw252xntcsc" path="res://assets/Sounds/guns/reload/gun-reload.mp3" id="4_y8r88"]
+[ext_resource type="PackedScene" uid="uid://d3pigm2371yh5" path="res://Projectile/javelin.tscn" id="4_ypdgh"]
 
 [resource]
 script = ExtResource("3_m5av0")
 id = "1"
 weapon_name = "Pistol"
 is_automatic = true
-cooldown = 0.5
+cooldown = 0.35
 max_range = 15.0
 min_damage_multiplier = 1.0
 magazine_size = 10
 reload_time = 1.0
-projectile_scene = ExtResource("1_6230l")
+projectile_scene = ExtResource("4_ypdgh")
 muzzle_flash_scene = ExtResource("3_y8r88")
 impact_effect_scene = ExtResource("2_y8r88")
 fire_sound = ExtResource("1_nebce")
