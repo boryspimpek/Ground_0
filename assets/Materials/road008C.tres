@@ -2,11 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://yjjybnjmvtmw" path="res://assets/Textures/roads/Road008C_1K-JPG/Road008C_1K-JPG_Color.jpg" id="1_2oi6r"]
 [ext_resource type="Texture2D" uid="uid://dx05nvthl7h3x" path="res://assets/Textures/roads/Road008C_1K-JPG/Road008C_1K-JPG_NormalGL.jpg" id="2_dnpja"]
-[ext_resource type="Texture2D" uid="uid://ddugw7hpnkxny" path="res://assets/Textures/roads/Asphalt019_1K-JPG/Asphalt019_1K-JPG_Roughness.jpg" id="3_h3obd"]
 
 [resource]
 albedo_texture = ExtResource("1_2oi6r")
-roughness_texture = ExtResource("3_h3obd")
 normal_enabled = true
 normal_texture = ExtResource("2_dnpja")
 uv1_scale = Vector3(0.05, 0.05, 0.05)

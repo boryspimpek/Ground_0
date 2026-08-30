@@ -19,7 +19,7 @@
 [ext_resource type="Material" uid="uid://bx7tqxju1b48l" path="res://assets/Materials/road008C.tres" id="17_82xsv"]
 [ext_resource type="Shader" uid="uid://cwo2i2ot3640a" path="res://edge.gdshader" id="19_cegan"]
 [ext_resource type="Texture2D" uid="uid://cyab885dlf2qu" path="res://assets/Textures/Snow004_1K-JPG/Snow004_1K-JPG_Color.jpg" id="20_getpj"]
-[ext_resource type="PackedScene" uid="uid://chc2u4jwwxpcp" path="res://assets/Model Scenes/street_light_double.tscn" id="21_getpj"]
+[ext_resource type="PackedScene" uid="uid://chc2u4jwwxpcp" path="res://assets/Model Scenes/street_light.tscn" id="21_getpj"]
 [ext_resource type="Texture2D" uid="uid://e4yhcymq4ihl" path="res://assets/Textures/Snow004_1K-JPG/Snow004_1K-JPG_NormalGL.jpg" id="21_ryguw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ycdy4"]
@@ -37,7 +37,6 @@ background_mode = 2
 sky = SubResource("Sky_2cqfq")
 ambient_light_source = 2
 ambient_light_color = Color(0.05882353, 0.09411765, 0.16862746, 1)
-ambient_light_energy = 0.3
 reflected_light_source = 2
 tonemap_mode = 3
 glow_enabled = true
@@ -88,7 +87,7 @@ environment = SubResource("Environment_h2yge")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=877989289]
 transform = Transform3D(-0.16332601, 0.32932454, -0.9299838, 0, 0.94264144, 0.33380684, 0.98657215, 0.05451934, -0.15395786, 0, 10, 0)
 light_color = Color(1, 1, 0.8980392, 1)
-light_energy = 0.5
+light_energy = 0.1
 light_specular = 0.03
 shadow_enabled = true
 shadow_opacity = 0.91
@@ -102,7 +101,7 @@ size = 24.616
 script = ExtResource("1_0xm2m")
 
 [node name="Camera3D2" type="Camera3D" parent="." unique_id=892619538]
-transform = Transform3D(0.7071067, 0.4999999, -0.49999997, 0, 0.7071067, 0.70710677, 0.7071067, -0.4999999, 0.49999997, -10, 10, 8.25)
+transform = Transform3D(0.7071067, 0.54167515, -0.45451945, 0, 0.6427876, 0.7660444, 0.7071067, -0.54167515, 0.45451945, -10, 10, 8.25)
 visible = false
 current = true
 size = 24.616
@@ -162,25 +161,28 @@ transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 2.23
 [node name="Arena" type="MeshInstance3D" parent="." unique_id=1144122714]
 
 [node name="Barrel" parent="Arena" unique_id=708475063 instance=ExtResource("8_2cqfq")]
-transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, 0.5603056, -9.536743e-07, 18.333893)
+transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, -16.392239, -9.536743e-07, 19.359413)
 
 [node name="Barrel7" parent="Arena" unique_id=1315396493 instance=ExtResource("8_2cqfq")]
 transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, -0.018306136, -9.536743e-07, -6.2315702)
 
-[node name="Barrel8" parent="Arena" unique_id=738754875 instance=ExtResource("8_2cqfq")]
-transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, -6.6478686, -9.536743e-07, -12.070025)
-
 [node name="Barrel2" parent="Arena" unique_id=129110064 instance=ExtResource("8_2cqfq")]
 transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, -6.4801736, -1.4305115e-06, 13.611901)
 
+[node name="Barrel3" parent="Arena" unique_id=706177299 instance=ExtResource("8_2cqfq")]
+transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, 16.897564, -2.3841858e-06, 19.385822)
+
 [node name="Barrel4" parent="Arena" unique_id=1284619419 instance=ExtResource("8_2cqfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.774112, 4.7683716e-07, -25.858248)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0315294, 4.7683716e-07, -27.268845)
 
 [node name="Barrel6" parent="Arena" unique_id=1318349924 instance=ExtResource("8_2cqfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7674613, 4.7683716e-07, -25.707127)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.673634, 4.7683716e-07, -27.771576)
 
 [node name="Barrel5" parent="Arena" unique_id=987457117 instance=ExtResource("8_2cqfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.600815, 4.7683716e-07, -42.18983)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.208914, 4.7683716e-07, -44.842968)
+
+[node name="Barrel8" parent="Arena" unique_id=415533334 instance=ExtResource("8_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.462488, 4.7683716e-07, -40.179058)
 
 [node name="rustcars" parent="Arena" unique_id=298416723 instance=ExtResource("9_yaehf")]
 transform = Transform3D(0.84962034, 0, 1.3439664, 0, 1.59, 0, -1.3439664, 0, 0.84962034, -9.451386, 0, 11.227959)
@@ -213,7 +215,7 @@ transform = Transform3D(-0.20777507, 0, 0.97817665, 0, 1, 0, -0.97817665, 0, -0.
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 10.270885, 0, -47.359)
 
 [node name="road_barrier" parent="Arena" unique_id=1372022710 instance=ExtResource("6_yaehf")]
-transform = Transform3D(-0.9978142, 0, 0.06608221, 0, 1, 0, -0.06608221, 0, -0.9978142, -8.520667, 0.4400345, -6.4265003)
+transform = Transform3D(-0.9978142, 0, 0.06608221, 0, 1, 0, -0.06608221, 0, -0.9978142, -8.520667, 0.4400345, -8.465473)
 
 [node name="road_barrier2" parent="Arena" unique_id=519436234 instance=ExtResource("6_yaehf")]
 transform = Transform3D(-0.9864063, 0, 0.16432446, 0, 1, 0, -0.16432446, 0, -0.9864063, 1.2250757, 0.4400345, -7.103481)
@@ -240,7 +242,7 @@ transform = Transform3D(-0.0007387857, 0, 0.023988627, 0, 0.023999998, 0, -0.023
 transform = Transform3D(1.6892046, 0, 0.051846296, 0, 1.6899999, 0, -0.051846296, 0, 1.6892046, 1.0406151, -3.6617384, -32.840866)
 
 [node name="Barricad" parent="Arena" unique_id=61497852 instance=ExtResource("15_vivmo")]
-transform = Transform3D(0.0049964795, 0, -0.00018757896, 0, 0.005, 0, 0.00018757896, 0, 0.0049964795, -6.2253513, 0, -6.0099072)
+transform = Transform3D(0.0049964795, 0, -0.00018757896, 0, 0.005, 0, 0.00018757896, 0, 0.0049964795, -6.2253513, 0, -8.458432)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=522533730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.626, -0.5, -15.39)
@@ -269,4 +271,37 @@ visible = false
 shape = SubResource("ConvexPolygonShape3D_lswn8")
 
 [node name="StreetLightPoles" parent="." unique_id=605025255 instance=ExtResource("21_getpj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.880691, 0, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.880691, 0, 22.851007)
+is_broken = true
+
+[node name="StreetLightPoles9" parent="." unique_id=2075578572 instance=ExtResource("21_getpj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.880691, 0, 2.9963655)
+
+[node name="StreetLightPoles2" parent="." unique_id=1678901965 instance=ExtResource("21_getpj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.880691, 0, -13.106119)
+
+[node name="StreetLightPoles3" parent="." unique_id=313757123 instance=ExtResource("21_getpj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.880691, 0, -34.056175)
+
+[node name="StreetLightPoles4" parent="." unique_id=706197003 instance=ExtResource("21_getpj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.880691, 0, -54.94737)
+is_broken = true
+
+[node name="StreetLightPoles5" parent="." unique_id=1865365403 instance=ExtResource("21_getpj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.221581, 0, 22.39567)
+
+[node name="StreetLightPoles6" parent="." unique_id=768803030 instance=ExtResource("21_getpj")]
+transform = Transform3D(-0.76452804, 0.03887406, 0.6434172, 0.37083635, 0.8429754, 0.3897082, -0.52723545, 0.5365455, -0.65889454, -10.221581, 0, -13.106119)
+is_broken = true
+
+[node name="StreetLightPoles7" parent="." unique_id=937144464 instance=ExtResource("21_getpj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.221581, 0, -34.056175)
+
+[node name="StreetLightPoles11" parent="." unique_id=1654887837 instance=ExtResource("21_getpj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.221581, 0, -21.793648)
+
+[node name="StreetLightPoles12" parent="." unique_id=897088196 instance=ExtResource("21_getpj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.221581, 0, 1.0814953)
+
+[node name="StreetLightPoles8" parent="." unique_id=821650774 instance=ExtResource("21_getpj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.221581, 0, -54.94737)

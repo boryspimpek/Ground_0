@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://chc2u4jwwxpcp"]
 
 [ext_resource type="PackedScene" uid="uid://jjgmi1en0h7b" path="res://assets/Models/street lights/StreetLightPoles.fbx" id="1_xy2jd"]
+[ext_resource type="Script" uid="uid://dww8jhafmrs1x" path="res://Scripts/street_lights.gd" id="2_u4qlc"]
 [ext_resource type="Texture2D" uid="uid://bqhnvy1nmb5ev" path="res://assets/Models/street lights/Single-arm street light pole/single_arm_BaseColor.jpg" id="2_xy2jd"]
 [ext_resource type="Texture2D" uid="uid://bpixqrraatql0" path="res://assets/Models/street lights/Single-arm street light pole/single_arm_Emission.jpg" id="3_u4qlc"]
 [ext_resource type="Texture2D" uid="uid://w1kvbvirbwgp" path="res://assets/Models/street lights/Single-arm street light pole/single_arm_Metalness.jpg" id="4_lgsev"]
@@ -13,12 +14,24 @@ metallic = 1.0
 metallic_texture = ExtResource("4_lgsev")
 roughness_texture = ExtResource("6_kqqfd")
 emission_enabled = true
+emission_energy_multiplier = 3.62
 emission_texture = ExtResource("3_u4qlc")
 normal_enabled = true
 normal_texture = ExtResource("5_42tmr")
 
-[node name="StreetLightPoles" unique_id=2075578572 instance=ExtResource("1_xy2jd")]
+[node name="StreetLight" unique_id=2075578572 node_paths=PackedStringArray("light_node", "mesh_node") instance=ExtResource("1_xy2jd")]
+script = ExtResource("2_u4qlc")
+light_node = NodePath("SpotLight3D")
+mesh_node = NodePath("Single_arm")
+flicker_speed = 0.15
 
 [node name="Single_arm" parent="." index="0" unique_id=1857445159]
 transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -0.80926394, 3.4681253, 2.5025516e-08)
 surface_material_override/0 = SubResource("StandardMaterial3D_nch6q")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="1" unique_id=1971290836]
+transform = Transform3D(-4.371139e-08, -0.9953962, 0.09584576, 0, 0.09584576, 0.9953962, -1, 4.351015e-08, -4.1895514e-09, -1.6280107, 6.6476264, 0)
+light_color = Color(0.6392157, 0.8784314, 1, 1)
+light_energy = 4.143
+spot_range = 12.19
+spot_angle = 50.0
