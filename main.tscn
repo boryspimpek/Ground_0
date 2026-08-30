@@ -19,6 +19,7 @@
 [ext_resource type="Material" uid="uid://bx7tqxju1b48l" path="res://assets/Materials/road008C.tres" id="17_82xsv"]
 [ext_resource type="Shader" uid="uid://cwo2i2ot3640a" path="res://edge.gdshader" id="19_cegan"]
 [ext_resource type="Texture2D" uid="uid://cyab885dlf2qu" path="res://assets/Textures/Snow004_1K-JPG/Snow004_1K-JPG_Color.jpg" id="20_getpj"]
+[ext_resource type="PackedScene" uid="uid://chc2u4jwwxpcp" path="res://assets/Model Scenes/street_light_double.tscn" id="21_getpj"]
 [ext_resource type="Texture2D" uid="uid://e4yhcymq4ihl" path="res://assets/Textures/Snow004_1K-JPG/Snow004_1K-JPG_NormalGL.jpg" id="21_ryguw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ycdy4"]
@@ -40,6 +41,8 @@ ambient_light_energy = 0.3
 reflected_light_source = 2
 tonemap_mode = 3
 glow_enabled = true
+fog_depth_begin = 2.0
+fog_depth_end = 239.5
 adjustment_enabled = true
 adjustment_saturation = 1.5
 
@@ -264,3 +267,6 @@ mesh = SubResource("PlaneMesh_getpj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=983367586]
 visible = false
 shape = SubResource("ConvexPolygonShape3D_lswn8")
+
+[node name="StreetLightPoles" parent="." unique_id=605025255 instance=ExtResource("21_getpj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.880691, 0, 7)

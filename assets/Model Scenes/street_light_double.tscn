@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://chc2u4jwwxpcp"]
+
+[ext_resource type="PackedScene" uid="uid://jjgmi1en0h7b" path="res://assets/Models/street lights/StreetLightPoles.fbx" id="1_xy2jd"]
+[ext_resource type="Texture2D" uid="uid://bqhnvy1nmb5ev" path="res://assets/Models/street lights/Single-arm street light pole/single_arm_BaseColor.jpg" id="2_xy2jd"]
+[ext_resource type="Texture2D" uid="uid://bpixqrraatql0" path="res://assets/Models/street lights/Single-arm street light pole/single_arm_Emission.jpg" id="3_u4qlc"]
+[ext_resource type="Texture2D" uid="uid://w1kvbvirbwgp" path="res://assets/Models/street lights/Single-arm street light pole/single_arm_Metalness.jpg" id="4_lgsev"]
+[ext_resource type="Texture2D" uid="uid://bnlmxxa5nuph3" path="res://assets/Models/street lights/Single-arm street light pole/single_arm_Normal.jpg" id="5_42tmr"]
+[ext_resource type="Texture2D" uid="uid://cs7jtks4hplos" path="res://assets/Models/street lights/Single-arm street light pole/single_arm_Roughness.jpg" id="6_kqqfd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nch6q"]
+albedo_texture = ExtResource("2_xy2jd")
+metallic = 1.0
+metallic_texture = ExtResource("4_lgsev")
+roughness_texture = ExtResource("6_kqqfd")
+emission_enabled = true
+emission_texture = ExtResource("3_u4qlc")
+normal_enabled = true
+normal_texture = ExtResource("5_42tmr")
+
+[node name="StreetLightPoles" unique_id=2075578572 instance=ExtResource("1_xy2jd")]
+
+[node name="Single_arm" parent="." index="0" unique_id=1857445159]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, -0.80926394, 3.4681253, 2.5025516e-08)
+surface_material_override/0 = SubResource("StandardMaterial3D_nch6q")
