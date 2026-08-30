@@ -244,64 +244,66 @@ transform = Transform3D(1.6892046, 0, 0.051846296, 0, 1.6899999, 0, -0.051846296
 [node name="Barricad" parent="Arena" unique_id=61497852 instance=ExtResource("15_vivmo")]
 transform = Transform3D(0.0049964795, 0, -0.00018757896, 0, 0.005, 0, 0.00018757896, 0, 0.0049964795, -6.2253513, 0, -8.458432)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=522533730]
+[node name="Road" type="Node3D" parent="Arena" unique_id=1151598272]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Arena/Road" unique_id=522533730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.626, -0.5, -15.39)
 material_override = ExtResource("17_82xsv")
 use_collision = true
 size = Vector3(22.084717, 1, 78.28015)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1953325203]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Arena/Road" unique_id=1953325203]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.76381, 0.05, -15.867)
 mesh = SubResource("PlaneMesh_getpj")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=443433655]
+[node name="StaticBody3D" type="StaticBody3D" parent="Arena/Road/MeshInstance3D" unique_id=443433655]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=946681005]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Road/MeshInstance3D/StaticBody3D" unique_id=946681005]
 visible = false
 shape = SubResource("ConvexPolygonShape3D_0odxb")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1496395539]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Arena/Road" unique_id=1496395539]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 18.269226, 0.05, -15.867)
 mesh = SubResource("PlaneMesh_getpj")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=641085066]
+[node name="StaticBody3D" type="StaticBody3D" parent="Arena/Road/MeshInstance3D2" unique_id=641085066]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=983367586]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Arena/Road/MeshInstance3D2/StaticBody3D" unique_id=983367586]
 visible = false
 shape = SubResource("ConvexPolygonShape3D_lswn8")
 
-[node name="StreetLightPoles" parent="." unique_id=605025255 instance=ExtResource("21_getpj")]
+[node name="StreetLightPoles" parent="Arena/Road" unique_id=605025255 instance=ExtResource("21_getpj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.880691, 0, 22.851007)
 is_broken = true
 
-[node name="StreetLightPoles9" parent="." unique_id=2075578572 instance=ExtResource("21_getpj")]
+[node name="StreetLightPoles9" parent="Arena/Road" unique_id=2075578572 instance=ExtResource("21_getpj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.880691, 0, 2.9963655)
 
-[node name="StreetLightPoles2" parent="." unique_id=1678901965 instance=ExtResource("21_getpj")]
+[node name="StreetLightPoles2" parent="Arena/Road" unique_id=1678901965 instance=ExtResource("21_getpj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.880691, 0, -13.106119)
 
-[node name="StreetLightPoles3" parent="." unique_id=313757123 instance=ExtResource("21_getpj")]
+[node name="StreetLightPoles3" parent="Arena/Road" unique_id=313757123 instance=ExtResource("21_getpj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.880691, 0, -34.056175)
 
-[node name="StreetLightPoles4" parent="." unique_id=706197003 instance=ExtResource("21_getpj")]
+[node name="StreetLightPoles4" parent="Arena/Road" unique_id=706197003 instance=ExtResource("21_getpj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.880691, 0, -54.94737)
 is_broken = true
 
-[node name="StreetLightPoles5" parent="." unique_id=1865365403 instance=ExtResource("21_getpj")]
+[node name="StreetLightPoles5" parent="Arena/Road" unique_id=1865365403 instance=ExtResource("21_getpj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.221581, 0, 22.39567)
 
-[node name="StreetLightPoles6" parent="." unique_id=768803030 instance=ExtResource("21_getpj")]
+[node name="StreetLightPoles6" parent="Arena/Road" unique_id=768803030 instance=ExtResource("21_getpj")]
 transform = Transform3D(-0.76452804, 0.03887406, 0.6434172, 0.37083635, 0.8429754, 0.3897082, -0.52723545, 0.5365455, -0.65889454, -10.221581, 0, -13.106119)
 is_broken = true
 
-[node name="StreetLightPoles7" parent="." unique_id=937144464 instance=ExtResource("21_getpj")]
+[node name="StreetLightPoles7" parent="Arena/Road" unique_id=937144464 instance=ExtResource("21_getpj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.221581, 0, -34.056175)
 
-[node name="StreetLightPoles11" parent="." unique_id=1654887837 instance=ExtResource("21_getpj")]
+[node name="StreetLightPoles11" parent="Arena/Road" unique_id=1654887837 instance=ExtResource("21_getpj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.221581, 0, -21.793648)
 
-[node name="StreetLightPoles12" parent="." unique_id=897088196 instance=ExtResource("21_getpj")]
+[node name="StreetLightPoles12" parent="Arena/Road" unique_id=897088196 instance=ExtResource("21_getpj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.221581, 0, 1.0814953)
 
-[node name="StreetLightPoles8" parent="." unique_id=821650774 instance=ExtResource("21_getpj")]
+[node name="StreetLightPoles8" parent="Arena/Road" unique_id=821650774 instance=ExtResource("21_getpj")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -10.221581, 0, -54.94737)
