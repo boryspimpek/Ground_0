@@ -102,6 +102,7 @@ avoidance_enabled = true
 collision_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea" index="0" unique_id=822100655]
+visible = false
 shape = SubResource("SphereShape3D_jnhbb")
 
 [node name="ElectricAttack" type="Node3D" parent="." index="4" unique_id=460952712]

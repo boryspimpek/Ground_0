@@ -3,14 +3,13 @@ shader_type spatial;
 render_mode depth_draw_opaque, cull_back;
 uniform vec3 albedo_color : source_color = vec3(0.1, 0.1, 0.1); 
 uniform sampler2D albedo_texture : source_color; 
-// Skalowanie UV tekstury
-// X = kafelkowanie wzdłuż
-// Y = kafelkowanie w poprzek
 uniform vec2 albedo_uv_scale = vec2(10.0, 1.0);
 
 // --- Normal mapa ---
 uniform sampler2D normal_texture : hint_normal;
 uniform float normal_strength : hint_range(0.0, 2.0) = 1.0;
+uniform float roughness : hint_range(0.0, 1.0) = 1.0;
+uniform float metallic : hint_range(0.0, 1.0) = 0.0;
 
 // Ustawienia proceduralnego poszarpania
 uniform sampler2D noise_texture : hint_default_black; // Tu wgramy FastNoiseLite
@@ -50,7 +49,9 @@ void fragment() {
 	fill_color *= texture(albedo_texture, tex_uv).rgb;
 	
 	ALBEDO = fill_color;
-	
+	ROUGHNESS = roughness;
+	METALLIC = metallic;
+		
 	// --- Normal mapping ---
 	NORMAL_MAP = texture(normal_texture, tex_uv).rgb;
 	NORMAL_MAP_DEPTH = normal_strength;

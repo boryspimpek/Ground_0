@@ -1,8 +1,6 @@
 [gd_scene format=3 uid="uid://drqhpny3vvhoy"]
 
 [ext_resource type="Script" uid="uid://c1g6u7c33v7jy" path="res://Player/Camera.gd" id="1_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://dybx0qnnmropb" path="res://assets/Textures/old_road_01_1k/old_road_01_1k/old_road_01_baseColor_1k.png" id="4_w48qg"]
-[ext_resource type="Texture2D" uid="uid://dvxh8spjhehcc" path="res://assets/Textures/old_road_01_1k/old_road_01_1k/old_road_01_normal_gl_1k.png" id="5_vivmo"]
 [ext_resource type="PackedScene" uid="uid://dx0y6c20qn2le" path="res://Player/Player_2.tscn" id="6_272bh"]
 [ext_resource type="PackedScene" uid="uid://s64nkoqom5ew" path="res://assets/Model Scenes/road_barrier.tscn" id="6_yaehf"]
 [ext_resource type="PackedScene" uid="uid://2wnqfmlvxldt" path="res://Enemies/sci_fi_drone.tscn" id="7_5vw27"]
@@ -18,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://gx7ge15t30jf" path="res://assets/Model Scenes/radio_telescope.tscn" id="14_ryguw"]
 [ext_resource type="PackedScene" uid="uid://q3y7tf8qlf33" path="res://assets/Model Scenes/barikad.tscn" id="14_w48qg"]
 [ext_resource type="PackedScene" uid="uid://bc5y8apdjseq2" path="res://assets/Model Scenes/barricad.tscn" id="15_vivmo"]
+[ext_resource type="Material" uid="uid://bx7tqxju1b48l" path="res://assets/Materials/road008C.tres" id="17_82xsv"]
 [ext_resource type="Shader" uid="uid://cwo2i2ot3640a" path="res://edge.gdshader" id="19_cegan"]
 [ext_resource type="Texture2D" uid="uid://cyab885dlf2qu" path="res://assets/Textures/Snow004_1K-JPG/Snow004_1K-JPG_Color.jpg" id="20_getpj"]
 [ext_resource type="Texture2D" uid="uid://e4yhcymq4ihl" path="res://assets/Textures/Snow004_1K-JPG/Snow004_1K-JPG_NormalGL.jpg" id="21_ryguw"]
@@ -42,19 +41,7 @@ reflected_light_source = 2
 tonemap_mode = 3
 glow_enabled = true
 adjustment_enabled = true
-adjustment_brightness = 1.24
-adjustment_saturation = 1.3
-
-[sub_resource type="NavigationMesh" id="NavigationMesh_272bh"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d13ii"]
-albedo_texture = ExtResource("4_w48qg")
-normal_enabled = true
-normal_scale = 2.45
-normal_texture = ExtResource("5_vivmo")
-uv1_scale = Vector3(0.1, 0.1, 0.1)
-uv1_offset = Vector3(-0.065, 0, 0)
-uv1_triplanar = true
+adjustment_saturation = 1.5
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_d13ii"]
 noise_type = 3
@@ -71,6 +58,8 @@ shader_parameter/albedo_texture = ExtResource("20_getpj")
 shader_parameter/albedo_uv_scale = Vector2(10, 2)
 shader_parameter/normal_texture = ExtResource("21_ryguw")
 shader_parameter/normal_strength = 1.650000078375
+shader_parameter/roughness = 1.0
+shader_parameter/metallic = 0.800000038
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_1u8w0")
 shader_parameter/edge_sharpness = 0.05900000210398
 shader_parameter/ruggedness = 0.050000002375
@@ -97,29 +86,26 @@ environment = SubResource("Environment_h2yge")
 transform = Transform3D(-0.16332601, 0.32932454, -0.9299838, 0, 0.94264144, 0.33380684, 0.98657215, 0.05451934, -0.15395786, 0, 10, 0)
 light_color = Color(1, 1, 0.8980392, 1)
 light_energy = 0.5
+light_specular = 0.03
 shadow_enabled = true
+shadow_opacity = 0.91
+shadow_blur = 0.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=346466420]
-transform = Transform3D(0.7071067, 0.40557975, -0.579228, 0, 0.81915194, 0.57357645, 0.7071067, -0.40557975, 0.579228, -5, 10, 5)
+transform = Transform3D(0.7071067, 0.40557975, -0.579228, 0, 0.81915194, 0.57357645, 0.7071067, -0.40557975, 0.579228, -10, 10, 10)
 visible = false
-v_offset = -4.0
 projection = 1
-size = 15.0
+size = 24.616
+script = ExtResource("1_0xm2m")
+
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=892619538]
+transform = Transform3D(0.7071067, 0.4999999, -0.49999997, 0, 0.7071067, 0.70710677, 0.7071067, -0.4999999, 0.49999997, -10, 10, 8.25)
+visible = false
+current = true
+size = 24.616
 script = ExtResource("1_0xm2m")
 
 [node name="HUD" parent="." unique_id=319821492 instance=ExtResource("7_272bh")]
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=436223479]
-navigation_mesh = SubResource("NavigationMesh_272bh")
-
-[node name="Node3D" type="CSGCombiner3D" parent="NavigationRegion3D" unique_id=1700766236]
-material_override = SubResource("StandardMaterial3D_d13ii")
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/Node3D" unique_id=522533730]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.626, -0.5, -15.39)
-use_collision = true
-size = Vector3(22.084717, 1, 78.28015)
 
 [node name="Enemies" type="Node3D" parent="." unique_id=480286661]
 
@@ -179,13 +165,10 @@ transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774
 transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, -0.018306136, -9.536743e-07, -6.2315702)
 
 [node name="Barrel8" parent="Arena" unique_id=738754875 instance=ExtResource("8_2cqfq")]
-transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, -10.211898, -9.536743e-07, -9.175453)
+transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, -6.6478686, -9.536743e-07, -12.070025)
 
 [node name="Barrel2" parent="Arena" unique_id=129110064 instance=ExtResource("8_2cqfq")]
 transform = Transform3D(-0.7337774, 0, -0.67939, 0, 1, 0, 0.67939, 0, -0.7337774, -6.4801736, -1.4305115e-06, 13.611901)
-
-[node name="Barrel3" parent="Arena" unique_id=893497734 instance=ExtResource("8_2cqfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.002855, 4.7683716e-07, -14.54879)
 
 [node name="Barrel4" parent="Arena" unique_id=1284619419 instance=ExtResource("8_2cqfq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.774112, 4.7683716e-07, -25.858248)
@@ -256,6 +239,12 @@ transform = Transform3D(1.6892046, 0, 0.051846296, 0, 1.6899999, 0, -0.051846296
 [node name="Barricad" parent="Arena" unique_id=61497852 instance=ExtResource("15_vivmo")]
 transform = Transform3D(0.0049964795, 0, -0.00018757896, 0, 0.005, 0, 0.00018757896, 0, 0.0049964795, -6.2253513, 0, -6.0099072)
 
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=522533730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.626, -0.5, -15.39)
+material_override = ExtResource("17_82xsv")
+use_collision = true
+size = Vector3(22.084717, 1, 78.28015)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1953325203]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.76381, 0.05, -15.867)
 mesh = SubResource("PlaneMesh_getpj")
@@ -263,6 +252,7 @@ mesh = SubResource("PlaneMesh_getpj")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=443433655]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=946681005]
+visible = false
 shape = SubResource("ConvexPolygonShape3D_0odxb")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1496395539]
@@ -272,4 +262,5 @@ mesh = SubResource("PlaneMesh_getpj")
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=641085066]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=983367586]
+visible = false
 shape = SubResource("ConvexPolygonShape3D_lswn8")
